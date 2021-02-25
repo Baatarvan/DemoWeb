@@ -1,0 +1,65 @@
+* {
+      padding: 0;
+      margin: 0;
+}
+body {
+      background-color: var(--background-color);
+      color: var(--font-color);
+}
+
+header {
+      background-color: #fff;
+      height: 80px;
+}
+
+.bold {
+      font-weight: bold;
+}
+.schedule-container{
+      width: 99%;
+      height: 700px;
+      margin: auto;
+      margin: 10px;
+}
+
+.wish-achieve {
+      background: #fff;
+      box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
+      border-radius: 16px;
+      border: 1px solid #f9fafd;
+      width: 50%;
+      height: 99%;
+      margin: 0 10px;
+      padding: 50px;
+   
+}
+
+.todo-list{
+      background: #fff;
+      box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
+      border-radius: 16px;
+      border: 1px solid #f9fafd;
+      width: 50%;
+      height: 99%;
+}
+
+.wish-name {
+      text-align: center;
+      background-color: var(--primary-color);
+      padding: 10px 2px;
+      width: 50%;
+      margin: auto;
+      border-radius: 50%;
+      color: #333;
+}
+.wish-img {
+      width: 60%;
+      margin-left: 20%;
+      padding: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+}
+
+.point {
+      text-align: center;
+}
