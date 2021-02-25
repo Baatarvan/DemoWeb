@@ -15,8 +15,9 @@ header {
 .bold {
       font-weight: bold;
 }
+
 .schedule-container{
-      width: 99%;
+      width: 95%;
       height: 700px;
       margin: auto;
       margin: 10px;
@@ -27,31 +28,43 @@ header {
       box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
       border-radius: 16px;
       border: 1px solid #f9fafd;
-      width: 50%;
+      width: 45%;
       height: 99%;
-      margin: 0 10px;
+      margin-left: 30px;
       padding: 50px;
-   
 }
 
-.todo-list{
+.todo-container{
       background: #fff;
       box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
       border-radius: 16px;
       border: 1px solid #f9fafd;
-      width: 50%;
+      width: 55%;
       height: 99%;
+      margin-left: 30px;
 }
 
+.wish-coming {
+      color: var(--primary-color);
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+}
 .wish-name {
       text-align: center;
-      background-color: var(--primary-color);
-      padding: 10px 2px;
+      background-color: rgb(192, 192, 192);
+      padding: 30px;
       width: 50%;
       margin: auto;
       border-radius: 50%;
       color: #333;
+      margin-top: 50px;
 }
+
+.wish-name .name {
+      color: var(--primary-color);
+}
+
 .wish-img {
       width: 60%;
       margin-left: 20%;
@@ -62,4 +75,27 @@ header {
 
 .point {
       text-align: center;
+      margin-top: 20px;
 }
+
+.battery-container { 
+      background-color: rgb(192, 192, 192); 
+      width: 80%; 
+      border-radius: 15px; 
+      margin: auto;
+      margin-top: 20px;
+  } 
+
+  .battery-container .achieve { 
+      background-color: var(--primary-color); 
+      color: white; 
+      padding: 1%; 
+      text-align: right; 
+      font-size: 20px; 
+      border-radius: 15px; 
+  } 
+  
+  .battery-container .percent { 
+      width: 60%; 
+  } 
+
