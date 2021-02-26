@@ -1,7 +1,3 @@
-* {
-      padding: 0;
-      margin: 0;
-}
 body {
       background-color: var(--background-color);
       color: var(--font-color);
@@ -16,12 +12,7 @@ header {
       font-weight: bold;
 }
 
-.schedule-container{
-      width: 95%;
-      height: 700px;
-      margin: auto;
-      margin: 10px;
-}
+/* WISH IS COMING */
 
 .wish-achieve {
       background: #fff;
@@ -34,27 +25,18 @@ header {
       padding: 50px;
 }
 
-.todo-container{
-      background: #fff;
-      box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
-      border-radius: 16px;
-      border: 1px solid #f9fafd;
-      width: 55%;
-      height: 99%;
-      margin-left: 30px;
-}
-
 .wish-coming {
       color: var(--primary-color);
       padding: 10px;
       text-align: center;
       margin-bottom: 20px;
 }
+
 .wish-name {
       text-align: center;
       background-color: rgb(192, 192, 192);
       padding: 30px;
-      width: 50%;
+      width: 60%;
       margin: auto;
       border-radius: 50%;
       color: #333;
@@ -80,22 +62,101 @@ header {
 
 .battery-container { 
       background-color: rgb(192, 192, 192); 
-      width: 80%; 
-      border-radius: 15px; 
+      width: 60%; 
+      border-radius: 5px; 
       margin: auto;
       margin-top: 20px;
-  } 
+} 
 
-  .battery-container .achieve { 
-      background-color: var(--primary-color); 
+.battery-container .achieve { 
+      background-color: skyblue; 
       color: white; 
       padding: 1%; 
       text-align: right; 
       font-size: 20px; 
-      border-radius: 15px; 
-  } 
+      border-radius: 5px; 
+} 
   
-  .battery-container .percent { 
+.battery-container .percent { 
       width: 60%; 
-  } 
+} 
 
+.schedule-container{
+      width: 95%;
+      height: 700px;
+      margin: auto;
+      margin: 10px;
+}
+
+/* TODO LIST */
+.todo-container{
+      background: #fff;
+      box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
+      border-radius: 16px;
+      border: 1px solid #f9fafd;
+      width: 55%;
+      height: 99%;
+      margin-left: 30px;
+      padding: 50px 40px;
+}
+
+.garchig {
+      text-align: center;
+      margin-bottom: 40px; 
+      margin-top: 15px; 
+      color: var(--primary-color);
+}
+
+.todo-list {
+      /* margin-top: 10px; */
+}
+.todo {
+      height: 60px;
+      position: relative;    
+      width: 90%; 
+      margin: auto;
+}
+.todo-desc{
+      color: white; 
+      height: 30px;
+      font-size: 20px;
+}
+
+.description {
+      display: inline-block;
+      background-color: skyblue; 
+      color: white; 
+      text-align: left;   
+      height: 30px; 
+      width: 83%;
+}
+
+.todo-point {
+      display: inline-block;
+      background-color: rgb(135, 204, 135); 
+      color: white; 
+      text-align: center; 
+      width: 80px;
+      height: 30px;
+}
+
+.todo-content {
+      width: 90%;
+      height: 90%;
+}
+.todo-check {
+      display: inline-block;
+      height:100%;
+      background-color: #d1d4d4;
+      width: 50px;
+      position: absolute;
+      right: 0;
+      top: 1px;
+      text-align: center;
+      padding-top: 20px; 
+}
+
+.todo-check input {
+      width: 23px;
+      height: 23px;
+}
