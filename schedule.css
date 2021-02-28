@@ -133,7 +133,7 @@ header {
 .purpose {
   border: grey 1px solid;
   width: 100%;
-  height: 40px;
+  height:fit-content;
   border-radius: 5px;
   margin-top: 5px;
 }
@@ -146,10 +146,11 @@ header {
 }
 .todo-desc {
   /* color: white;  */
-  height: 35px;
+  height: fit-content;
   font-size: 18px;
   border: 2px solid grey;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .description {
@@ -166,7 +167,7 @@ header {
   color: rgb(70, 189, 70);
   text-align: center;
   width: 13%;
-  height: 25px;
+  height: 7%;
   font-size: 20px;
   border-radius: 5px;
 }
@@ -178,16 +179,17 @@ header {
 .todo-edit {
   display: inline-block;
   height: 100%;
-  width: 50px;
+  width: 10%;
   position: absolute;
   right: 0;
-  top: 5px;
+  top: 3px;
   text-align: center;
 }
 
 .todo-check input {
-  width: 25px;
-  height: 25px;
+  width: 40%;
+  height: 40%;
+  cursor: pointer;
 }
 
 .add-todo {
@@ -201,6 +203,7 @@ header {
   padding: 5px;
   margin-top: 5%;
   margin-left: 40%;
+  cursor: pointer;
 }
 
 .add-todo:hover {
@@ -278,9 +281,56 @@ header {
       border: 1px solid gray;
       border-radius: 15px;
       outline: none;
+      cursor: pointer;
 }
 
 .confirm-todo:hover {
       background-color: gray;
       color: #fff;
+}
+
+/* kebab */
+.kebab-more {
+  background: transparent;
+  border: none;
+  color: var(--font-color);
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20%;
+}
+
+.kebab-more:after {
+  content: '\2807';
+  font-size: 1rem;
+  padding-left: 5px;
+  }
+
+.kebab {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: black;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* edit */
+.kebab > ul {
+  position: absolute;
+  list-style: none;
+  top: -30px;
+  right: 21px;
+  z-index: 10;
+  width: 100px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.kebab ul li {
+  margin-top: 10px;
+  background-color: white;
+  border: var(--font-color);
+  color: var(--font-color);
+  padding: 2px 4px;
 }
