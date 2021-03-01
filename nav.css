@@ -24,16 +24,33 @@
     margin-right: 20px;
 }
 
-.searchbox{
-    
+.searchBox{
+    width: 30%;
+    display: flex;
+    position: relative;
 }
 
-.searchbutton{
-
+.searchButton{
+  width: 20%;
+  height: 36px;
+  border: 1px solid #eef1f8;
+  background: #eef1f8;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 0px 0px 5px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.searchinput{
-
+.searchInput{
+    width: 70%;
+    border: 3px solid #eef1f8;
+    border-left: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 0px 5px 5px 0px;
+    outline: none;
+    color: #9DBFAF;
 }
 
 .navcontainer a{
