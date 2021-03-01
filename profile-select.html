@@ -16,19 +16,19 @@
         <div class="list flex flex-1">
             <ul>
                 <li>
-                    <img src="https://api.getepic.com/utils/compose.png?avatar_id=21&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="50px">
+                    <img src="https://api.getepic.com/utils/compose.png?avatar_id=21&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="40px">
                 </li>
                 <li id="modalshowme">Parent</li>
-                <li><button class="logOut">LOG OUT</button></li>
+                <li><button class="logOut">Log Out</button></li>
             </ul>
         </div>
     </div>
-    <div class="content flex flex-8">
+    <div class="content flex flex-9">
         <div class="box flex flex-1">
             <div class="selecyourProile flex-1s">
                 <h2>Select Your Profile</h2>
             </div>
-            <div class="avatar flex flex-8">
+            <div class="avatar flex flex-9">
                 <div class="child flex">
                     <img id="avatarimg" src="https://api.getepic.com/utils/compose.png?avatar_id=15&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="170px">
                     <h3 class="name">Name</h3>
@@ -52,6 +52,12 @@
             <p class="x">X</p>
         </div>        
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+    <script src="./js/base.js" ></script>
     <script src="./js/profile-select.js"></script>
 </body>
 </html>

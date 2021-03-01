@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
-* { box-sizing: border-box; }
 body { 
     display: flex;
-    align-items: center;
     color: var(--blue-color);
-    min-width: 855px;
     flex-direction: column;
 }
 
@@ -14,30 +9,28 @@ body {
 }
 
 .title {
-    width: 700px;
     display: flex;
     align-items: center;
     font-size: 30px;
+    margin-left: 20px;
 }
 
-.list {
-    width: 700px;
+.list ul {
     list-style-type: none;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    flex-direction: row-reverse;
 }
 
-.list li {
-    display: inline;
-    margin-right: 10px;
+.list ul li {
+    margin-right: 20px;
+    color: var(--grey-color);
 }
 
 .content {
-    max-width: 855px;
-    width: 100%;
     align-items: center;
 }
+
 .login {
     justify-content: space-around;
     align-items: flex-start;

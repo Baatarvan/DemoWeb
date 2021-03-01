@@ -1,5 +1,4 @@
 // modal //
-
 let $modal = document.querySelector('.modal');
 let $button = document.querySelector('#modalshowme');
 
@@ -14,10 +13,9 @@ $modalExit.addEventListener('click', () => {
 });
 
 // logout //
-
 let $logout = document.querySelector('.logOut');
 
-
 $logout.addEventListener('click', () => {
+    firebase.auth().signOut();
     location.replace('login.html');
 });

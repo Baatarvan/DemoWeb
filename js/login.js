@@ -1,31 +1,25 @@
-let $login = document.querySelector('.loginBtn');
-console.log('hello world');
-
-$login.addEventListener('click', () => {
-    console.log("hello world");
-    location.replace('profile-select.html');
-});
-
-// Auth //
-firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  });
-
+document.querySelector('.loginBtn').onclick = () => {
+  let email = document.querySelector('.email').value;
+  let password = document.querySelector('.password').value;
 
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
+    location.replace('profile-select.html');
     // ...
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
   });
+}
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    var uid = user.uid;
+  } else {
+      console.log("Nevterch orno uu?");
+      location.replace('login.html');
+  }
+});
