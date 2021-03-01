@@ -18,10 +18,11 @@ header {
 /* WISH IS COMING */
 
 .wish-achieve {
-  background: #fff;
+  background-color: var(--primary-color);
   box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
   border-radius: 16px;
   border: 1px solid #f9fafd;
+  color: #fff;
   width: 45%;
   height: 99%;
   margin-left: 30px;
@@ -33,11 +34,14 @@ header {
 }
 
 .wish-card {
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+  background: url(https://previews.123rf.com/images/lightvisionftb/lightvisionftb1603/lightvisionftb160300011/53159355-boom-comic-book-explosion-cartoon-bubble-smoke-vector.jpg) center center/cover;
   width: 80%;
   margin: auto;
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
+  border-radius: 15px;
+
 }
 .wish-coming {
   padding: 10px;
@@ -51,6 +55,7 @@ header {
 
 .wish-schedule {
   padding-top: 30px;
+  
 }
 .point {
   text-align: left;
@@ -65,12 +70,12 @@ header {
 }
 
 .battery-container {
-  /* background-color: rgb(192, 192, 192);  */
+  background-color: var(--background-color);
   width: 60%;
   border-radius: 15px;
   margin: auto;
   margin-top: 20px;
-  border: 1px solid #333;
+  border: 1px solid var(--background-color);
 }
 
 .battery-container .achieve {
@@ -91,11 +96,13 @@ header {
   height: 700px;
   margin: auto;
   margin: 10px;
+  position: relative;
 }
 
 /* TODO LIST */
 .todo-container {
-  background: #fff;
+  background-color: #fff;
+  color: var(--primary-color);
   box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
   border-radius: 16px;
   border: 1px solid #f9fafd;
@@ -131,7 +138,11 @@ header {
   margin-top: 10px;
 }
 .purpose {
-  border: grey 1px solid;
+  background-color:#fff;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px;
+  color: var(--primary-color);
   width: 100%;
   height:fit-content;
   border-radius: 5px;
@@ -193,11 +204,13 @@ header {
 }
 
 .add-todo {
-  border: rgb(60, 109, 60) 2px solid;
-  color: rgb(72, 129, 72);
+  border: none;
+  color: var(--primary-color);
+  background-color: #fff;
   text-align: center;
-  width: 20%;
-  height: 35px;
+  width: 30%;
+  font-size: 1.5rem;
+  height: 7%;
   font-weight: 400;
   border-radius: 15px;
   padding: 5px;
@@ -207,31 +220,36 @@ header {
 }
 
 .add-todo:hover {
-  background-color: rgb(72, 129, 72);
+  background-color: var(--primary-color);
   color: #fff;
 }
 
 /* add-todo Modul */
 
 .modul-todo {
-  background: var(--background-color);
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 15%;
+  left: 30%;
+  background: var(--primary-color);
   box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
   border-radius: 16px;
   border: 1px solid #f9fafd;
   width: 40%;
-  height: 70%;
+  /* height: 100%; */
   margin: auto;
   padding: 30px;
 }
 
 .modul-container {
-      background-color: #fff;
+      background-color:  #74c0e9;
       height: 100%;
       border-radius: 16px;
       padding: 40px 70px ;
       margin: auto;
       text-align: center;
-      overflow-y: scroll;
+      /* overflow-y: scroll; */
 
 }
 
