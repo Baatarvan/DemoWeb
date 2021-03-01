@@ -1,0 +1,88 @@
+.navbar{
+    background-color: var(--white-color) ;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    padding: 16px 24px;
+    align-items: center;
+    margin-right: 32px;
+}
+
+.navcontainer{
+    color: var(--grey-color) ;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.searchBox{
+    width: 30%;
+    display: flex;
+    position: relative;
+}
+
+.searchButton{
+  width: 20%;
+  height: 36px;
+  border: 1px solid #eef1f8;
+  background: #eef1f8;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 0px 0px 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.searchInput{
+    width: 70%;
+    border: 3px solid #eef1f8;
+    border-left: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 0px 5px 5px 0px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.navcontainer a{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    cursor:pointer;
+    position: relative;
+    margin-right: 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navcontainer a:hover{
+    color:var(--blue-color);
+}
+
+.todo i{
+    font-size: 30px;
+}
+
+
+
+
+
+.mainbody{
+    background-color: var(--background-color);
+    width: 100%;
+    height:900px;
+    align-items: center;
+    align-content: center;
+   
+}
