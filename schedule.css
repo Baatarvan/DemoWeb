@@ -8,23 +8,17 @@ header {
   height: 80px;
 }
 
-.bold {
-  font-weight: bold;
-}
 
-/* span {
-      display: inline-block;
-} */
 /* WISH IS COMING */
 
 .wish-achieve {
-  background-color: var(--primary-color);
-  box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
+  background-color: #d4d6d6;
+  box-shadow: 0 1px 20px rgb(43 71 104 / 15%);
   border-radius: 16px;
-  border: 1px solid #f9fafd;
-  color: #fff;
-  width: 45%;
-  height: 99%;
+  border: 3px solid #d4d6d6;
+  color: var(--primary-color);
+  width: 40%;
+  height: fit-content;
   margin-left: 30px;
   padding: 50px;
 }
@@ -70,7 +64,7 @@ header {
 }
 
 .battery-container {
-  background-color: var(--background-color);
+  background-color: gray;
   width: 60%;
   border-radius: 15px;
   margin: auto;
@@ -93,10 +87,13 @@ header {
 
 .schedule-container {
   width: 95%;
-  height: 700px;
+  height: 80%;
   margin: auto;
-  margin: 10px;
+  margin-top: 3%;
   position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .hidden {
@@ -105,15 +102,21 @@ header {
 
 /* TODO LIST */
 .todo-container {
-  background-color: #fff;
+  background-color: #333;
   color: var(--primary-color);
-  box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
+  box-shadow: 0 1px 17px var(--primary-color);
   border-radius: 16px;
-  border: 1px solid #f9fafd;
-  width: 55%;
-  height: 99%;
+  border: 3px solid var(--primary-color);
+  width: 40%;
+  height: fit-content;
   margin-left: 30px;
   padding: 50px 50px;
+}
+
+.fas {
+  font-size: 5rem;
+  vertical-align: middle;
+  color:var(--primary-color);
 }
 
 .garchig {
@@ -126,7 +129,7 @@ header {
   padding: 10px;
   padding-top: 20px;
   height: 40%;
-  background-color: var(--background-color);
+  background-color:#d4d6d6;
   overflow-y: scroll;
 }
 
@@ -134,7 +137,7 @@ header {
   padding: 10px;
   padding-top: 20px;
   height: 30%;
-  background-color: var(--background-color);
+  background-color:#d4d6d6;
   overflow-y: scroll;
 }
 
@@ -143,10 +146,10 @@ header {
 }
 .purpose {
   background-color:#fff;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 1rem;
   padding: 10px;
-  color: var(--primary-color);
+  color: var(--font-color);
   width: 100%;
   height:fit-content;
   border-radius: 5px;
@@ -163,7 +166,7 @@ header {
   /* color: white;  */
   height: fit-content;
   font-size: 18px;
-  border: 2px solid grey;
+  border: 3px solid grey;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -219,7 +222,7 @@ header {
   border-radius: 15px;
   padding: 5px;
   margin-top: 5%;
-  margin-left: 40%;
+  margin-left: 35%;
   cursor: pointer;
 }
 
@@ -236,7 +239,7 @@ header {
   z-index: 100;
   top: 15%;
   left: 30%;
-  background: var(--primary-color);
+  background: var(--background-color);
   box-shadow: 0 1px 3px rgb(43 71 104 / 15%);
   border-radius: 16px;
   border: 1px solid #f9fafd;
@@ -278,7 +281,7 @@ header {
 .plus-point {
       display: inline-block;
       background-color: rgb(190, 218, 190);
-      color: rgb(70, 189, 70);
+      color: var(--primary-color);
       text-align: center;
       width: 18%;
       font-size: 30px;
@@ -300,14 +303,17 @@ header {
       margin-top: 20%;
       width: 60%;
       height: 30px;
-      border: 1px solid gray;
+      color: var(--primary-color);
+      border: none;
+      background-color: #fff;
       border-radius: 15px;
       outline: none;
       cursor: pointer;
+      font-size: 1.5rem;
 }
 
 .confirm-todo:hover {
-      background-color: gray;
+      background-color: var(--primary-color);
       color: #fff;
 }
 
@@ -355,4 +361,15 @@ header {
   border: var(--font-color);
   color: var(--font-color);
   padding: 2px 4px;
+}
+
+.item-edit:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+
+.item-delete:hover{
+  background-color: #333;
+  color: #fff;
 }
