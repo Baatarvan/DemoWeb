@@ -99,6 +99,10 @@ header {
   position: relative;
 }
 
+.hidden {
+  display: none;
+}
+
 /* TODO LIST */
 .todo-container {
   background-color: #fff;
