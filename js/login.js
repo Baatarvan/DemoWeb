@@ -12,6 +12,7 @@ document.querySelector('.loginBtn').onclick = () => {
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+    alert(errorMessage)s;
   });
 }
 
@@ -20,6 +21,5 @@ firebase.auth().onAuthStateChanged((user) => {
     var uid = user.uid;
   } else {
       console.log("Nevterch orno uu?");
-      location.replace('login.html');
   }
 });
