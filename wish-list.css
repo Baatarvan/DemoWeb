@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* { box-sizing: border-box; }
+body { 
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+:root {
+  --blue-color: #0d9ce7;
+  --darkblue-color: #0b74bb;
+  --grey-color:#64738a;
+  --white-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6, p { margin: 0 }
+
+h1, h2 {
+    color: var(--blue-color);
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 46px;
+}
+
+.flex { display: flex }
+.flex.space-around { justify-content: space-around }
+.flex.space-between { justify-content: space-between }
+.flex.center { justify-content: center }
+.flex.column { flex-direction: column; }
+
+.flex-1 { flex: 1 }
+.flex-2 { flex: 2 }
+.flex-3 { flex: 3 }
+.flex-4 { flex: 4 }
+.flex-8 { flex: 8 }
+
+
+
+
+button {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font-weight: 700;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    min-height: 40px;
+    min-width: 150px;
+    padding: 0 32px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.content {
+    max-width: 855px;
+    width: 100%;
+}
+.background {
+    max-width: 855px;
+    width: 100%;
+    background-color: rgb(249,250,253);
+    height: 100vh;
+    
+}
+.container {
+   max-width: 855px;
+   background-color: #fff;
+   height: calc(100Vh - 120px);
+   margin-top: 60px;
+   margin-left: 40px;
+   margin-right: 40px;
+    
+}
+h4 {
+    color: var(--grey-color);
+}
+
+.row {
+    margin-top: 40px;
+    margin-bottom: 20px;
+   
+    width: 100%;
+    height: 230px;
+}
+.add-wish {
+    background-color: #fff;
+    color: rgb(110,160,120);
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 1px solid rgb(110,160,120);;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    min-height: 40px;
+    max-width: 100px;
+    padding: 0 32px;
+    font-size: 16px;
+    line-height: 24px;
+    margin:   0 auto 20px;
+}
+
+
+.card {
+    max-width: 231px;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(242, 245, 67);
+    margin-left: 20px;
+    margin-top: 20px;
+    
+}
+
+
+
+
+
+
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 65px;
+	width: 300px;
+	background: #F5F5F5;
+	overflow-x: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	height: 150px;
+    min-width: 450px;
+}
+
+
+
+/*
+ *  STYLE 1
+ */
+
+
+
+
+
+
+
