@@ -14,6 +14,8 @@ body {
   --blue-color: #0d9ce7;
   --darkblue-color: #0b74bb;
   --grey-color:#64738a;
+  --grey1-color: #afbbca;
+  --grey2-color:#F9FAFD;
   --white-color: #fff;
   --background-color: #f9fafd;
 }
@@ -43,5 +45,23 @@ h3{
 .flex-2 { flex: 2 }
 .flex-3 { flex: 3 }
 .flex-4 { flex: 4 }
-.flex-8 { flex: 8 }
+.flex-9 { flex: 9 }
 
+button {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font-weight: 700;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    min-height: 40px;
+    min-width: 150px;
+    padding: 0 32px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.flex-8 { flex: 8 }

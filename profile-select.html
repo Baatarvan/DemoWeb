@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/profile-select.css">    
+    <title>Profile Select</title>
+</head>
+<body>
+    <div class="navbar flex flex-1">
+        <div class="title flex-1">
+            <h1>WHISHLIST</h1>
+        </div>
+        <div class="list flex flex-1">
+            <ul>
+                <li>
+                    <img src="https://api.getepic.com/utils/compose.png?avatar_id=21&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="40px">
+                </li>
+                <li id="modalshowme">Parent</li>
+                <li><button class="logOut">Log Out</button></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content flex flex-9">
+        <div class="box flex flex-1">
+            <div class="selecyourProile flex-1s">
+                <h2>Select Your Profile</h2>
+            </div>
+            <div class="avatar flex flex-9">
+                <div class="child flex">
+                    <img id="avatarimg" src="https://api.getepic.com/utils/compose.png?avatar_id=15&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="170px">
+                    <h3 class="name">Name</h3>
+                </div>
+                <div class="child flex">
+                    <img id="avatarimg" src="https://cdn.getepic.com/website/assets/sign-in/add-child.svg" alt="avatar" width="170px">
+                    <h3 class="name">add child</h3>
+                </div>
+            </div>
+        </div>
+        <div class="flex-3"></div>
+    </div>
+    <div class="modal">
+        <div class="modalbox">
+            <h2>Please Enter Your Password</h2>
+            <img src="https://api.getepic.com/utils/compose.png?avatar_id=21&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="90px">
+            <h3>Parent</h3>
+            <input type="password" placeholder="Password">
+            <button>Go</button>
+            <p>Forgot Password?</p>
+            <p class="x">X</p>
+        </div>        
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+    <script src="./js/base.js" ></script>
+    <script src="./js/profile-select.js"></script>
+</body>
+</html>
