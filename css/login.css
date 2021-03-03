@@ -1,5 +1,4 @@
 body { 
-    display: flex;
     color: var(--primary-color);
     flex-direction: column;
 }
