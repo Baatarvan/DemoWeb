@@ -11,13 +11,14 @@ body {
 }
 
 :root {
-  --blue-color: #0d9ce7;
+  --primary-color: #0d9ce7;
   --darkblue-color: #0b74bb;
   --grey-color:#64738a;
   --grey1-color: #afbbca;
   --grey2-color:#F9FAFD;
   --white-color: #fff;
-  --background-color: #f9fafd;
+  --background-color: #f1f2f2;
+  --font-color: #64738a;
 }
 
 h1, h2, h3, h4, h5, h6, p { margin: 0 }
@@ -29,10 +30,6 @@ h1, h2 {
 h1 {
     font-size: 40px;
     line-height: 46px;
-}
-
-h3{
-    color: var(--grey-color);
 }
 
 .flex { display: flex }
