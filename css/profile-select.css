@@ -1,8 +1,17 @@
 body { 
     display: flex;
-    color: var(--blue-color);
+    color: var(--primary-color);
     flex-direction: column;
     background-color: var(--grey2-color);
+}
+
+h1, h2 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 46px;
 }
 
 .navbar {
@@ -38,12 +47,12 @@ li {
 
 .logOut {
     background-color: var(--white-color);
-    color: var(--blue-color);
-    border: 2px solid var(--blue-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .logOut:hover {
-    background-color: var(--blue-color);
+    background-color: var(--primary-color);
     color: var(--white-color);
 }
 
