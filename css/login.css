@@ -1,7 +1,16 @@
 body { 
     display: flex;
-    color: var(--blue-color);
+    color: var(--primary-color);
     flex-direction: column;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 46px;
 }
 
 .navbar {
