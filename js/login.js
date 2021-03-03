@@ -12,7 +12,7 @@ document.querySelector('.loginBtn').onclick = () => {
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    alert(errorMessage)s;
+    alert(errorMessage);
   });
 }
 
