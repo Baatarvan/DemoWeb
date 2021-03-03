@@ -1,0 +1,110 @@
+
+
+.navBar{
+    background-color: var(--white-color) ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    padding: 16px 24px;
+    align-items: center;
+    margin-right: 32px;
+}
+
+.navContainer{
+    color: var(--grey-color) ;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.searchBox{
+    width: 30%;
+    display: flex;
+    position: relative;
+}
+
+.searchButton{
+  width: 20%;
+  height: 36px;
+  border: 1px solid #eef1f8;
+  background: #eef1f8;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 0px 0px 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.searchInput{
+    width: 70%;
+    border: 3px solid #eef1f8;
+    border-left: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 0px 5px 5px 0px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.navContainer a{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    cursor:pointer;
+    position: relative;
+    margin-right: 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navContainer a:hover{
+    color:var(--blue-color);
+}
+
+.toDo i{
+    font-size: 30px;
+}
+
+.Profile{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profileForm{
+    flex-direction: column;
+}
+
+
+.finishButton {
+background-color: var(--blue-color);     
+color: var(--white-color);     
+font-weight: 700;     
+box-sizing: border-box;     
+border: none;     
+outline: none;     
+border-radius: 100px;     
+cursor: pointer;    
+white-space: nowrap;     
+min-height: 40px;    
+min-width: 150px;    
+padding: 0 32px;     
+font-size: 16px;     
+line-height: 24px; 
+margin-top: 20px;
+}
+
+.profile .flex-1 h2{
+    margin: 20px;
+    height: 50px;
+}

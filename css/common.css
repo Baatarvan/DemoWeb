@@ -4,6 +4,9 @@
 body { 
     margin: 0;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -13,7 +16,8 @@ body {
   --grey-color:#64738a;
   --grey1-color: #afbbca;
   --grey2-color:#F9FAFD;
-  --white-color: #FFFFFF;
+  --white-color: #fff;
+  --background-color: #f9fafd;
 }
 
 h1, h2, h3, h4, h5, h6, p { margin: 0 }
@@ -25,6 +29,10 @@ h1, h2 {
 h1 {
     font-size: 40px;
     line-height: 46px;
+}
+
+h3{
+    color: var(--grey-color);
 }
 
 .flex { display: flex }
@@ -55,3 +63,5 @@ button {
     font-size: 16px;
     line-height: 24px;
 }
+
+.flex-8 { flex: 8 }
