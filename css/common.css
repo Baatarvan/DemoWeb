@@ -7,7 +7,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--blue-color);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -30,6 +29,10 @@ h1 {
     line-height: 46px;
 }
 
+h3{
+    color: var(--grey-color);
+}
+
 .flex { display: flex }
 .flex.space-around { justify-content: space-around }
 .flex.space-between { justify-content: space-between }
@@ -41,3 +44,4 @@ h1 {
 .flex-3 { flex: 3 }
 .flex-4 { flex: 4 }
 .flex-8 { flex: 8 }
+
