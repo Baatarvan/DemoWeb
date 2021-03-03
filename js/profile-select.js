@@ -19,3 +19,9 @@ $logout.addEventListener('click', () => {
     firebase.auth().signOut();
     location.replace('login.html');
 });
+
+// Add child //
+
+document.querySelector('.addchild').addEventListener('click', () => {
+    location.replace('addChild.html');
+})
