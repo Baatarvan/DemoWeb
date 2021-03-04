@@ -20,7 +20,7 @@ function addWish(doc) {
     const $wish = `<div data-id='${doc.id}'>
         <h1>${doc.data().name}</h1>
         <p>${doc.data().nas}</p>
-        <button class="delete">delete</button>
+        <button class="delete">delete1</button>
     </div>`
 
     box.insertAdjacentHTML('beforeend', $wish);
