@@ -119,6 +119,17 @@ li {
     display: none;    
 }
 
+.childPinModal {
+    position: fixed;
+    background-color: rgba(40,59,81,.9);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
 .modalbox {
     background-color: var(--white-color);
     border: none;
