@@ -21,3 +21,7 @@ for(var i = 0; i < $kebabBtn.length; i++){
          }
       }
    }
+
+// modal
+var modulTitle = document.querySelector("#modul-todo-title");
+var modulDesc = document.querySelector("#modul-todo-description");
