@@ -27,7 +27,8 @@ if($addChild != null) {
       pin: $pin.value,
     })
     .then(() => {
-        console.log("Document successfully written!");
+      console.log("Document successfully written!");
+      window.location.replace('profile-select.html'); 
     })
     .catch((error) => {
         console.error("Error writing document: ", error);

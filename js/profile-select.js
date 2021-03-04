@@ -6,11 +6,11 @@ $button.addEventListener('click', () => {
     $modal.classList.add('showme');
 });
 
-let $modalExit = $modal.querySelector('.x');
-
-$modalExit.addEventListener('click', () => {
-    $modal.classList.remove('showme');
-});
+window.onclick = function(event) {
+    if (event.target == $modal) {
+      $modal.style.display = "none";
+    }
+  }
 
 // logout //
 let $logout = document.querySelector('.logOut');
@@ -22,6 +22,6 @@ $logout.addEventListener('click', () => {
 
 // Add child //
 
-document.querySelector('.addchild').addEventListener('click', () => {
+document.querySelector('.addChildbtn').addEventListener('click', () => {
     location.replace('addChild.html');
 })

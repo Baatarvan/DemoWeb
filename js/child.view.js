@@ -1,5 +1,6 @@
 
 let selectedChild;
+let selectedChildPin;
 // create elementx
 
 function $createChild(item) {
@@ -14,17 +15,32 @@ function $createChild(item) {
         selectedChild = item.id;
         showChildPinModal();
 
-        let $pinCheckBtn = document.querySelector('.childPinModal .modalbox button');
-        let $inputPin = $child.querySelector('input').value;
-        console.log($inputPin);
-
-        $pinCheckBtn.onclick = () => {
+            document.querySelector('.childPinModal .modalbox button').onclick = () => {
             db.doc(`family/DSfi2IoefMBltjwX55WC/children/${selectedChild}`).get()
-            // db.collection('family').doc('DSfi2IoefMBltjwX55WC').collection('children').doc(selectedChild).get()
             .then((doc) => {
                     console.log(doc.data().pin);
+                    selectedChildPin = doc.data().pin;
                 }
             )
+            let inputPin = document.querySelector('.childPinModal .modalbox input').value;
+
+            if(inputPin === selectedChildPin) {
+                location.replace('wish-list.html');
+            }
+
+            let modal = $child.querySelector('.childPinModal')
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+            }
+        }
+
+        
+
+        document.querySelector('.childPinModal .modalbox .x').onclick = () => {
+            document.querySelector('.childPinModal').classList.remove('showme');
         }
     };
     return $child;
@@ -32,7 +48,7 @@ function $createChild(item) {
 
 // Main draw function
 function drawChildren(children) {
-    var $childrenList = document.querySelector('#children');
+    var $childrenList = document.querySelector('.avatar');
 
     $childrenList.innerHTML = '';
     children.forEach((item) => {
@@ -42,7 +58,6 @@ function drawChildren(children) {
 }
 
 function showChildPinModal() {
-    let $PinModal = document.querySelector('.childPinModal');
-    $PinModal.classList.add('showme');
+    document.querySelector('.childPinModal').classList.add('showme');
 }
     

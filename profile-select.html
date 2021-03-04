@@ -25,18 +25,15 @@
     </div>
     <div class="content flex flex-9">
         <div class="box flex flex-1">
-            <div class="selecyourProile flex-1s">
+            <div class="selectyourProfile flex-1">
                 <h2>Select Your Profile</h2>
             </div>
             <div class="avatar flex flex-9">
-                <div id="children"></div>
-                <div class="child flex addchild">
-                    <img class="avatarimg" src="https://cdn.getepic.com/website/assets/sign-in/add-child.svg" alt="avatar" width="170px">
-                    <h3 class="name">add child</h3>
-                </div>
             </div>
         </div>
-        <div class="flex-3"></div>
+        <div class="flex-3">
+            <button class="addChildbtn">Add child</button>
+        </div>
     </div>
     <div class="modal">
         <div class="modalbox">
@@ -45,7 +42,6 @@
             <h3>Parent</h3>
             <input type="password" placeholder="Password">
             <button>Go</button>
-            <p class="x">X</p>
         </div>        
     </div>
     <div class="childPinModal">
@@ -53,13 +49,10 @@
             <h2>Please Enter Your Password</h2>
             <img src="https://api.getepic.com/utils/compose.png?avatar_id=15&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="90px">
             <h3>Parent</h3>
-            <input type="password" placeholder="Password">
+            <input type="text" placeholder="Password">
             <button>Go</button>
-            <p class="x">X</p>
         </div>        
     </div>
-
-    
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>

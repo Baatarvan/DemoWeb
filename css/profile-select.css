@@ -78,7 +78,7 @@ li {
     align-items: center;
 }
 
-.selecyourProile {
+.selectyourProfile {
     display: flex;
     justify-content: center;
 }
@@ -98,6 +98,7 @@ li {
     justify-content: center;
     cursor: pointer;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .child {
