@@ -33,8 +33,7 @@ function addWish(doc) {
         }).catch(err => {
         console.log('Error removing document', err);
         });
-    }
-
+  }
 }
 
 // add wish

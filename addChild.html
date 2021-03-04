@@ -5,14 +5,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Team 2</title>
+        <title>Add Child</title>
 
         <link rel="stylesheet" href="css/common.css" >
         <link rel="stylesheet" href="css/addChild.css">
 
         <script src="https://kit.fontawesome.com/47120a7326.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body class="flex">
         <div class="navBar flex flex-1">
             <div class="logo flex">
             <h2>WISHLIST</h2> 
@@ -24,13 +24,16 @@
                     </button>
                     <input type=text class="searchInput" placeholder="Search by Wish">
                 </div>
-                <h3 class="flex-1"><a>My Wish List</a></h3>
-                <h3 class="flex-1"><a>My profile</a></h3>
+                <h3 class="flex flex-1 flex.column ">
+                    <a class="myWishList">My Wish List</a>
+                </h3>
+                <h3 class="flex-1">
+                    <a>My profile</a>
+                </h3>
 
             </div> 
-        </div>
-
-        <div class="AddProfile flex flex-8">
+        </div>    
+        <div class="AddProfile flex flex-4">
             <div class="picture flex flex-1">
                 <img src="https://www.getepic.com/assets/characters/NUFscreen_Owl2.svg" alt="picture"> 
             </div>
@@ -50,5 +53,12 @@
             <div class="WhiteSpace flex-1">
             </div>
         </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+    <script src="./js/base.js" ></script>
+    <script src="./js/addChild.js"></script>
     </body>
 </html>
