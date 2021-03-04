@@ -22,26 +22,28 @@ for(var i = 0; i < $kebabBtn.length; i++){
    }
 
 // TODO modal
-
 document.querySelector(".confirm-todo").onclick = function(){
+   console.log('confirm-todo-clicked')
    var $modulTitle = document.querySelector("#modul-todo-title");
    var $modulDesc = document.querySelector("#modul-todo-description");
    var $modulDate = document.querySelector("#modul-todo-date");
    var $modulPoint = document.querySelector("#modul-todo-point");
 
    var newTodo = {
-      modTitle = $modulTitle.value,
-      description = $modulDesc.value,
-      dueDate = $modulDate.value,
-      todoPoint = $modulPoint.value,
-      createdAt = new Date().toISOString(),
+      id: parseInt(Math.random()*9999999999),
+      modTitle: $modulTitle.value,
+      description:$modulDesc.value,
+      dueDate : $modulDate.value,
+      todoPoint: $modulPoint.value,
+      createdAt: new Date().toISOString(),
       isDone: false,
    };
    $drawTodo(newTodo);
-}
+   // console.log(newTodo);
+};
 
-function $drawTodo (newTodo){
-   var $todoListInner = `<div class="todo-list">
+function $drawTodo(newTodo){
+   var $todoListInner = `<div class="todo-list" data-id="${newTodo.id}">
    <div class="todo">
          <div class="todo-content">
                <div class="todo-desc">
@@ -56,13 +58,13 @@ function $drawTodo (newTodo){
                </div>
          </div>
          <div class="todo-edit">
-               <span class="todo-check"><input type="checkbox">
+               <span class="todo-check"><input type="checkbox" ${ newTodo.isDone ? 'checked' : '' } class="is-done" data-id="${ newTodo.id }">
                </span>
                <span class="kebab">
                      <span class="kebab-more"></span>
                      <ul class="hidden">
                            <li class="item-edit">EDIT</li>
-                           <li class="item-delete">DELETE</li>
+                           <li class="item-delete" data-id="${ newTodo.id }">DELETE</li>
                      </ul>
                </span>
          </div>
@@ -71,28 +73,31 @@ function $drawTodo (newTodo){
    `
    var $todoList = document.createElement('div');
    $todoList.innerHTML = $todoListInner;
+   $todoList.querySelector('.is-done').onchange = function() {
+      return newTodo.isDone = !newTodo.isDone;
+  }();
    return $todoList;
-}
+};
 
-function $drawTodos () {
+
+function $drawTodos(tasks){
    var $todos = document.querySelector('.todos');
    var $completedTodos = document.querySelector('.todos-completed');
 
    $todos.innerHTML = '';
    $completedTodos.innerHTML = '';
 
-   todos.forEach((todo)=>{
-      $newTodo = $drawTodo(todo);
-
+      tasks.forEach((task) => {
+         $newTodo = $drawTodo(task);
+      $todos.append($newTodo);
       if(todo.isDone){
          $completedTodos.append($newTodo);
       } else {
          $todos.append($newTodo);
       }
+      });
+};
 
-   })
-   
-}
 
 
 
