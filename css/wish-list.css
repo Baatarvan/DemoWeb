@@ -1,69 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-* { box-sizing: border-box; }
-body { 
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+/* Navigation bar  */
+
+.navBar{
+    background-color: var(--white-color) ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     align-items: center;
-    color: var(--blue-color);
-    font-family: 'Roboto', sans-serif;
 }
 
-
-:root {
-  --blue-color: #0d9ce7;
-  --darkblue-color: #0b74bb;
-  --grey-color:#64738a;
-  --white-color: #fff;
+.navBar h2{
+    color: var(--primary-color);
+    font-size: 35px;
 }
 
-h1, h2, h3, h4, h5, h6, p { margin: 0 }
-
-h1, h2 {
-    color: var(--blue-color);
+.navBar h3{
+    color: var(--grey-color);
 }
 
-h1 {
-    font-size: 40px;
-    line-height: 46px;
+.logo{
+    display: flex;
+    padding: 16px 24px;
+    align-items: center;
+    margin-right: 32px;
 }
 
-.flex { display: flex }
-.flex.space-around { justify-content: space-around }
-.flex.space-between { justify-content: space-between }
-.flex.center { justify-content: center }
-.flex.column { flex-direction: column; }
-.flex.row { flex-direction: row; }
-
-.flex-1 { flex: 1 }
-.flex-2 { flex: 2 }
-.flex-3 { flex: 3 }
-.flex-4 { flex: 4 }
-.flex-8 { flex: 8 }
-
-
-
-
-button {
-    background-color: var(--blue-color);
-    color: var(--white-color);
-    font-weight: 700;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    border-radius: 100px;
-    cursor: pointer;
-    white-space: nowrap;
-    min-height: 40px;
-    min-width: 150px;
-    padding: 0 32px;
-    font-size: 16px;
-    line-height: 24px;
-    margin-top: 20px;
-    
+.navContainer{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
 }
+
+/* Wish search section */
+
+.searchBox{
+    width: 30%;
+    display: flex;
+    position: relative;
+}
+
+.searchBox .searchButton{
+  width: 10%;
+  height: 36px;
+  border: 1px solid #eef1f8;
+  background: #eef1f8;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 0px 0px 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.searchButton:hover{
+    background-color: var(--primary-color) ;
+}
+
+.searchInput{
+    width: 70%;
+    border: 3px solid #eef1f8;
+    border-left: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 0px 5px 5px 0px;
+    color: var(--grey-color) ;
+}
+
+/* Menu section  */
+
+.navContainer a{
+    cursor:pointer;
+}
+
+.navContainer a:hover{
+    color:var(--primary-color);
+}
+
+/* Wishlist-n heseg */
+
+
 
 div.yellow { background-color: rgb(255, 238, 0);
 background-image: linear-gradient(to right, rgb(248, 224, 8), rgb(248, 240, 197));}
@@ -79,21 +96,19 @@ div.sky {
     width: 100%;
 }
 .background {
-    max-width: 855px;
     width: 100%;
-    background-color: rgb(249,250,253);
-    height: 100vh;
-    
+    background-color: var(--background-color);
 }
+
 .container {
    max-width: 855px;
-   background-color: #fff;
+   background-color: var(--background-color);
    height: calc(100Vh - 120px);
    margin-top: 60px;
    margin-left: 40px;
    margin-right: 40px;
-    
 }
+
 h4 {
     color: var(--grey-color);
 }
@@ -101,12 +116,12 @@ h4 {
 .row {
     margin-top: 40px;
     margin-bottom: 20px;
-   
     width: 100%;
     height: 230px;
 }
+
 .add-wish {
-    background-color: #fff;
+    background-color: var(--white-color);
     color: rgb(110,160,120);
     font-weight: 700;
     box-sizing: border-box;
@@ -123,24 +138,22 @@ h4 {
     margin:   40px 350px ;
 }
 
-
 .card {
     width: 231px;
     height: 250px;
     background-color: rgb(242, 245, 67);
     margin-left: 20px;
     margin-top: 100px;
-    border: 3px solid white;
+    border: 3px solid var(--white-color);
     border-radius: 10px;
     box-shadow: rgb(172, 171, 171) 3px 3px 10px;
     padding-right: 8px;
-    
 }
+
 .background .container :first-child{
     margin-left: 3px;
     
 }
-
 
 #style-1::-webkit-scrollbar-thumb
 {
@@ -148,6 +161,7 @@ h4 {
 	background-color: #F5F5F5;
     border-radius: 4px;
 }
+
 #style-1::-webkit-scrollbar
 {
 	-webkit-box-shadow: inset 0 0 5px rgba(117, 117, 117, 0.3);
@@ -158,28 +172,18 @@ h4 {
     
 }
 
-
-
-
-
 .scrollbar
 {
     margin-left: 20px;
 	float: left;
-	
 	width: 95%;
-	
 	overflow-x: scroll;
-	
 }
 
 .force-overflow
 {
-	
     min-width: 450px;
 }
-
-
 
 .zurag {
     width: 120px;
@@ -191,7 +195,7 @@ h4 {
 h3.wish-name {
     margin-top: 35px;
     margin-left: 300px;
-    color: #fff;
+    color: var(--white-color);
 }
 
 .title {
