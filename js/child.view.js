@@ -25,25 +25,20 @@ function $createChild(item) {
             let inputPin = document.querySelector('.childPinModal .modalbox input').value;
 
             if(inputPin === selectedChildPin) {
-                location.replace('wish-list.html');
+                location.replace('wishlist.html');
             }
-
-            let modal = $child.querySelector('.childPinModal')
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                  modal.style.display = "none";
-                }
-            }
-        }
-
-        
-
-        document.querySelector('.childPinModal .modalbox .x').onclick = () => {
-            document.querySelector('.childPinModal').classList.remove('showme');
         }
     };
     return $child;
+}
+
+let modal = document.querySelector('.childPinModal')
+
+modal.onclick = function(event) {
+    if(event.target ==  modal){
+        modal.classList.remove('showme')
+    }
+    
 }
 
 // Main draw function

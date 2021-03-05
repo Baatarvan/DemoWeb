@@ -10,3 +10,12 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
+
+let $logOutBtn = document.querySelector('.logOut');
+$logOutBtn.onclick = () => {
+    firebase.auth().signOut().then(() => {
+        location.replace('login.html');
+      }).catch((error) => {
+        alert(error)
+    });
+}
