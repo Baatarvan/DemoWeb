@@ -66,6 +66,8 @@
     height: 36px;
     border-radius: 0px 5px 5px 0px;
     color: var(--grey-color) ;
+    font: 18px/28px Roboto,sans-serif;
+    letter-spacing: .01em;
 }
 
 /* Menu section  */
@@ -78,10 +80,38 @@
     color:var(--primary-color);
 }
 
+/* add wish button */
+
+.add-wish {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 700;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    min-height: 40px;
+    min-width: 150px;
+    padding: 0 32px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.add-wish:hover{
+    background-color: var(--darkblue-color);
+}
+
 /* Wishlist-n heseg */
 
+body {
+    background-color: var(--grey2-color);
+ }
 
+ 
 
+/* 
 div.yellow { background-color: rgb(255, 238, 0);
 background-image: linear-gradient(to right, rgb(248, 224, 8), rgb(248, 240, 197));}
 
@@ -91,28 +121,10 @@ div.blue {
 div.sky { 
         background-image: linear-gradient(to right, rgb(0, 247, 255), rgb(188, 245, 247));}    
 
-.content {
-    max-width: 855px;
-    width: 100%;
-}
-.background {
-    width: 100%;
-    background-color: var(--background-color);
-}
-
-.container {
-   max-width: 855px;
-   background-color: var(--background-color);
-   height: calc(100Vh - 120px);
-   margin-top: 60px;
-   margin-left: 40px;
-   margin-right: 40px;
-}
 
 h4 {
     color: var(--grey-color);
 }
-
 .row {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -120,23 +132,7 @@ h4 {
     height: 230px;
 }
 
-.add-wish {
-    background-color: var(--white-color);
-    color: rgb(110,160,120);
-    font-weight: 700;
-    box-sizing: border-box;
-    border: 1px solid rgb(110,160,120);;
-    outline: none;
-    border-radius: 100px;
-    cursor: pointer;
-    white-space: nowrap;
-    min-height: 40px;
-    max-width: 100px;
-    padding: 0 32px;
-    font-size: 16px;
-    line-height: 24px;
-    margin:   40px 350px ;
-}
+
 
 .card {
     width: 231px;
@@ -203,7 +199,7 @@ h3.wish-name {
 }
 
 
-
+ */
 
 
 

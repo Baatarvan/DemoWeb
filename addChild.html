@@ -12,7 +12,8 @@
 
         <script src="https://kit.fontawesome.com/47120a7326.js" crossorigin="anonymous"></script>
     </head>
-    <body class="flex">
+    <body class="flex column">
+        <!-- Nav bar -->
         <div class="navBar flex flex-1">
             <div class="logo flex">
             <h2>WISHLIST</h2> 
@@ -33,26 +34,26 @@
 
             </div> 
         </div>    
-        <div class="AddProfile flex flex-4">
-            <div class="picture flex flex-1">
-                <img src="https://www.getepic.com/assets/characters/NUFscreen_Owl2.svg" alt="picture"> 
+
+        <!-- Add cild section -->
+        <div class="AddProfile flex flex-8">
+            <div class="flex-1"></div>
+            <div class="photo flex-1">
+                <img src="https://cdn.getepic.com/website/assets/sign-in/parentLogin-graphic.svg" alt="photo">
             </div>
-            <div class="Profile flex flex-1"> 
-                <div class=flex-1>
-                    <h2>Create Your Children's Profile</h2>
-                    <h3> Child's Name</h3>
-                    <input class="flex-1" placeholder="Enter Child's Name">
-                    <h3> Pin Code</h3> 
-                    <input placeholder="Enter Pin Code">
-                    <button class="finishButton">
-                        Finish
-                    </button>
+            <div class="flex column flex-1">
+                <h2>Create Your Children's Profile</h2>
+                <div class="form">
+                    <h3>Child's name</h3>
+                    <input type="text" placeholder="Enter Child's Name">
+                    <h3>Pin Code</h3>
+                    <input type="text" placeholder="Enter Pin Code">
                 </div>
-                <div class=flex-1></div>
+                <button class="finishButton">Finish</button>
+                
             </div>
-            <div class="WhiteSpace flex-1">
-            </div>
-        </div>
+            <div class="flex-1"></div>
+     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>

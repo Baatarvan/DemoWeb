@@ -11,17 +11,13 @@ h3{
 
 .navBar{
     background-color: var(--white-color) ;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
     align-items: center;
 }
 
 .navBar h2{
     color: var(--primary-color);
 }
-
+ 
 .logo{
     display: flex;
     padding: 16px 24px;
@@ -69,6 +65,8 @@ h3{
     height: 36px;
     border-radius: 0px 5px 5px 0px;
     color: var(--grey-color) ;
+    font: 18px/28px Roboto,sans-serif;
+    letter-spacing: .01em;
 }
 
 /* Menu section  */
@@ -83,39 +81,62 @@ h3{
 
 /* Create your children's profile */
 
-.Profile{
+.AddProfile {
     align-items: center;
-    justify-content: space-between;
+    margin-top: 100px;
 }
 
-.profileForm{
-    flex-direction: column;
+.form {
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
 }
 
+.form input {
+    -webkit-appearance: none;
+    font: 18px/28px Roboto,sans-serif;
+    letter-spacing: .01em;
+    color: #64738a;
+    background-color: #fff;
+    border: 1px solid #afbbca;
+    border-radius: 8px;
+    width: 100%;
+    height: 48px;
+    padding: 10px;
+    outline: 0;
+    resize: vertical;
+    box-sizing: border-box;
+    background-size: 10px 10px;
+    margin-bottom: 10px;
+}
+
+.form h3 {
+    color: var(--grey-color);
+    margin-top: 10px;
+}
+
+.photo img {
+    width: 90%;
+}
+
+.signUp {
+    margin: 20px 0;
+}
 
 .finishButton {
-background-color: var(--primary-color);     
-color: var(--white-color);     
-font-weight: 700;     
-box-sizing: border-box;     
-border: none;     
-outline: none;     
-border-radius: 100px;     
-cursor: pointer;    
-white-space: nowrap;     
-min-height: 40px;    
-min-width: 150px;    
-padding: 0 32px;     
-font-size: 16px;     
-line-height: 24px; 
-margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 700;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    min-height: 40px;
+    min-width: 150px;
+    padding: 0 32px;
+    font-size: 16px;
+    line-height: 24px;
 }
 
-.finishButton:hover{
-    background-color: var(--darkblue-color) ;
-}
-
-/* .profile .flex-1 h2{
-    margin: 20px;
-    height: 50px;
-} 
