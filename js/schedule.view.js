@@ -38,7 +38,7 @@ document.querySelector(".confirm-todo").onclick = function(){
       createdAt: new Date().toISOString(),
       isDone: false,
    };
-   $drawTodo(newTodo);
+   create(newTodo);
    // console.log(newTodo);
 };
 
@@ -83,14 +83,14 @@ function $drawTodo(newTodo){
 function $drawTodos(tasks){
    var $todos = document.querySelector('.todos');
    var $completedTodos = document.querySelector('.todos-completed');
-
+   console.log(tasks);
    $todos.innerHTML = '';
    $completedTodos.innerHTML = '';
 
       tasks.forEach((task) => {
          $newTodo = $drawTodo(task);
       $todos.append($newTodo);
-      if(todo.isDone){
+      if(task.isDone){
          $completedTodos.append($newTodo);
       } else {
          $todos.append($newTodo);
