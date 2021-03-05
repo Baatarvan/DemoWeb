@@ -34,25 +34,25 @@ function $createChild(item) {
 
 let modal = document.querySelector('.childPinModal')
 
-modal.onclick = function(event) {
-    if(event.target ==  modal){
-        modal.classList.remove('showme')
+if(modal != null) {
+    modal.onclick = function(event) {
+        if(event.target ==  modal){
+            modal.classList.remove('showme')
+        }
     }
-    
-}
 
-// Main draw function
-function drawChildren(children) {
-    var $childrenList = document.querySelector('.avatar');
+    // Main draw function
+    function drawChildren(children) {
+        var $childrenList = document.querySelector('.avatar');
 
-    $childrenList.innerHTML = '';
-    children.forEach((item) => {
-        $child = $createChild(item);
-        $childrenList.append($child);
-    });
-}
+        $childrenList.innerHTML = '';
+        children.forEach((item) => {
+            $child = $createChild(item);
+            $childrenList.append($child);
+        });
+    }
 
-function showChildPinModal() {
-    document.querySelector('.childPinModal').classList.add('showme');
+    function showChildPinModal() {
+        document.querySelector('.childPinModal').classList.add('showme');
+    }
 }
-    

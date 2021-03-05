@@ -9,6 +9,10 @@ h1, h2 {
     color: var(--primary-color);
 }
 
+h3 {
+    color: var(--grey-color);
+}
+
 h1 {
     font-size: 40px;
     line-height: 46px;
@@ -148,5 +152,5 @@ li {
 }
 
 .addChildbtn {
-    margin-top: ;
+    margin-top: 20px;
 }

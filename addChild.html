@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
@@ -9,15 +8,22 @@
 
         <link rel="stylesheet" href="./css/common.css" >
         <link rel="stylesheet" href="./css/addChild.css">
-        <script src="https://kit.fontawesome.com/47120a7326.js" crossorigin="anonymous"></script>
     </head>
     <body class="flex">
         <div class="navbar flex space-between flex-1">
-            <div class="title flex">
-                <h1>Whishlist</h1>
+            <div class="title flex-1">
+                <h1>Child's Profile</h1>
             </div>
-            <div class="btns flex">
-                <button class="logOut">Log out</button>
+            <div class="list flex flex-1">
+                <ul>
+                    <li>
+                        <h3>Profile</h3>
+                    </li>
+                    <li>
+                        <img id="modalshowme" src="https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/parents.svg?alt=media" alt="avatar" width="40px">
+                    </li>
+                    <li><button class="logOut">Log Out</button></li>
+                </ul>
             </div>
         </div>
         <div class="container flex flex-8">
@@ -27,7 +33,7 @@
             <div class="form flex flex-1 column">
                 <h1>Create your child’s profile</h1>
                 <h3>Child’s Name</h3>
-                <input id="childName" type="test" placeholder="Enter Child's Name">
+                <input id="childName" type="text" autoCapitalize="on" placeholder="Enter Child's Name">
                 <h3>Child’s Pin</h3>
                 <input id="childPin" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" placeholder="Enter Child's Pin">
                 <button class="finishButton">Finish</button>

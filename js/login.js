@@ -15,11 +15,3 @@ document.querySelector('.loginBtn').onclick = () => {
     alert(errorMessage);
   });
 }
-
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    var uid = user.uid;
-  } else {
-      console.log("Nevterch orno uu?");
-  }
-});
