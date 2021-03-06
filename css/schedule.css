@@ -233,6 +233,12 @@ header {
 
 /* add-todo Modul */
 
+/* .modul {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+} */
+
 .modul-todo {
   display: none;
   position: absolute;
