@@ -88,7 +88,7 @@
     font-weight: 700;
     box-sizing: border-box;
     border: none;
-    outline: none;
+    outline: none; 
     border-radius: 100px;
     cursor: pointer;
     white-space: nowrap;
@@ -109,7 +109,7 @@ body {
     background-color: var(--grey2-color);
  }
 
- 
+
 
 /* 
 div.yellow { background-color: rgb(255, 238, 0);
