@@ -11,8 +11,32 @@ firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
 
+// login
+
+if (window.location.href.endsWith('login.html')) {
+    document.querySelector('.loginBtn').onclick = () => {
+        let email = document.querySelector('.email').value;
+        let password = document.querySelector('.password').value;
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Signed in
+                var user = userCredential.user;
+                location.replace('profile-select.html');
+                // ...
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert(errorMessage);
+            });
+    }
+}
+
+// Log Out
+
 let $logOutBtn = document.querySelector('.logOut');
-if($logOutBtn != null) {
+if ($logOutBtn != null) {
     $logOutBtn.onclick = () => {
         firebase.auth().signOut().then(() => {
             location.replace('login.html');
@@ -25,10 +49,10 @@ if($logOutBtn != null) {
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      var uid = user.uid;
+        var uid = user.uid;
     } else {
-        if (!window.location.href.endsWith('login.html')){
-        location.replace('login.html');
+        if (!window.location.href.endsWith('login.html')) {
+            location.replace('login.html');
         }
     }
 });
