@@ -42,7 +42,7 @@ h2 {
 
 .wishbox {
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 10px;
     width: 1000px;
     box-shadow: 0 1px 3px 0 rgb(71 76 85 / 10%);

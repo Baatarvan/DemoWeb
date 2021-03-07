@@ -14,14 +14,15 @@ function drawChildrenFromSnapshot (snapshot) {
 }
 
 if(document.querySelector('.addChildbtn') != null) {
-  // Add child //
+
+  // Add child  html-ruu usreh uildel //
 
   document.querySelector('.addChildbtn').addEventListener('click', () => {
     location.replace('addChild.html');
   })
 }
 
-// add child
+// add child crud // 
 
 let $addChild = document.querySelector('.finishButton');
 let $name = document.querySelector('#childName');
@@ -50,7 +51,7 @@ if(window.location.href.endsWith('addChild.html')) {
 
 if(window.location.href.endsWith('profile-select.html')){
   
-  // modal //
+  // modal show uildel//
   let $modal = document.querySelector('.modal');
   let $button = document.querySelector('#modalshowme');
 
@@ -65,6 +66,8 @@ if(window.location.href.endsWith('profile-select.html')){
       location.replace('login.html');
   });
 
+
+  // modal hide uildel//
   window.onclick = function(event) {
     if (event.target == $modal) {
       $modal.classList.remove('showme');
@@ -73,7 +76,7 @@ if(window.location.href.endsWith('profile-select.html')){
 
 };
 
-// Realtime
+// Realtime data awchirah uildel //
 
 window.onload = () => {
   db.collection('family')
