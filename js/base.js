@@ -21,14 +21,14 @@ if($logOutBtn != null) {
         });
     }
 }
-// onAuthStateChanged
+// // onAuthStateChanged
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      var uid = user.uid;
-    } else {
-        if (!window.location.href.endsWith('login.html')){
-        location.replace('login.html');
-        }
-    }
-});
+// firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       var uid = user.uid;
+//     } else {
+//         if (!window.location.href.endsWith('login.html')){
+//         location.replace('login.html');
+//         }
+//     }
+// });
