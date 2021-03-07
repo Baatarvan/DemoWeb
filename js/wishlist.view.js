@@ -10,5 +10,5 @@ elements.forEach(el => {
 function drawWishlist() {
     wishlists = [];
 
-    
+
 }

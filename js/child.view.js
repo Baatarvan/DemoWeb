@@ -20,8 +20,7 @@ function $createChild(item) {
                 .then((doc) => {
                     console.log(doc.data().pin);
                     selectedChildPin = doc.data().pin;
-                }
-                )
+                })
             let inputPin = document.querySelector('.childPinModal .modalbox input').value;
 
             if (inputPin === selectedChildPin) {
