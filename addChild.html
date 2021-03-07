@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
@@ -7,59 +6,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Add Child</title>
 
-        <link rel="stylesheet" href="css/common.css" >
-        <link rel="stylesheet" href="css/addChild.css">
-
-        <script src="https://kit.fontawesome.com/47120a7326.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./css/common.css" >
+        <link rel="stylesheet" href="./css/addChild.css">
     </head>
-    <body class="flex column">
-        <!-- Nav bar -->
-        <div class="navBar flex flex-1">
-            <div class="logo flex">
-            <h2>WISHLIST</h2> 
+    <body class="flex">
+        <div class="navbar flex space-between flex-1">
+            <div class="title flex-1">
+                <h1>Child's Profile</h1>
             </div>
-            <div class="navContainer flex">
-                <div class="searchBox flex-4">
-                    <button class="searchButton">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <input type=text class="searchInput" placeholder="Search by Wish">
-                </div>
-                <h3 class="flex flex-1 flex.column ">
-                    <a class="myWishList">My Wish List</a>
-                </h3>
-                <h3 class="flex-1">
-                    <a>My profile</a>
-                </h3>
-
-            </div> 
-        </div>    
-
-        <!-- Add cild section -->
-        <div class="AddProfile flex flex-8">
-            <div class="flex-1"></div>
-            <div class="photo flex-1">
-                <img src="https://cdn.getepic.com/website/assets/sign-in/parentLogin-graphic.svg" alt="photo">
+            <div class="list flex flex-1">
+                <ul>
+                    <li>
+                        <h3>Profile</h3>
+                    </li>
+                    <li>
+                        <img id="modalshowme" src="https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/parents.svg?alt=media" alt="avatar" width="40px">
+                    </li>
+                    <li><button class="logOut">Log Out</button></li>
+                </ul>
             </div>
-            <div class="flex column flex-1">
-                <h2>Create Your Children's Profile</h2>
-                <div class="form">
-                    <h3>Child's name</h3>
-                    <input type="text" placeholder="Enter Child's Name">
-                    <h3>Pin Code</h3>
-                    <input type="text" placeholder="Enter Pin Code">
-                </div>
+        </div>
+        <div class="container flex flex-8">
+            <div class="img flex flex-2">
+                <img src="https://www.getepic.com/assets/characters/NUFscreen_Owl2.svg" alt="img">
+            </div>
+            <div class="form flex flex-1 column">
+                <h1>Create your child’s profile</h1>
+                <h3>Child’s Name</h3>
+                <input id="childName" type="text" autoCapitalize="on" placeholder="Enter Child's Name">
+                <h3>Child’s Pin</h3>
+                <input id="childPin" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" placeholder="Enter Child's Pin">
                 <button class="finishButton">Finish</button>
-                
             </div>
-            <div class="flex-1"></div>
-     </div>
+            <div class="flex-2"></div>
+        </div>
+        <div class="flex-2"></div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
 
-    <script src="./js/base.js" ></script>
-    <script src="./js/addChild.js"></script>
+        <script src="./js/base.js" ></script>
+        <script src="./js/child.view.js"></script>
+        <script src="./js/child.controller.js"></script>
     </body>
 </html>

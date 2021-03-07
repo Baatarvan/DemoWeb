@@ -10,3 +10,25 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
+
+let $logOutBtn = document.querySelector('.logOut');
+if($logOutBtn != null) {
+    $logOutBtn.onclick = () => {
+        firebase.auth().signOut().then(() => {
+            location.replace('login.html');
+        }).catch((error) => {
+            alert(error)
+        });
+    }
+}
+// onAuthStateChanged
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      var uid = user.uid;
+    } else {
+        if (!window.location.href.endsWith('login.html')){
+        location.replace('login.html');
+        }
+    }
+});

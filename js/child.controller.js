@@ -1,74 +1,83 @@
 let children = [];
 
+// draw children
+
 function drawChildrenFromSnapshot (snapshot) {
-  console.log("updated");
   children = [];
   snapshot.forEach((doc) => {
-    children.push(doc.data());
+    children.push({
+      id: doc.id,
+      data: doc.data()
+    });
   });
     drawChildren(children);
 }
 
-let submit = document.querySelector('#btn');
-let $name = document.querySelector('#name');
-let $nas = document.querySelector('#nas');
-let box = document.querySelector('.wishlist');
+if(document.querySelector('.addChildbtn') != null) {
+  // Add child //
 
-// create element
-function addWish(doc) {
-    console.log(doc.id);
-    const $wish = `<div data-id='${doc.id}'>
-        <h1>${doc.data().name}</h1>
-        <p>${doc.data().nas}</p>
-        <button class="delete">delete</button>
-    </div>`
+  document.querySelector('.addChildbtn').addEventListener('click', () => {
+    location.replace('addChild.html');
+  })
+}
 
-    box.insertAdjacentHTML('beforeend', $wish);
+// add child
 
-    let btnDelete = document.querySelector(`[data-id='${doc.id}'] .delete`);
+let $addChild = document.querySelector('.finishButton');
+let $name = document.querySelector('#childName');
+let $pin = document.querySelector('#childPin');
 
-    btnDelete.onclick = function () {
-    db.collection('family').doc(`${doc.id}`).delete().then(() => {
-        console.log('Document succesfully deleted!');
-        }).catch(err => {
-        console.log('Error removing document', err);
-        });
+if(window.location.href.endsWith('addChild.html')) {
+  $addChild.onclick = () => {
+    if ($name.value && $pin.value) {
+      db.collection("family").doc("DSfi2IoefMBltjwX55WC")
+      .collection('children').add({
+        name: $name.value,
+        pin: $pin.value,
+      })
+      .then(() => {
+        console.log("Document successfully written!");
+        window.location.replace('profile-select.html'); 
+      })
+      .catch((error) => {
+          console.error("Error writing document: ", error);
+      });
+    } else {
+      alert('boglo');
+    }
   }
 }
 
-// add wish
+if(window.location.href.endsWith('profile-select.html')){
+  
+  // modal //
+  let $modal = document.querySelector('.modal');
+  let $button = document.querySelector('#modalshowme');
 
-// submit.addEventListener('click', () => {
-//     db.collection('family').add({
-//         name: $name.value,
-//         nas: $nas.value,
-//     });
-// })
+  $button.onclick = () => {
+    $modal.classList.add('showme');
+  };
+
+  // logout //
+  let $logout = document.querySelector('.logOut');
+  $logout.addEventListener('click', () => {
+      firebase.auth().signOut();
+      location.replace('login.html');
+  });
+
+  window.onclick = function(event) {
+    if (event.target == $modal) {
+      $modal.classList.remove('showme');
+    }
+  }
+
+};
 
 // Realtime
 
-// db.collection('family').onSnapshot(snapshot => {
-//     snapshot.docChanges().forEach(change => {
-//       if(change.type === 'added') {
-//         addWish(change.doc);
-//       }
-//       if(change.type === 'removed') {
-//         let item = document.querySelector(`[data-id='${change.doc.id}']`);
-//         box.removeChild(item);
-//       }
-//       if(change.type === 'modified') {
-//         let item = document.querySelector(`[data-id='${change.doc.id}']`);
-//         box.removeChild(item);
-//         addWish(change.doc);
-//       }
-//     })
-// })
-
-window.onload = function() {
+window.onload = () => {
   db.collection('family')
     .doc('DSfi2IoefMBltjwX55WC')
     .collection('children')
     .onSnapshot(drawChildrenFromSnapshot);
 };
-
-
