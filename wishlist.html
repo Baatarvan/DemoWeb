@@ -11,7 +11,7 @@
 <body>
     <div class="navbar flex space-between flex-1">
         <div class="title flex">
-            <h1>Whishlist</h1>
+            <h1>WISHLIST</h1>
         </div>
         <div class="btns flex">
             <button class="logOut">Log out</button>
@@ -20,10 +20,6 @@
     </div>
     <div class="container flex flex-8">
         <div class="wishbox flex">
-            <div class="wish">
-                <img src="https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/049-bicycle.svg?alt=media" alt="img">
-                <h2>Bycicle</h2>
-            </div>
         </div>
         <div class="addWish flex">
             <button id="addWishBtn">add wish</button>
@@ -68,18 +64,29 @@
             <div class="form flex flex-1">
                 <h2>Choose your wish</h2>
                 <input id="modulTitle" type="text" placeholder="Title">
-                <input id="modulDisc" type="text" placeholder="Discription">
+                <input id="modulDesc" type="text" placeholder="Description">
                 <button id="modulAddWishBtn">add</button>
             </div>            
         </div>   
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
 
-    <script src="./js/base.js"></script>
-    <script src="./js/wishlist.controller.js"></script>
-    <script src="./js/wishlist.view.js"></script>
+<script src="./js/base.js"></script>
+<script src="./js/wishlist.model.js"></script>
+<script src="./js/wishlist.controller.js"></script>
+<script>
+    function drawList(lists){   
+        var $wishlists = document.querySelector('.wishbox');
+        
+        $wishlists.innerHTML = '';
+        lists.forEach((item) => {
+            $list = $createList(item);
+            $wishlists.append($list);
+        });
+    }
+</script>
 </body>
 </html>

@@ -10,6 +10,8 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
+let selectedChildID;
+
 
 let $logOutBtn = document.querySelector('.logOut');
 if($logOutBtn != null) {
@@ -32,3 +34,4 @@ firebase.auth().onAuthStateChanged((user) => {
         }
     }
 });
+
