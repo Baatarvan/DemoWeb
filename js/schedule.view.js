@@ -1,45 +1,96 @@
 // Add todo button
-document.querySelector('.add-todo').onclick= function(){
-      console.log('hello add todo button');
-      var $modulTodo = document.querySelector('.modul-todo');
-         if($modulTodo.style.display === 'none'){
-            $modulTodo.style.display = 'block'
-         } else {
-            $modulTodo.style.display = 'none';
-         }     
+document.querySelector('.add-todo').onclick = (e) => {
+   openModal();
+   console.log('add todo botton')
 }
 
-//... edit delete button 
-var $kebabBtn = document.querySelectorAll('.kebab');
-for(var i = 0; i < $kebabBtn.length; i++){
-   $kebabBtn[i].onclick = function(){
-         if(this.children[1].style.display === 'none'){
-            this.children[1].style.display = 'block';
-         } else {
-            this.children[1].style.display = 'none';
-         }
-      }
+document.querySelector('.x').onclick = function(event) {
+   if (event.target === this ) {
+       closeModal();
+       console.log('click modul')
    }
+}; 
+
+// function onEditClick() {
+//    var id = this.closest('.todo-list').dataset.id;
+//    var todo = getTodo(id);
+//    openModal(todo);
+// }
+
+function openModal(todo){
+   var $modulTodo = document.querySelector('.modul-todo');
+   if(todo)  {
+      $modulTodo.querySelector("#modul-todo-title").value = todo.modTitle;
+      $modulTodo.querySelector("#modul-todo-description").value = todo.description;
+      $modulTodo.querySelector("#modul-todo-date").value = todo.dueDate;
+      $modulTodo.querySelector("#modul-todo-point").value = todo.todoPoint;
+      $modulTodo.dataset.editingid = todo.id;
+   } else {
+      delete $modulTodo.dataset.editingid;
+   }
+
+   $modulTodo.style.display = 'block';
+};
+
+function closeModal() {
+   var $modulTodo = document.querySelector('.modul-todo');
+   $modulTodo.querySelector("#modul-todo-title").value = '';
+   $modulTodo.querySelector("#modul-todo-description").value = '';
+   $modulTodo.querySelector("#modul-todo-date").value = '';
+   $modulTodo.querySelector("#modul-todo-point").value = '';
+   $modulTodo.style.display = 'none';
+};
+
+
+
 
 // TODO modal
 document.querySelector(".confirm-todo").onclick = function(){
    console.log('confirm-todo-clicked')
+   var $modulTodo = document.querySelector('.modul-todo');
    var $modulTitle = document.querySelector("#modul-todo-title");
    var $modulDesc = document.querySelector("#modul-todo-description");
    var $modulDate = document.querySelector("#modul-todo-date");
    var $modulPoint = document.querySelector("#modul-todo-point");
 
    var newTodo = {
-      id: parseInt(Math.random()*9999999999),
-      modTitle: $modulTitle.value,
-      description:$modulDesc.value,
-      dueDate : $modulDate.value,
-      todoPoint: $modulPoint.value,
-      createdAt: new Date().toISOString(),
-      isDone: false,
-   };
-   create(newTodo);
-   // console.log(newTodo);
+            id: parseInt(Math.random()*9999999999),
+            modTitle: $modulTitle.value,
+            description:$modulDesc.value,
+            dueDate : $modulDate.value,
+            todoPoint: $modulPoint.value,
+            createdAt: new Date().toISOString(),
+            isDone: false,
+         };
+         create(newTodo);
+
+   // if (!$modulTodo.dataset.editingid){
+   //    var newTodo = {
+   //       id: parseInt(Math.random()*9999999999),
+   //       modTitle: $modulTitle.value,
+   //       description:$modulDesc.value,
+   //       dueDate : $modulDate.value,
+   //       todoPoint: $modulPoint.value,
+   //       createdAt: new Date().toISOString(),
+   //       isDone: false,
+   //    };
+   //    create(newTodo);
+   // } else {
+   //      var id = $modulTodo.dataset.editingid;
+   //      var title = $modulTitle.value;
+   //      var description = $modulDesc.value;
+   //      var dueDate = $modulDate.value;
+   //      var todoPoint = $modulPoint.value;
+   //      let updatingFields = {
+   //          title: title,
+   //          description: description,
+   //          dueDate: dueDate,
+   //          todoPoint: todoPoint,
+   //      };
+
+   //      update(id, updatingFields);
+   //  }
+    closeModal();
 };
 
 function $drawTodo(newTodo){
@@ -74,9 +125,12 @@ function $drawTodo(newTodo){
    var $todoList = document.createElement('div');
    $todoList.innerHTML = $todoListInner;
    $todoList.querySelector('.is-done').onchange = function() {
-      return newTodo.isDone = !newTodo.isDone;
-  }();
-   return $todoList;
+      toggleIsDone(newTodo.id);
+  };
+  $todoList.querySelector('.kebab').onclick = function(){
+      onKebabBtn(this);  
+  };
+  return $todoList;
 };
 
 
@@ -96,11 +150,23 @@ function $drawTodos(tasks){
          $todos.append($newTodo);
       }
       });
+      if($completedTodos.innerHTML === ''){
+         
+      }
 };
 
 
 
 
+//... edit delete button 
+function onKebabBtn (html){
+   console.log(html);
+      if(html.children[1].style.display === 'none'){
+         html.children[1].style.display = 'block';
+      } else {
+         html.children[1].style.display = 'none';
+      }
+   };
 
 
 
