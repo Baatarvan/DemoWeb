@@ -10,6 +10,8 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
+let selectedChildID;
+
 
 // Login
 
@@ -90,3 +92,4 @@ firebase.auth().onAuthStateChanged((user) => {
         }
     }
 });
+

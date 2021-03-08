@@ -6,12 +6,28 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>wishlist-schedule</title>
       <script src="https://kit.fontawesome.com/ed2d1f5acf.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="./css/common.css">
-      <link rel="stylesheet" href="./css/schedule.css">
+      <link rel="stylesheet" href="css/common.css">
+      <link rel="stylesheet" href="css/schedule.css">
 </head>
 
 <body>
       <header>
+            <div class="navbar flex space-between flex-1">
+                  <div class="title flex-1">
+                      <h1><span style="color: #0d9ce7;">WISHLIST</span> төлөвлөгөө</h1>
+                  </div>
+                  <div class="list flex flex-1">
+                      <ul>
+                          <li>
+                              <h3>Нүүр хуудас</h3>
+                          </li>
+                          <li>
+                              <img id="modalshowme" src="https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/parents.svg?alt=media" alt="avatar" width="40px">
+                          </li>
+                          <li><button class="logOut">Гарах</button></li>
+                      </ul>
+                  </div>
+              </div>
 
       </header>
       <div class="schedule-container">
@@ -48,7 +64,7 @@
             <div class="todo-container">
                   <h1 class='garchig'>Хийх ажлын жагсаалт</h1>
                   <div class="todos">
-                        <div class="todo-list">
+                        <!-- <div class="todo-list">
                               <div class="todo">
                                     <div class="todo-content">
                                           <div class="todo-desc">
@@ -74,8 +90,8 @@
                                           </span>
                                     </div>
                               </div>
-                        </div>
-                        <div class="todo-list">
+                        </div> -->
+                        <!-- <div class="todo-list">
                               <div class="todo">
                                     <div class="todo-content">
                                           <div class="todo-desc">
@@ -101,12 +117,12 @@
                                           </span>
                                     </div>
                               </div>
-                        </div>                
+                        </div>                 -->
                   </div>
-                  <p style="margin: 10px; text-decoration: underline;">Дууссан ажлын жагсаалт</p>
-                  <p style="text-align: right;"><b>Бүгдийг устгах</b></p>
+                  <p class='p-list'>Дууссан ажлын жагсаалт</p>
+                  <p class='all-del'>Бүгдийг устгах</p>
                   <div class="todos-completed">
-                        <div class="todo-list">
+                        <!-- <div class="todo-list">
                               <div class="todo">
                                     <div class="todo-content">
                                           <div class="todo-desc">
@@ -133,30 +149,37 @@
                                     </div>
                               </div>
       
-                        </div>
+                        </div> -->
 
                   </div>
                   <div class="add-todo">add todo +</div>
             </div>
-            <div class="modul-todo">
-                  <div class="modul-container">
-                        <h2>Шинэ ажил нэмэх</h2>
-                        <h3>Гарчиг</h3>
-                        <input type="text" placeholder="Хийх ажлын нэр">
-                        <h3>Тайлбар</h3>
-                        <input type="text" placeholder="Нэмэлт тайлбар байвал бичнэ үү.">
-                        <h3>Гүйцэтгэх огноо</h3>
-                        <input type="date" placeholder="Он сар өдөр">
-                        <h3>Оноо</h3>
-                        <div class="modul-add-point">
-                              <input class="add-point" type="text" style="width: 60%;" placeholder="Та оноогоо оруулна уу.">
-                              <span class="plus-point">+</span>
+           
+                  <class class="modul-todo"><div class="x">X</div>
+                        <div class="modul-container">
+                              <h2 class="modul-title">Шинэ ажил нэмэх</h2>
+                              <h3>Гарчиг</h3>
+                              <input type="text" placeholder="Хийх ажлын нэр" id="modul-todo-title">
+                              <h3>Тайлбар</h3>
+                              <input type="text" placeholder="Нэмэлт тайлбар байвал бичнэ үү." id="modul-todo-description">
+                              <h3>Гүйцэтгэх огноо</h3>
+                              <input type="date" placeholder="Он сар өдөр" id="modul-todo-date">
+                              <h3>Оноо</h3>
+                              <div class="modul-add-point">
+                                    <input class="add-point" type="text" style="width: 60%;" placeholder="Та оноогоо оруулна уу." id="modul-todo-point">
+                                    <span class="plus-point">+</span>
+                              </div>
+                             <button class="confirm-todo" type="submit">confirm todo +</button>
+                              
                         </div>
-                       <button class="confirm-todo" type="submit">confirm todo +</button>
-                        
-                  </div>
-            </div>
+                  </class>
       </div>
-      <script src="js/schedule.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+  
+      <script src="js/base.js" ></script>
+      <script src="js/schedule.controller.js"></script>
+      <script src="js/schedule.view.js"></script>
 </body>
 </html>

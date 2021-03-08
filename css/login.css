@@ -1,4 +1,5 @@
-body { 
+body {
+    display: flex;
     color: var(--primary-color);
     flex-direction: column;
 }
@@ -21,22 +22,6 @@ h1 {
     align-items: center;
     font-size: 30px;
     margin-left: 20px;
-}
-
-.list ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.list ul li {
-    margin-right: 20px;
-    color: var(--grey-color);
-}
-
-.content {
-    align-items: center;
 }
 
 .login {
