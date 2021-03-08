@@ -25,6 +25,8 @@ function $createChild(item) {
             let inputPin = document.querySelector('.childPinModal .modalbox input').value;
 
             if(inputPin === selectedChildPin) {
+                selectedChildID = item.id;
+                console.log(selectedChildID);
                 location.replace('wishlist.html');
             }
         }
