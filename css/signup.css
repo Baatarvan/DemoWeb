@@ -1,5 +1,4 @@
-body {
-    display: flex;
+body { 
     color: var(--primary-color);
     flex-direction: column;
 }
@@ -24,9 +23,8 @@ h1 {
     margin-left: 20px;
 }
 
-.login {
-    justify-content: space-around;
-    align-items: flex-start;
+.content {
+    align-items: center;
 }
 
 .form {
@@ -62,7 +60,14 @@ h1 {
     width: 90%;
 }
 
-.signUp {
+.login {
     margin: 20px 0;
+    display: flex;
+    color: var(--grey1-color);
+}
+
+.login .loginBtn {
+    margin-left: 10px;
+    color: var(--primary-color);
     cursor: pointer;
 }
