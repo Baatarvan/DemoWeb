@@ -22,13 +22,19 @@ function create(newTodo){
    .doc('jeofIcnAC3iRtqYTW0bW').set({task: whishlist.task}, {merge: true});
 }
 
-// function update(id, data) {
-//   db.collection('family')
-//   .doc('DSfi2IoefMBltjwX55WC')
-//    .collection('whilist')
-//    .doc('jeofIcnAC3iRtqYTW0bW').set({task: whishlist.task}, {merge: true});
+function update(id, data) {
+  whishlist.task.forEach((each,index)=>{
+    if(each.id == id){
+      whishlist.task[index] = {...whishlist.task[index],...data};
+    }
+  });
   
-// }
+  db.collection('family')
+  .doc('DSfi2IoefMBltjwX55WC')
+   .collection('whilist')
+   .doc('jeofIcnAC3iRtqYTW0bW').set({task: whishlist.task}, {merge: true});
+  
+}
 
 //  checkbox clicked 
 function toggleIsDone(id){
@@ -46,6 +52,26 @@ function getTodo(id) {
   });
 };
 
+function deleteTask(id) {
+  var idToRemove = id;
+  db.collection('family')
+    .doc('DSfi2IoefMBltjwX55WC')
+    .collection('whilist')
+    .doc('jeofIcnAC3iRtqYTW0bW').get().then((snapshot)=>{
+      var tasks = snapshot.data().task;
+      var index = tasks.map(x => {
+        return x.id;
+      }).indexOf(idToRemove); 
+      delete tasks.splice(index, 1);
+        whishlist.task = tasks;
+
+        db.collection('family')
+    .doc('DSfi2IoefMBltjwX55WC')
+    .collection('whilist')
+    .doc('jeofIcnAC3iRtqYTW0bW').set({task: whishlist.task}, {merge: true}); 
+      });
+};
+   
 
 window.onload = function() {
     db.collection('family').doc('DSfi2IoefMBltjwX55WC').collection('whilist').doc('jeofIcnAC3iRtqYTW0bW').onSnapshot(drawFromTodoSnapshot);

@@ -11,12 +11,6 @@ document.querySelector('.x').onclick = function(event) {
    }
 }; 
 
-// function onEditClick() {
-//    var id = this.closest('.todo-list').dataset.id;
-//    var todo = getTodo(id);
-//    openModal(todo);
-// }
-
 function openModal(todo){
    var $modulTodo = document.querySelector('.modul-todo');
    if(todo)  {
@@ -53,43 +47,32 @@ document.querySelector(".confirm-todo").onclick = function(){
    var $modulDate = document.querySelector("#modul-todo-date");
    var $modulPoint = document.querySelector("#modul-todo-point");
 
-   var newTodo = {
-            id: parseInt(Math.random()*9999999999),
-            modTitle: $modulTitle.value,
-            description:$modulDesc.value,
-            dueDate : $modulDate.value,
-            todoPoint: $modulPoint.value,
-            createdAt: new Date().toISOString(),
-            isDone: false,
-         };
-         create(newTodo);
+   if (!$modulTodo.dataset.editingid){
+      var newTodo = {
+         id: parseInt(Math.random()*9999999999),
+         modTitle: $modulTitle.value,
+         description:$modulDesc.value,
+         dueDate : $modulDate.value,
+         todoPoint: $modulPoint.value,
+         createdAt: new Date().toISOString(),
+         isDone: false,
+      };
+      create(newTodo);
+   } else {
+        var id = $modulTodo.dataset.editingid;
+        var title = $modulTitle.value;
+        var description = $modulDesc.value;
+        var dueDate = $modulDate.value;
+        var todoPoint = $modulPoint.value;
+        let updatingFields = {
+            modTitle: title,
+            description: description,
+            dueDate: dueDate,
+            todoPoint: todoPoint,
+        };
 
-   // if (!$modulTodo.dataset.editingid){
-   //    var newTodo = {
-   //       id: parseInt(Math.random()*9999999999),
-   //       modTitle: $modulTitle.value,
-   //       description:$modulDesc.value,
-   //       dueDate : $modulDate.value,
-   //       todoPoint: $modulPoint.value,
-   //       createdAt: new Date().toISOString(),
-   //       isDone: false,
-   //    };
-   //    create(newTodo);
-   // } else {
-   //      var id = $modulTodo.dataset.editingid;
-   //      var title = $modulTitle.value;
-   //      var description = $modulDesc.value;
-   //      var dueDate = $modulDate.value;
-   //      var todoPoint = $modulPoint.value;
-   //      let updatingFields = {
-   //          title: title,
-   //          description: description,
-   //          dueDate: dueDate,
-   //          todoPoint: todoPoint,
-   //      };
-
-   //      update(id, updatingFields);
-   //  }
+        update(id, updatingFields);
+    }
     closeModal();
 };
 
@@ -130,6 +113,11 @@ function $drawTodo(newTodo){
   $todoList.querySelector('.kebab').onclick = function(){
       onKebabBtn(this);  
   };
+  $todoList.querySelector('.item-delete').onclick = function() {
+   deleteTask(newTodo.id);
+   };
+   $todoList.querySelector('.item-edit').onclick = onEditClick;
+
   return $todoList;
 };
 
@@ -157,7 +145,6 @@ function $drawTodos(tasks){
 
 
 
-
 //... edit delete button 
 function onKebabBtn (html){
    console.log(html);
@@ -168,7 +155,13 @@ function onKebabBtn (html){
       }
    };
 
-
+   // edit button
+   function onEditClick() {
+      var id = this.closest('.todo-list').dataset.id;
+      var todo = getTodo(id);
+      openModal(todo);
+   }
+   
 
 
 
