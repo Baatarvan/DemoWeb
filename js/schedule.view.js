@@ -153,12 +153,12 @@ function $drawTodos(tasks){
       });
       if($completedTodos.innerHTML === ''){
          document.querySelector('.p-list').innerHTML = '';
-         document.querySelector('.all-del').innerHTML = '';
+         // document.querySelector('.all-del').innerHTML = '';
          document.querySelector('.todos').style.height = '80%';
          document.querySelector('.todos-completed').style.display = 'none';
       } else {
          document.querySelector('.p-list').innerHTML = 'Дууссан ажлын жагсаалт';
-         document.querySelector('.all-del').innerHTML = 'Бүгдийг устгах';
+         // document.querySelector('.all-del').innerHTML = 'Бүгдийг устгах';
          document.querySelector('.todos').style.height = '40%';
          document.querySelector('.todos-completed').style.display = 'block';
       }

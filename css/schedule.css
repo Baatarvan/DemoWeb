@@ -133,8 +133,8 @@ header {
 }
 
 .todos-completed {
-  padding: 10px;
-  padding-top: 20px;
+  padding: 15px;
+  padding-top: 0;
   height: 30%;
   background-color: transparent;
   overflow-y: scroll;
@@ -239,11 +239,11 @@ header {
   font-weight: 700;
 }
 
-.all-del {
+/* .all-del {
   text-align: right;
   font-weight: bold;
   cursor: pointer;
-}
+} */
 
 /* add-todo Modul */
 
