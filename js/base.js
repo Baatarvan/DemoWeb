@@ -10,8 +10,12 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
-let selectedChildID;
 
+// localStorage.setItem('userType', 'parent'); 
+// localStorage.setItem('userID', 'p32332323');
+
+
+// localStorage.getItem('')
 
 // Login
 
@@ -63,9 +67,22 @@ if (window.location.href.endsWith('signup.html')) {
         .then((userCredential) => {
             // Signed in 
             var user = userCredential.user;
-            firebase.auth().signOut();
-            location.replace('login.html');
-            // ...
+            
+            var userUID= user.uid;
+            alert(user.uid);
+            // Create new family collection
+            // function createFamily(){
+            //     console.log(userUID);
+               
+            // }
+            // createFamily();
+            db.collection('family').doc(userUID).set({
+                createAt: new Date()
+            }).then(()=>  {
+                firebase.auth().signOut();
+                location.replace('login.html');
+            });
+           
         })
         .catch((error) => {
             var errorCode = error.code;
