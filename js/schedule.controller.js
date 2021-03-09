@@ -19,7 +19,7 @@ function create(newTodo){
    db.collection('family')
   .doc('DSfi2IoefMBltjwX55WC')
    .collection('whilist')
-   .doc('jeofIcnAC3iRtqYTW0bW').set({task: whishlist.task}, {merge: true});
+   .doc('FeBGA8qIj3ER23G3VDOn').set({task: whishlist.task}, {merge: true});
 }
 
 function update(id, data) {
@@ -32,7 +32,7 @@ function update(id, data) {
   db.collection('family')
   .doc('DSfi2IoefMBltjwX55WC')
    .collection('whilist')
-   .doc('jeofIcnAC3iRtqYTW0bW').set({task: whishlist.task}, {merge: true});
+   .doc('FeBGA8qIj3ER23G3VDOn').set({task: whishlist.task}, {merge: true});
   
 }
 
@@ -43,7 +43,7 @@ function toggleIsDone(id){
     db.collection('family')
     .doc('DSfi2IoefMBltjwX55WC')
      .collection('whilist')
-     .doc('jeofIcnAC3iRtqYTW0bW').set({task: whishlist.task}, {merge: true});  
+     .doc('FeBGA8qIj3ER23G3VDOn').set({task: whishlist.task}, {merge: true});  
 };
 //  find todo in todos
 function getTodo(id) {  
@@ -57,7 +57,7 @@ function deleteTask(id) {
   db.collection('family')
     .doc('DSfi2IoefMBltjwX55WC')
     .collection('whilist')
-    .doc('jeofIcnAC3iRtqYTW0bW').get().then((snapshot)=>{
+    .doc('FeBGA8qIj3ER23G3VDOn').get().then((snapshot)=>{
       var tasks = snapshot.data().task;
       var index = tasks.map(x => {
         return x.id;
@@ -68,13 +68,13 @@ function deleteTask(id) {
         db.collection('family')
     .doc('DSfi2IoefMBltjwX55WC')
     .collection('whilist')
-    .doc('jeofIcnAC3iRtqYTW0bW').set({task: whishlist.task}, {merge: true}); 
+    .doc('FeBGA8qIj3ER23G3VDOn').set({task: whishlist.task}, {merge: true}); 
       });
 };
    
 
 window.onload = function() {
-    db.collection('family').doc('DSfi2IoefMBltjwX55WC').collection('whilist').doc('jeofIcnAC3iRtqYTW0bW').onSnapshot(drawFromTodoSnapshot);
+    db.collection('family').doc('DSfi2IoefMBltjwX55WC').collection('whilist').doc('FeBGA8qIj3ER23G3VDOn').onSnapshot(drawFromTodoSnapshot);
    };
 
 
