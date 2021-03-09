@@ -133,9 +133,7 @@ header {
 }
 
 .todos-completed {
-  padding: 15px;
-  padding-top: 0;
-  height: 30%;
+  height: 300px;
   background-color: transparent;
   overflow-y: scroll;
 }
