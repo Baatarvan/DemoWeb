@@ -38,7 +38,7 @@ if (window.location.href.endsWith('addChild.html')) {
         })
         .then(() => {
           console.log("Document successfully written!");
-          window.location.replace('profile-select.html');
+          window.locatoin.href="'profile-select.html";
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
@@ -49,7 +49,7 @@ if (window.location.href.endsWith('addChild.html')) {
   }
 
   document.querySelector('#navbarProfileBtn').onclick = () => {
-    window.location.replace('profile-select.html');
+    window.locatoin.href="'profile-select.html";
   }
 }
 
@@ -67,7 +67,7 @@ if(window.location.href.endsWith('profile-select.html')){
   let $logout = document.querySelector('.logOut');
   $logout.addEventListener('click', () => {
     firebase.auth().signOut();
-    location.replace('login.html');
+    window.locatoin.href="'login.hmtl";
   });
 
   // modal hide uildel
