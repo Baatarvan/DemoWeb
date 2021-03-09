@@ -11,13 +11,6 @@ document.querySelector('.add-todo').onclick = (e) => {
    console.log('add todo botton')
 }
 
-document.querySelector('.x').onclick = function(event) {
-   if (event.target === this ) {
-       closeModal();
-       console.log('click modul')
-   }
-}; 
-
 function openModal(todo){
    var $modulTodo = document.querySelector('.modul-todo');
    if(todo)  {

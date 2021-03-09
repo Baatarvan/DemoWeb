@@ -74,8 +74,14 @@ function deleteTask(id) {
    
 
 window.onload = function() {
-    db.collection('family').doc('DSfi2IoefMBltjwX55WC').collection('whilist').doc('FeBGA8qIj3ER23G3VDOn').onSnapshot(drawFromTodoSnapshot);
-   };
+  db.collection('family').doc('DSfi2IoefMBltjwX55WC').collection('whilist').doc('FeBGA8qIj3ER23G3VDOn').onSnapshot(drawFromTodoSnapshot);
+};
 
+// modal hide uildel
+var $modulTodo = document.querySelector('.modul-todo');
 
-   
+window.onclick = function(event) {
+  if (event.target == $modulTodo) {
+    $modulTodo.style.display = 'none';
+  }
+}  
