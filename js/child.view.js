@@ -23,7 +23,7 @@ function $createChild(item) {
                     let inputPin = document.querySelector('.childPinModal .modalbox input').value;
 
                     if (inputPin === selectedChildPin) {
-                        window.locatoin.href="wishlist.html";
+                        window.location.href="wishlist.html";
                     }
                     
                 })

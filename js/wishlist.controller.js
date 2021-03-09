@@ -59,9 +59,14 @@ function $createList(item) {
     `;
     $list.innerHTML = content;
     $list.onclick = () => {
-        location.replace('schedule.html');
+        window.location.href = 'schedule.html';
     };
     return $list;
 }
 
-//
+// Home button
+if(window.location.href.endsWith('wishlist.html')){
+    document.querySelector('#navbarProfileBtn1').onclick = () => {
+        window.location.href="profile-select.html";
+    }
+}
