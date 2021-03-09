@@ -15,10 +15,10 @@ function drawChildrenFromSnapshot(snapshot) {
 
 if(document.querySelector('.addChildbtn') != null) {
 
-  // Add child  html-ruu usreh uildel //
+  // Add child  html-ruu usreh uildel
 
   document.querySelector('.addChildbtn').addEventListener('click', () => {
-    location.replace('addChild.html');
+    window.location.href="addChild.html";
   })
 }
 
@@ -38,7 +38,7 @@ if (window.location.href.endsWith('addChild.html')) {
         })
         .then(() => {
           console.log("Document successfully written!");
-          window.location.replace('profile-select.html');
+          window.location.href="profile-select.html";
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
@@ -48,8 +48,8 @@ if (window.location.href.endsWith('addChild.html')) {
     }
   }
 
-  document.querySelector('#navbarProfileBtn').onclick = () => {
-    window.location.replace('profile-select.html');
+  document.querySelector('#navbarProfileBtn2').onclick = () => {
+    window.location.href="profile-select.html";
   }
 }
 
@@ -67,10 +67,10 @@ if(window.location.href.endsWith('profile-select.html')){
   let $logout = document.querySelector('.logOut');
   $logout.addEventListener('click', () => {
     firebase.auth().signOut();
-    location.replace('login.html');
+    window.location.href="login.hmtl";
   });
 
-  // modal hide uildel//
+  // modal hide uildel
   window.onclick = function(event) {
     if (event.target == $modal) {
       $modal.classList.remove('showme');
@@ -79,7 +79,7 @@ if(window.location.href.endsWith('profile-select.html')){
 
 };
 
-// Realtime data awchirah uildel //
+// Realtime data awchirah uildel
 
 window.onload = () => {
   db.collection('family')

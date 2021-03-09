@@ -50,6 +50,10 @@ li {
     flex-direction: column;
 }
 
+.container, .flex-2 {
+    background-color: var(--grey2-color);
+}
+
 .img.flex.flex-2 {
     justify-content: center;
     align-items: center;

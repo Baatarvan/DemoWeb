@@ -4,40 +4,57 @@ body {
     min-width: 1080px;
 }
 
-h1 {
+/* navbar */
+
+h1, h2 {
     color: var(--primary-color);
 }
 
-h2 {
+h3 {
     color: var(--grey-color);
 }
 
-/* navbar */
+h1 {
+    font-size: 40px;
+    line-height: 46px;
+}
 
 .navbar {
-    padding: 0 30px;
+    background-color: var(--white-color);
 }
 
 .title {
+    display: flex;
     align-items: center;
 }
 
-.btns {
+.title h1 {
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+.list {
     flex-direction: row-reverse;
+}
+
+.list ul {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.btns .parentsImg {
-    border-radius: 50%;
-    width: 50px;
+li {
+    list-style-type: none;
     margin-right: 20px;
     cursor: pointer;
+    font-weight: 700;
 }
 
 /* content */
 .container {
     align-items: center;
-    flex-direction: column;    
+    flex-direction: column;
+    background-color: var(--grey2-color); 
 }
 
 .wishbox {
@@ -153,7 +170,7 @@ h2 {
     outline: none;
 }
 
-#modulDisc {
+#modulDesc {
     height: 100px;
     outline: none;
 }
