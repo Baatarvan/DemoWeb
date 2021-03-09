@@ -11,33 +11,27 @@
 </head>
 
 <body>
-      <header>
-            <div class="navbar flex space-between flex-1">
-                  <div class="title flex-1">
-                      <h1><span style="color: #0d9ce7; font-size: 3rem;">WISHLIST</span> төлөвлөгөө</h1>
-                  </div>
-                  <div class="list flex flex-1">
-                      <ul>
-                          <li>
-                              <h3>Нүүр хуудас</h3>
-                          </li>
-                          <li>
-                              <img id="modalshowme" src="https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/parents.svg?alt=media" alt="avatar" width="40px">
-                          </li>
-                          <li><button class="logOut">Гарах</button></li>
-                      </ul>
-                  </div>
-              </div>
-
-      </header>
-      <div class="schedule-container">
+      <div class="navbar flex flex-1">
+            <div class="title flex-1">
+                <h1>Wishlist</h1>
+            </div>
+            <div class="list flex flex-1">
+                <ul>
+                    <li>
+                        <h3>Нүүр хуудас</h3>
+                    </li>
+                    <li><button class="logOut">Гарах</button></li>
+                </ul>
+            </div>
+      </div>
+      <div class="schedule-container flex-9">
             <div class="wish-achieve">
                   <div class="wish-coming">
                         <h1 class="name">Унадаг дугуй</h1>
                   </div>
                   <div class="wish-content">
                         <div class="wish-card">
-                              <img class="wish-img" src="https://freesvg.org/img/Machovka_bike.png" alt="">
+                              <img class="wish-img" src="https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/004-videogames.svg?alt=media" alt="img">
                         </div>
                         <div class="wish-schedule">
                               <div class="battery-container">
@@ -52,15 +46,14 @@
                                           <span >Одоогийн оноо:</span>
                                           <span style="color: blue;" class="your-point">0</span>
                                     </div>
-                                    <div class="wish-desc">
-                                          <h4 style="margin-left: 15px; color:  #64738a; font-size: 1.2rem;">Description</h4>
-                                          <div class="purpose">Унадаг дугуй унаж сурах шаардлагатай байгаа.</div>
-                                    </div>
+                              </div>
+                              <div class="wish-desc">
+                                    <h4 style="margin-left: 15px; color:  #64738a; font-size: 1.2rem;">Тайлбар</h4>
+                                    <div class="purpose">Унадаг дугуй унаж сурах шаардлагатай байгаа.</div>
                               </div>
                         </div>
                   </div>
             </div>
-            <i class="fas fa-arrows-alt-h"></i>
             <div class="todo-container">
                   <h1 class='garchig'>Хийх ажлын жагсаалт</h1>
                   <div class="todos">
@@ -152,33 +145,31 @@
                         </div> -->
 
                   </div>
-                  <div class="add-todo">add todo +</div>
-            </div>
-           
-                  <class class="modul-todo"><div class="x">X</div>
-                        <div class="modul-container">
-                              <h2 class="modul-title">Шинэ ажил нэмэх</h2>
-                              <h3>Гарчиг</h3>
-                              <input type="text" placeholder="Хийх ажлын нэр" id="modul-todo-title">
-                              <h3>Тайлбар</h3>
-                              <input type="text" placeholder="Нэмэлт тайлбар байвал бичнэ үү." id="modul-todo-description">
-                              <h3>Гүйцэтгэх огноо</h3>
-                              <input type="date" placeholder="Он сар өдөр" id="modul-todo-date">
-                              <h3>Оноо</h3>
-                              <div class="modul-add-point">
-                                    <input class="add-point" type="text" style="width: 60%;" placeholder="Та оноогоо оруулна уу." id="modul-todo-point">
-                                    <span class="plus-point">+</span>
-                              </div>
-                             <button class="confirm-todo" type="submit">confirm todo +</button>
-                              
+                  <button class="add-todo">add todo +</button>
+            </div>           
+            <div class="modul-todo">
+                  <div class="modul-container">
+                        <h2 class="modul-title">Шинэ ажил нэмэх</h2>
+                        <h3>Гарчиг</h3>
+                        <input type="text" placeholder="Хийх ажлын нэр" id="modul-todo-title">
+                        <h3>Тайлбар</h3>
+                        <input type="text" placeholder="Нэмэлт тайлбар байвал бичнэ үү." id="modul-todo-description">
+                        <h3>Гүйцэтгэх огноо</h3>
+                        <input type="date" placeholder="Он сар өдөр" id="modul-todo-date">
+                        <h3>Оноо</h3>
+                        <div class="modul-add-point">
+                              <input class="add-point" type="text" style="width: 60%;" placeholder="Та оноогоо оруулна уу." id="modul-todo-point">
+                              <span class="plus-point">+</span>
                         </div>
-                  </class>
+                        <button class="confirm-todo" type="submit">confirm todo +</button>    
+                  </div>
+            </div>
       </div>
       <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
   
-      <script src="js/base.js" ></script>
+      <script src="js/base.js"></script>
       <script src="js/schedule.controller.js"></script>
       <script src="js/schedule.view.js"></script>
 </body>

@@ -11,6 +11,8 @@ firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
 
+let userUID;
+
 // localStorage.setItem('userType', 'parent'); 
 // localStorage.setItem('userID', 'p32332323');
 
@@ -68,12 +70,11 @@ if (window.location.href.endsWith('signup.html')) {
             // Signed in 
             var user = userCredential.user;
             
-            var userUID= user.uid;
-            alert(user.uid);
+            userUID = user.uid;
+            alert(userUID);
             // Create new family collection
             // function createFamily(){
-            //     console.log(userUID);
-               
+            //     console.log(userUID);               
             // }
             // createFamily();
             db.collection('family').doc(userUID).set({
@@ -96,13 +97,11 @@ if (window.location.href.endsWith('signup.html')) {
     }
 }
 
-
-
 // onAuthStateChanged
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        var uid = user.uid;
+        let uid = user.uid;
     } else {
         if (!window.location.href.endsWith('login.html') && window.location.href.endsWith('login.html')) {
             window.location.href = 'login.html';
