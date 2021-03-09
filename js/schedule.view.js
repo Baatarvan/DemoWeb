@@ -4,6 +4,8 @@ var yourPoint = document.querySelector('.your-point');
 var batteryContainer = document.querySelector('.battery-container');
 var achievePercent = document.querySelector('.achieve percent');
 
+// battery
+
 
 // Add todo button
 document.querySelector('.add-todo').onclick = (e) => {
@@ -41,8 +43,6 @@ function closeModal() {
    $modulTodo.querySelector("#modul-todo-point").value = '';
    $modulTodo.style.display = 'none';
 };
-
-
 
 
 // TODO modal
@@ -83,9 +83,8 @@ document.querySelector(".confirm-todo").onclick = function(){
     closeModal();
 };
 
-var tPoint = 0;
+
 function $drawTodo(newTodo){
-   var point = 0; 
    var $todoListInner = `<div class="todo-list" data-id="${newTodo.id}">
    <div class="todo">
          <div class="todo-content">
@@ -118,6 +117,7 @@ function $drawTodo(newTodo){
    $todoList.innerHTML = $todoListInner;
    $todoList.querySelector('.is-done').onchange = function() {
       toggleIsDone(newTodo.id);
+     
   };
   $todoList.querySelector('.kebab').onclick = function(){
       onKebabBtn(this);  
@@ -126,29 +126,25 @@ function $drawTodo(newTodo){
    deleteTask(newTodo.id);
    };
    $todoList.querySelector('.item-edit').onclick = onEditClick;
-
-   point =  parseInt(newTodo.todoPoint);
-   tPoint = tPoint + point;
-   totalPoint.innerHTML = tPoint;
-   console.log(totalPoint.innerHTML);
-  return $todoList;
+   return $todoList;
 };
 
 
 function $drawTodos(tasks){
    var $todos = document.querySelector('.todos');
    var $completedTodos = document.querySelector('.todos-completed');
-   console.log(tasks);
-   $todos.innerHTML = '';
-   $completedTodos.innerHTML = '';
+      $todos.innerHTML = '';
+      $completedTodos.innerHTML = '';
 
       tasks.forEach((task) => {
          $newTodo = $drawTodo(task);
       $todos.append($newTodo);
       if(task.isDone){
          $completedTodos.append($newTodo);
+         onYourPoint(task);
       } else {
          $todos.append($newTodo);
+         onTotalPoint(task);
       }
       });
       if($completedTodos.innerHTML === ''){
@@ -164,11 +160,8 @@ function $drawTodos(tasks){
       }
 };
 
-
-
 //... edit delete button 
 function onKebabBtn (html){
-   console.log(html);
       if(html.children[1].style.display === 'none'){
          html.children[1].style.display = 'block';
       } else {

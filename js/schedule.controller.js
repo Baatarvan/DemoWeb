@@ -2,6 +2,26 @@ var whishlist = {
   task: []
 };
 
+var tPoint = 0;
+var myPoint = 0; 
+
+// point 
+function  onTotalPoint(task){
+  if(!task.isDone){
+    var point =  parseInt(task.todoPoint);
+    tPoint = tPoint + point;
+    totalPoint.innerHTML = tPoint;
+    console.log('total point')
+  } 
+
+}
+function  onYourPoint(task){
+  var point =  parseInt(task.todoPoint);
+  myPoint = myPoint + point;
+  yourPoint.innerHTML = myPoint;
+  console.log('your point')
+}
+
 
 function drawFromTodoSnapshot(snapshot){
   console.log("updated");
