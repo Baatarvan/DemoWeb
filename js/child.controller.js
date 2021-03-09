@@ -31,7 +31,7 @@ let $pin = document.querySelector('#childPin');
 if (window.location.href.endsWith('addChild.html')) {
   $addChild.onclick = () => {
     if ($name.value && $pin.value) {
-      db.collection("family").doc("DSfi2IoefMBltjwX55WC")
+      db.collection("family").doc(userUID)
         .collection('children').add({
           name: $name.value,
           pin: $pin.value,
@@ -83,7 +83,7 @@ if(window.location.href.endsWith('profile-select.html')){
 
 window.onload = () => {
   db.collection('family')
-    .doc('DSfi2IoefMBltjwX55WC')
+    .doc(userUID)
     .collection('children')
     .onSnapshot(drawChildrenFromSnapshot);
 };
