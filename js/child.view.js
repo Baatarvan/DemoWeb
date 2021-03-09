@@ -1,6 +1,9 @@
 
 let selectedChild;
 let selectedChildPin;
+let selectedChildID;
+userUID = localStorage.getItem('userUID');
+
 // create elementx
 
 function $createChild(item) {
@@ -16,13 +19,15 @@ function $createChild(item) {
         showChildPinModal();
 
         document.querySelector('.childPinModal .modalbox button').onclick = () => {
-            db.doc(`family/DSfi2IoefMBltjwX55WC/children/${selectedChild}`).get()
+            db.doc(`family/${userUID}/children/${selectedChild}`).get()
                 .then((doc) => {
                     console.log(doc.data().pin);
                     selectedChildPin = doc.data().pin;
                     let inputPin = document.querySelector('.childPinModal .modalbox input').value;
 
                     if (inputPin === selectedChildPin) {
+                        selectedChildID = item.id;
+                        localStorage.setItem('selectedChildID',selectedChildID);
                         window.location.href="wishlist.html";
                     }
                     
