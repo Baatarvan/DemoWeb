@@ -11,8 +11,6 @@ firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
 
-let userUID;
-
 // localStorage.setItem('userType', 'parent'); 
 // localStorage.setItem('userID', 'p32332323');
 
@@ -30,6 +28,8 @@ if (window.location.href.endsWith('login.html')) {
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
+            userUID = user.uid;
+            localStorage.setItem('userUID', userUID); 
             window.location.href = "profile-select.html";
             // ...
         })
@@ -69,9 +69,8 @@ if (window.location.href.endsWith('signup.html')) {
         .then((userCredential) => {
             // Signed in 
             var user = userCredential.user;
-            
-            userUID = user.uid;
-            alert(userUID);
+            userUID = user.uid;            
+            localStorage.setItem('userUID', userUID); 
             // Create new family collection
             // function createFamily(){
             //     console.log(userUID);               
@@ -108,4 +107,3 @@ firebase.auth().onAuthStateChanged((user) => {
         }
     }
 });
-

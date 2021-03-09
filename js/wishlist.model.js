@@ -1,11 +1,7 @@
 
 // wishlist crud
-
-let childID = db.collection('family')
-.doc(userUID)
-.collection('children')
-
-
+ userUID = localStorage.getItem('userUID');
+ 
 function createWishlist(list){
     db.collection('family').doc(userUID)
     .collection('whilist').add({

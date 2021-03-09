@@ -1,4 +1,5 @@
 let children = [];
+userUID = localStorage.getItem('userUID');
 
 // draw children
 
