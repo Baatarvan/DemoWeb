@@ -12,6 +12,50 @@ h2 {
     color: var(--grey-color);
 }
 
+h1, h2 {
+    color: var(--primary-color);
+}
+
+h3 {
+    color: var(--grey-color);
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 46px;
+}
+
+.navbar {
+    background-color: var(--white-color);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title h1 {
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+.list {
+    flex-direction: row-reverse;
+}
+
+.list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
 /* navbar */
 
 .navbar {
