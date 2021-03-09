@@ -18,7 +18,8 @@ if(document.querySelector('.addChildbtn') != null) {
   // Add child  html-ruu usreh uildel //
 
   document.querySelector('.addChildbtn').addEventListener('click', () => {
-    location.replace('addChild.html');
+    window.location.href="addChild.html";
+    
   })
 }
 
@@ -31,14 +32,15 @@ let $pin = document.querySelector('#childPin');
 if (window.location.href.endsWith('addChild.html')) {
   $addChild.onclick = () => {
     if ($name.value && $pin.value) {
-      db.collection("family").doc("DSfi2IoefMBltjwX55WC")
+      let userUID = firebase.auth().currentUser.uid;
+      db.collection("family").doc(userUID)
         .collection('children').add({
           name: $name.value,
           pin: $pin.value,
         })
         .then(() => {
-          console.log("Document successfully written!");
-          window.location.replace('profile-select.html');
+          window.location.href="profile-select.html";
+          
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
@@ -49,7 +51,8 @@ if (window.location.href.endsWith('addChild.html')) {
   }
 
   document.querySelector('#navbarProfileBtn').onclick = () => {
-    window.location.replace('profile-select.html');
+    window.location.href="profile-select.html";
+    
   }
 }
 
@@ -67,7 +70,7 @@ if(window.location.href.endsWith('profile-select.html')){
   let $logout = document.querySelector('.logOut');
   $logout.addEventListener('click', () => {
     firebase.auth().signOut();
-    location.replace('login.html');
+    window.location.href='login.html';
   });
 
   // modal hide uildel//
@@ -82,8 +85,18 @@ if(window.location.href.endsWith('profile-select.html')){
 // Realtime data awchirah uildel //
 
 window.onload = () => {
-  db.collection('family')
-    .doc('DSfi2IoefMBltjwX55WC')
-    .collection('children')
-    .onSnapshot(drawChildrenFromSnapshot);
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        var userUID = user.uid;
+        db.collection('family')
+        .doc(userUID)
+        .collection('children')
+        .onSnapshot(drawChildrenFromSnapshot);
+    } else {
+        if (!window.location.href.endsWith('login.html') && window.location.href.endsWith('login.html')) {
+            window.location.href="login.html";
+        }
+    }
+});
+ 
 };

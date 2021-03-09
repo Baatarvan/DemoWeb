@@ -7,11 +7,17 @@ let firebaseConfig = {
     appId: "1:455394024390:web:ab92f33d7934d4825630c7"
 };
 
+let userUID;
+
 firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
-let selectedChildID;
 
+// localStorage.setItem('userType', 'parent'); 
+// localStorage.setItem('userID', 'p32332323');
+
+
+// localStorage.getItem('')
 
 // Login
 
@@ -24,7 +30,7 @@ if (window.location.href.endsWith('login.html')) {
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
-            location.replace('profile-select.html');
+            window.location.href="profile-select.html";
             // ...
         })
         .catch((error) => {
@@ -35,7 +41,7 @@ if (window.location.href.endsWith('login.html')) {
     }
 
     document.querySelector('.signUp').onclick = () => {
-        location.replace('signup.html');
+        window.location.href="signup.html";
     }
 }
 
@@ -45,7 +51,7 @@ let $logOutBtn = document.querySelector('.logOut');
 if ($logOutBtn != null) {
     $logOutBtn.onclick = () => {
         firebase.auth().signOut().then(() => {
-            location.replace('login.html');
+            window.location.href="login.html";
         }).catch((error) => {
             alert(error);
         });
@@ -63,9 +69,22 @@ if (window.location.href.endsWith('signup.html')) {
         .then((userCredential) => {
             // Signed in 
             var user = userCredential.user;
-            firebase.auth().signOut();
-            location.replace('login.html');
-            // ...
+            
+            userUID = user.uid;
+            alert(user.uid);
+            // Create new family collection
+            // function createFamily(){
+            //     console.log(userUID);
+               
+            // }
+            // createFamily();
+            db.collection('family').doc(userUID).set({
+                createAt: new Date()
+            }).then(()=>  {
+                firebase.auth().signOut();
+                window.location.href="login.html";
+            });
+           
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -75,7 +94,7 @@ if (window.location.href.endsWith('signup.html')) {
     }
 
     document.querySelector('.loginBtn').onclick = () => {
-        location.replace('login.html');
+        window.location.href="login.html";
     }
 }
 
@@ -86,9 +105,13 @@ if (window.location.href.endsWith('signup.html')) {
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         var uid = user.uid;
+        if (window.location.href.endsWith('login.html')) {
+        window.location.href="profile-select.html";
+    }
+
     } else {
         if (!window.location.href.endsWith('login.html') && window.location.href.endsWith('login.html')) {
-            location.replace('login.html');
+            window.location.href="login.html";
         }
     }
 });

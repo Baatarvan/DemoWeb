@@ -14,24 +14,23 @@ function $createChild(item) {
     $child.onclick = () => {
         selectedChild = item.id;
         showChildPinModal();
-
         document.querySelector('.childPinModal .modalbox button').onclick = () => {
-            db.doc(`family/DSfi2IoefMBltjwX55WC/children/${selectedChild}`).get()
+            let userUID = firebase.auth().currentUser.uid;
+            db.doc(`family/${userUID}/children/${selectedChild}`).get()
                 .then((doc) => {
-                    console.log(doc.data().pin);
                     selectedChildPin = doc.data().pin;
-                })
-            let inputPin = document.querySelector('.childPinModal .modalbox input').value;
+                    let inputPin = document.querySelector('.childPinModal .modalbox input').value;
 
-            if (inputPin === selectedChildPin) {
-                location.replace('wishlist.html');
-            }
+                    if (inputPin === selectedChildPin) {
+                        window.location.href='wishlist.html'
+                    }
+                })           
         }
     };
     return $child;
 }
 
-let modal = document.querySelector('.childPinModal')
+let modal = document.querySelector('.childPinModal');
 
 if (modal != null) {
     modal.onclick = function (event) {

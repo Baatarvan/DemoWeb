@@ -2,12 +2,12 @@
 // wishlist crud
 
 let childID = db.collection('family')
-.doc('DSfi2IoefMBltjwX55WC')
+.doc(userUID)
 .collection('children')
 
 
 function createWishlist(list){
-    db.collection('family').doc('DSfi2IoefMBltjwX55WC')
+    db.collection('family').doc(userUID)
     .collection('whilist').add({
         childrenId: list.childrenId,
         title: list.title ,
@@ -21,14 +21,14 @@ function createWishlist(list){
 
 function listWishlist(childID){
     db.collection('family')
-        .doc('DSfi2IoefMBltjwX55WC')
+        .doc(userUID)
         .collection('whilist')
         .where("childrenId" , "==", childID)
         .onSnapshot(drawWishlistFromSnapshot);
 }
 
 function deleteWishlist(id){
-    db.collection('family').doc('DSfi2IoefMBltjwX55WC')
+    db.collection('family').doc(userUID)
     .collection('whilist').doc(id).delete().then(() => {
         console.log("Document successfully deleted!");
     }).catch((error) => {
