@@ -15,7 +15,7 @@ function drawChildrenFromSnapshot(snapshot) {
 
 if(document.querySelector('.addChildbtn') != null) {
 
-  // Add child  html-ruu usreh uildel //
+  // Add child  html-ruu usreh uildel
 
   document.querySelector('.addChildbtn').addEventListener('click', () => {
     location.replace('addChild.html');
@@ -70,7 +70,7 @@ if(window.location.href.endsWith('profile-select.html')){
     location.replace('login.html');
   });
 
-  // modal hide uildel//
+  // modal hide uildel
   window.onclick = function(event) {
     if (event.target == $modal) {
       $modal.classList.remove('showme');
@@ -79,7 +79,7 @@ if(window.location.href.endsWith('profile-select.html')){
 
 };
 
-// Realtime data awchirah uildel //
+// Realtime data awchirah uildel
 
 window.onload = () => {
   db.collection('family')
