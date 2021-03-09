@@ -21,7 +21,7 @@ function createWishlist(list){
 
 function listWishlist(childID){
     db.collection('family')
-        .doc(userUID)
+        .doc('xLlWmKpzc7LiVOihxhsP')
         .collection('whilist')
         .where("childrenId" , "==", childID)
         .onSnapshot(drawWishlistFromSnapshot);
