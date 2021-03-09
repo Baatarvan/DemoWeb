@@ -1,3 +1,10 @@
+// point tootsoh
+var totalPoint = document.querySelector('.total-point');
+var yourPoint = document.querySelector('.your-point');
+var batteryContainer = document.querySelector('.battery-container');
+var achievePercent = document.querySelector('.achieve percent');
+
+
 // Add todo button
 document.querySelector('.add-todo').onclick = (e) => {
    openModal();
@@ -76,7 +83,9 @@ document.querySelector(".confirm-todo").onclick = function(){
     closeModal();
 };
 
+var tPoint = 0;
 function $drawTodo(newTodo){
+   var point = 0; 
    var $todoListInner = `<div class="todo-list" data-id="${newTodo.id}">
    <div class="todo">
          <div class="todo-content">
@@ -118,6 +127,10 @@ function $drawTodo(newTodo){
    };
    $todoList.querySelector('.item-edit').onclick = onEditClick;
 
+   point =  parseInt(newTodo.todoPoint);
+   tPoint = tPoint + point;
+   totalPoint.innerHTML = tPoint;
+   console.log(totalPoint.innerHTML);
   return $todoList;
 };
 
@@ -139,7 +152,15 @@ function $drawTodos(tasks){
       }
       });
       if($completedTodos.innerHTML === ''){
-         
+         document.querySelector('.p-list').innerHTML = '';
+         document.querySelector('.all-del').innerHTML = '';
+         document.querySelector('.todos').style.height = '80%';
+         document.querySelector('.todos-completed').style.display = 'none';
+      } else {
+         document.querySelector('.p-list').innerHTML = 'Дууссан ажлын жагсаалт';
+         document.querySelector('.all-del').innerHTML = 'Бүгдийг устгах';
+         document.querySelector('.todos').style.height = '40%';
+         document.querySelector('.todos-completed').style.display = 'block';
       }
 };
 

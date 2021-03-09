@@ -12,7 +12,7 @@ header {
 /* WISH IS COMING */
 
 .wish-achieve {
-  background-color: #d4d6d6;
+  background-color:#fff;
   box-shadow: 0 1px 20px rgb(43 71 104 / 15%);
   border-radius: 16px;
   border: 3px solid #d4d6d6;
@@ -231,13 +231,18 @@ header {
 }
 
 .p-list {
-  margin: 10px; 
+  margin-top: 20px; 
+  margin-bottom: 0;
+  padding-bottom: 0;
   text-decoration: underline;
+  color: var(--font-color);
+  font-weight: 700;
 }
 
 .all-del {
   text-align: right;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* add-todo Modul */
