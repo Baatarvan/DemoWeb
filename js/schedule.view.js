@@ -1,11 +1,3 @@
-// point tootsoh
-var totalPoint = document.querySelector('.total-point');
-var yourPoint = document.querySelector('.your-point');
-
-
-// battery
-
-
 selectedChildID = localStorage.getItem("selectedChildID");  //selected child ID
 userUID = localStorage.getItem('userUID'); //selected family ID
 selectedWishID = localStorage.getItem('selectedWishID'); //selected wishlist ID
@@ -24,17 +16,12 @@ wishImage.src = selectedWishDataImg;
 wishDesc.innerHTML = selectedWishDataDesc;
 
 // point tootsoh
-var totalPoint = document.querySelector('.total-point');
-var yourPoint = document.querySelector('.your-point');
-var batteryContainer = document.querySelector('.battery-container');
-var achievePercent = document.querySelector('.achieve percent');
-
-// battery
+var tPoint = 0;
+var myPoint = 0; 
 
 // Add todo button
 document.querySelector('.add-todo').onclick = (e) => {
    openModal();
-   console.log('add todo botton')
 }
 
 function openModal(todo){
@@ -141,7 +128,7 @@ function $drawTodo(newTodo){
    deleteTask(newTodo.id);
    };
    $todoList.querySelector('.item-edit').onclick = onEditClick;
-   onTotalPoint(newTodo);
+   
    return $todoList;
 };
 
