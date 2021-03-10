@@ -68,17 +68,25 @@ if (window.location.href.endsWith('signup.html')) {
     document.querySelector('#signup').onclick = () => {
         let email = document.querySelector('.email').value;
         let password = document.querySelector('.password').value;
+        let parentPin = document.querySelector('.pin').value;
     
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in 
             var user = userCredential.user;
             userUID = user.uid;            
+            // Create new family collection
+            // function createFamily(){
+            //     console.log(userUID);               
+            // }
+            // createFamily();
             localStorage.setItem('userUID', userUID);  //family UID-glocal storage deer hadgalah
 
             //Create family collection
             db.collection('family').doc(userUID).set({
-                createAt: new Date()
+                createAt: new Date(),
+                parintPin: parentPin,
+                
             }).then(()=>  {
                 firebase.auth().signOut();
                 window.location.href = 'login.html';

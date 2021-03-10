@@ -50,6 +50,7 @@ function closeModal() {
 
 // TODO modal
 document.querySelector(".confirm-todo").onclick = function(){
+   console.log('confirm-todo-clicked')
    var $modulTodo = document.querySelector('.modul-todo');
    var $modulTitle = document.querySelector("#modul-todo-title");
    var $modulDesc = document.querySelector("#modul-todo-description");
@@ -117,7 +118,8 @@ function $drawTodo(newTodo){
    var $todoList = document.createElement('div');
    $todoList.innerHTML = $todoListInner;
    $todoList.querySelector('.is-done').onchange = function() {
-      toggleIsDone(newTodo.id);   
+      toggleIsDone(newTodo.id);
+     
   };
   $todoList.querySelector('.kebab').onclick = function(){
       onKebabBtn(this);  
@@ -126,6 +128,7 @@ function $drawTodo(newTodo){
    deleteTask(newTodo.id);
    };
    $todoList.querySelector('.item-edit').onclick = onEditClick;
+   
    return $todoList;
 };
 
@@ -135,25 +138,23 @@ function $drawTodos(tasks){
    var $completedTodos = document.querySelector('.todos-completed');
       $todos.innerHTML = '';
       $completedTodos.innerHTML = '';
-
-      tPoint = 0;
+      tPoint  = 0;
       myPoint = 0;
       tasks.forEach((task) => {
          $newTodo = $drawTodo(task);
-         $todos.append($newTodo);
-         tPoint += parseInt(task.todoPoint);
+      $todos.append($newTodo);
+      tPoint += parseInt(task.todoPoint) ;
       if(task.isDone){
          $completedTodos.append($newTodo);
-         myPoint += parseInt(task.todoPoint);
-         
+         myPoint += parseInt(task.todoPoint) ;
+    
       } else {
          $todos.append($newTodo);
-         
+    
       }
          onTotalPoint(tPoint);
          onYourPoint(myPoint);
          calcPers(tPoint, myPoint);
-         
       });
       if($completedTodos.innerHTML === ''){
          document.querySelector('.p-list').innerHTML = '';
