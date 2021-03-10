@@ -78,7 +78,7 @@ if(window.location.href.endsWith('profile-select.html')){
   let $logout = document.querySelector('.logOut');
   $logout.addEventListener('click', () => {
     firebase.auth().signOut();
-    window.location.href="login.hmtl";
+    window.location.href="login.html";
   });
 
   // modal hide uildel
@@ -88,8 +88,20 @@ if(window.location.href.endsWith('profile-select.html')){
     }
   }
 
+  document.querySelector('.modal .modalbox button').onclick = () => {
+    let parentPintInput = document.querySelector('.modal .modalbox input').value;
+    db.doc(`family/${userUID}`).get()
+      .then((doc) => {
+        console.log(doc.data().parintPin);
+        if(doc.data().parintPin === parentPintInput) {
+          window.location.href="parent.html";
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 };
-
 
 // Realtime data awchirah uildel
 
