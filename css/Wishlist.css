@@ -25,13 +25,11 @@ h1 {
 }
 
 .title {
-    display: flex;
     align-items: center;
 }
 
-.title h1 {
-    margin-left: 30px;
-    font-size: 30px;
+.title * {
+    margin-left: 15px;
 }
 
 .list {
