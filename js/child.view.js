@@ -22,9 +22,8 @@ function $createChild(item) {
 
         let modalImg = document.querySelector('.modulbox, img');
         modalImg.setAttribute('src', imageSource);
-
-       let modulName = $child.querySelector('.child, .name');
-        document.querySelector('.childPinModal .modalbox h3').innerHTML = modulName.innerHTML;
+        
+        document.querySelector('.childPinModal .modalbox h3').innerHTML = $child.querySelector('.child, .name').innerHTML;
 
         
         showChildPinModal();

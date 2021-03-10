@@ -19,7 +19,12 @@ if(document.querySelector('.addChildbtn') != null) {
   // Add child  html-ruu usreh uildel
 
   document.querySelector('.addChildbtn').addEventListener('click', () => {
-    window.location.href="addChild.html";
+    if(children.length < 6 ) {
+      window.location.href="addChild.html";
+    }
+    else {
+      alert('Хүүхдйин тоо дүүрсэн байна.');
+    }
   })
 }
 
