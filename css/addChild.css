@@ -81,6 +81,11 @@ li {
     outline: none;
     height: 50px;
 }
+
+.finishButton{
+    margin-right: 5px;
+}
+
 webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;

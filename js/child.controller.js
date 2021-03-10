@@ -1,5 +1,5 @@
 let children = [];
-userUID = localStorage.getItem('userUID');
+userUID = localStorage.getItem('userUID'); //selected family ID
 
 // draw children
 
@@ -28,6 +28,7 @@ if(document.querySelector('.addChildbtn') != null) {
 let $addChild = document.querySelector('.finishButton');
 let $name = document.querySelector('#childName');
 let $pin = document.querySelector('#childPin');
+let cancelButton = document.querySelector('.cancelButton');
 
 if (window.location.href.endsWith('addChild.html')) {
   $addChild.onclick = () => {
@@ -52,6 +53,10 @@ if (window.location.href.endsWith('addChild.html')) {
   document.querySelector('#navbarProfileBtn2').onclick = () => {
     window.location.href="profile-select.html";
   }
+  cancelButton.onclick = () => {
+    window.location.href="profile-select.html";
+  }
+
 }
 
 if(window.location.href.endsWith('profile-select.html')){

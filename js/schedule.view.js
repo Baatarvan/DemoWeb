@@ -1,3 +1,7 @@
+selectedChildID = localStorage.getItem("selectedChildID");  //selected child ID
+userUID = localStorage.getItem('userUID'); //selected family ID
+selectedWishID = localStorage.getItem('selectedWishID'); //selected wishlist ID
+
 // point tootsoh
 var totalPoint = document.querySelector('.total-point');
 var yourPoint = document.querySelector('.your-point');
