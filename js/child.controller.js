@@ -1,74 +1,90 @@
 let children = [];
+userUID = localStorage.getItem('userUID');
 
-function drawChildrenFromSnapshot (snapshot) {
-  console.log("updated");
+// draw children
+
+function drawChildrenFromSnapshot(snapshot) {
   children = [];
   snapshot.forEach((doc) => {
-    children.push(doc.data());
+    children.push({
+      id: doc.id,
+      data: doc.data()
+    });
   });
-    drawChildren(children);
+  drawChildren(children);
 }
 
-let submit = document.querySelector('#btn');
-let $name = document.querySelector('#name');
-let $nas = document.querySelector('#nas');
-let box = document.querySelector('.wishlist');
+if(document.querySelector('.addChildbtn') != null) {
 
-// create element
-function addWish(doc) {
-    console.log(doc.id);
-    const $wish = `<div data-id='${doc.id}'>
-        <h1>${doc.data().name}</h1>
-        <p>${doc.data().nas}</p>
-        <button class="delete">delete</button>
-    </div>`
+  // Add child  html-ruu usreh uildel
 
-    box.insertAdjacentHTML('beforeend', $wish);
+  document.querySelector('.addChildbtn').addEventListener('click', () => {
+    window.location.href="addChild.html";
+  })
+}
 
-    let btnDelete = document.querySelector(`[data-id='${doc.id}'] .delete`);
+// add child crud // 
 
-    btnDelete.onclick = function () {
-    db.collection('family').doc(`${doc.id}`).delete().then(() => {
-        console.log('Document succesfully deleted!');
-        }).catch(err => {
-        console.log('Error removing document', err);
+let $addChild = document.querySelector('.finishButton');
+let $name = document.querySelector('#childName');
+let $pin = document.querySelector('#childPin');
+
+if (window.location.href.endsWith('addChild.html')) {
+  $addChild.onclick = () => {
+    if ($name.value && $pin.value) {
+      db.collection("family").doc(userUID)
+        .collection('children').add({
+          name: $name.value,
+          pin: $pin.value,
+        })
+        .then(() => {
+          console.log("Document successfully written!");
+          window.location.href="profile-select.html";
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
         });
+    } else {
+      alert('please fill in the form');
+    }
+  }
+
+  document.querySelector('#navbarProfileBtn2').onclick = () => {
+    window.location.href="profile-select.html";
   }
 }
 
-// add wish
+if(window.location.href.endsWith('profile-select.html')){
+  
+  // modal show uildel// main
+  let $modal = document.querySelector('.modal');
+  let $button = document.querySelector('#modalshowme');
 
-// submit.addEventListener('click', () => {
-//     db.collection('family').add({
-//         name: $name.value,
-//         nas: $nas.value,
-//     });
-// })
+  $button.onclick = () => {
+    $modal.classList.add('showme');
+  };
 
-// Realtime
+  // logout //
+  let $logout = document.querySelector('.logOut');
+  $logout.addEventListener('click', () => {
+    firebase.auth().signOut();
+    window.location.href="login.hmtl";
+  });
 
-// db.collection('family').onSnapshot(snapshot => {
-//     snapshot.docChanges().forEach(change => {
-//       if(change.type === 'added') {
-//         addWish(change.doc);
-//       }
-//       if(change.type === 'removed') {
-//         let item = document.querySelector(`[data-id='${change.doc.id}']`);
-//         box.removeChild(item);
-//       }
-//       if(change.type === 'modified') {
-//         let item = document.querySelector(`[data-id='${change.doc.id}']`);
-//         box.removeChild(item);
-//         addWish(change.doc);
-//       }
-//     })
-// })
+  // modal hide uildel
+  window.onclick = function(event) {
+    if (event.target == $modal) {
+      $modal.classList.remove('showme');
+    }
+  }
 
-window.onload = function() {
+};
+
+// Realtime data awchirah uildel
+
+window.onload = () => {
   db.collection('family')
-    .doc('DSfi2IoefMBltjwX55WC')
+    .doc(userUID)
     .collection('children')
     .onSnapshot(drawChildrenFromSnapshot);
 };
-
-

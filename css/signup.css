@@ -1,4 +1,4 @@
-body {
+body { 
     display: flex;
     color: var(--primary-color);
     flex-direction: column;
@@ -24,12 +24,9 @@ h1 {
     margin-left: 20px;
 }
 
-.login {
-    max-width: 400px;
-}
-
 .content {
     align-items: center;
+    justify-content: center;
 }
 
 .form {
@@ -46,7 +43,6 @@ h1 {
     background-color: #fff;
     border: 1px solid #afbbca;
     border-radius: 8px;
-    width: 100%;
     height: 48px;
     padding: 10px;
     outline: 0;
@@ -54,6 +50,7 @@ h1 {
     box-sizing: border-box;
     background-size: 10px 10px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .form h3 {
@@ -65,7 +62,22 @@ h1 {
     width: 90%;
 }
 
-.signUp {
+.signup {
+    max-width: 500px;
+}
+
+#signup {
+    width: 100%;
+}
+
+.login {
     margin: 20px 0;
+    display: flex;
+    color: var(--grey1-color);
+}
+
+.login .loginBtn {
+    margin-left: 10px;
+    color: var(--primary-color);
     cursor: pointer;
 }
