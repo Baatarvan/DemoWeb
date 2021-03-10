@@ -19,7 +19,7 @@ addBtn.onclick = () => {
     let $title = document.querySelector('#modulTitle');
     let $description = document.querySelector('#modulDesc');
     
-    if($title.value == "" || $description.value =="")  //utga hooson esehiig shalgah
+    if($title.value == "" || $description.value =="")
     {
         alert("boglo");
     }

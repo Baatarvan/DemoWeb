@@ -56,9 +56,13 @@ body {
 
 .battery-container {
   background-color: gray;
+<<<<<<< HEAD
+=======
   width: 60%;
+>>>>>>> main
   border-radius: 20px;
   margin: auto;
+  width: 50%;
   margin-top: 20px;
   border: 1px solid var(--background-color);
 }
@@ -72,9 +76,10 @@ body {
   border-radius: 20px;
 }
 
-.battery-container .percent {
-  width: 60%;
+#taskProcent {
+  width: 0%;
 }
+
 
 .schedule-container {
   position: relative;
@@ -150,7 +155,11 @@ body {
   /* color: white;  */
   height: fit-content;
   font-size: 18px;
+<<<<<<< HEAD
+  border: 1px solid grey;
+=======
   border: 2px solid var(--background-color);
+>>>>>>> main
   border-radius: 5px;
   cursor: pointer;
   padding: 1px;
@@ -423,4 +432,28 @@ webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+<<<<<<< HEAD
+}
+
+.logOut {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  box-sizing: border-box;
+  border: 2px solid var(--primary-color);
+  outline: none;
+  border-radius: 100px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 40px;
+  min-width: 150px;
+  padding: 0 32px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.logOut:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+=======
+>>>>>>> main
 }

@@ -1,3 +1,11 @@
+// point tootsoh
+var totalPoint = document.querySelector('.total-point');
+var yourPoint = document.querySelector('.your-point');
+
+
+// battery
+
+
 selectedChildID = localStorage.getItem("selectedChildID");  //selected child ID
 userUID = localStorage.getItem('userUID'); //selected family ID
 selectedWishID = localStorage.getItem('selectedWishID'); //selected wishlist ID
@@ -133,6 +141,7 @@ function $drawTodo(newTodo){
    deleteTask(newTodo.id);
    };
    $todoList.querySelector('.item-edit').onclick = onEditClick;
+   onTotalPoint(newTodo);
    return $todoList;
 };
 
@@ -142,17 +151,23 @@ function $drawTodos(tasks){
    var $completedTodos = document.querySelector('.todos-completed');
       $todos.innerHTML = '';
       $completedTodos.innerHTML = '';
-
+      tPoint  = 0;
+      myPoint = 0;
       tasks.forEach((task) => {
          $newTodo = $drawTodo(task);
       $todos.append($newTodo);
+      tPoint += parseInt(task.todoPoint) ;
       if(task.isDone){
          $completedTodos.append($newTodo);
-         onYourPoint(task);
+         myPoint += parseInt(task.todoPoint) ;
+    
       } else {
          $todos.append($newTodo);
-         onTotalPoint(task);
+    
       }
+         onTotalPoint(tPoint);
+         onYourPoint(myPoint);
+         calcPers(tPoint, myPoint);
       });
       if($completedTodos.innerHTML === ''){
          document.querySelector('.p-list').innerHTML = '';
