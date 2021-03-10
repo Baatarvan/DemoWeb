@@ -21,6 +21,7 @@ h1 {
 
 .navbar {
     background-color: var(--white-color);
+    box-shadow: 0 1px 3px 0 rgb(71 76 85 / 10%);
 }
 
 .title {
