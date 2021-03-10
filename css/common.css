@@ -91,4 +91,12 @@ button:hover {
     background-color: var(--primary-color);
     border-radius: 20px;
     border: 4px solid var(--white-color);
-  }
+}
+
+/* number arrow */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

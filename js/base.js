@@ -68,6 +68,7 @@ if (window.location.href.endsWith('signup.html')) {
     document.querySelector('#signup').onclick = () => {
         let email = document.querySelector('.email').value;
         let password = document.querySelector('.password').value;
+        let parentPin = document.querySelector('.pin').value;
     
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -83,7 +84,9 @@ if (window.location.href.endsWith('signup.html')) {
 
             //Create family collection
             db.collection('family').doc(userUID).set({
-                createAt: new Date()
+                createAt: new Date(),
+                parintPin: parentPin,
+                
             }).then(()=>  {
                 firebase.auth().signOut();
                 window.location.href = 'login.html';
