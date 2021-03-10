@@ -6,69 +6,37 @@ var whishlist = {
   task: []
 };
 
-
-// Progress battery
 var batteryContainer = document.querySelector('.battery-container');
 var achievePercent = document.querySelector('#taskProcent');
-var tPoint = 0;
-var myPoint = 0; 
+var totalPoint = document.querySelector('.total-point');
+var yourPoint = document.querySelector('.your-point');
 
-
-function calcPers(totalPoint, myPoint) {
-  var huwi = (myPoint / totalPoint) * 100;
-  console.log(totalPoint);
-  console.log(myPoint);
-  console.log(huwi);
-  achievePercent.style.width = `${huwi}%`;
-  let percent = parseInt(`${huwi}%`);
-  achievePercent.innerHTML =  percent + '%';
+// battery
+function calcPers(totalPoint, myPoint){
+  var huvi = (myPoint / totalPoint) * 100;
+  achievePercent.style.width = `${huvi}%`;
+  var percent = parseInt(`${huvi}%`);
+  achievePercent.innerHTML = percent + '%';
 }
 
-
 // point 
-  function  onTotalPoint(point){
-      totalPoint.innerHTML = point;
-
+function  onTotalPoint(point){
+    totalPoint.innerHTML = point;
   };
 
 function  onYourPoint(myPoint){
   yourPoint.innerHTML = myPoint;
 };
 
-
-var tPoint = 0;
-var myPoint = 0; 
-
-// point 
-function  onTotalPoint(task){
-  if(!task.isDone){
-    var point =  parseInt(task.todoPoint);
-    tPoint = tPoint + point;
-    totalPoint.innerHTML = tPoint;
-    console.log('total point')
-  } 
-};
-
-function  onYourPoint(task){
-  var point =  parseInt(task.todoPoint);
-  myPoint = myPoint + point;
-  yourPoint.innerHTML = myPoint;
-  console.log('your point')
-};
-
-
-// Progress battery
-
-
-
 function drawFromTodoSnapshot(snapshot){
-  console.log("updated");
   whishlist = snapshot.data();
-
-  if(whishlist.task === undefined) {
+  
+  if(whishlist.task == undefined && whishlist.task == null) {
     whishlist.task = [];
-  }
-  $drawTodos(whishlist.task);
+    console.log(whishlist);
+    $drawTodos(whishlist.task);
+  } else
+    $drawTodos(whishlist.task);
 }
 
 // update task's datas
@@ -78,7 +46,7 @@ function create(newTodo){
   .doc(userUID)
    .collection('whilist')
    .doc(selectedWishID).set({task: whishlist.task}, {merge: true});
-}
+};
 
 function update(id, data) {
   whishlist.task.forEach((each,index)=>{
