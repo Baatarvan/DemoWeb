@@ -81,7 +81,7 @@ li {
 }
 
 .wish:hover {
-    background-color: #CBCFDC;
+    background-color: var(--wishhover-color);
 }
 
 
@@ -147,7 +147,7 @@ li {
 }
 
 .modalWish:hover {
-    background-color: #CBCFDC;
+    background-color: var(--wishhover-color);
 }
 
 
