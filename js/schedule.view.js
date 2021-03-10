@@ -1,3 +1,20 @@
+selectedChildID = localStorage.getItem("selectedChildID");  //selected child ID
+userUID = localStorage.getItem('userUID'); //selected family ID
+selectedWishID = localStorage.getItem('selectedWishID'); //selected wishlist ID
+selectedWishDataTitle = localStorage.getItem('selectedWishDataTitle'); //selected wish title
+selectedWishDataImg = localStorage.getItem('selectedWishDataImg'); //selected wish img src
+selectedWishDataDesc = localStorage.getItem('selectedWishDataDesc'); //selected wish desc
+
+// wishlist-n title, zurag, description oruulj ireh
+
+var wishTitle = document.querySelector('.name');
+var wishImage = document.querySelector('.wish-img');
+var wishDesc = document.querySelector('.purpose');
+
+wishTitle.innerHTML = selectedWishDataTitle;
+wishImage.src = selectedWishDataImg;
+wishDesc.innerHTML = selectedWishDataDesc;
+
 // point tootsoh
 var totalPoint = document.querySelector('.total-point');
 var yourPoint = document.querySelector('.your-point');
@@ -5,7 +22,6 @@ var batteryContainer = document.querySelector('.battery-container');
 var achievePercent = document.querySelector('.achieve percent');
 
 // battery
-
 
 // Add todo button
 document.querySelector('.add-todo').onclick = (e) => {
@@ -36,7 +52,6 @@ function closeModal() {
    $modulTodo.querySelector("#modul-todo-point").value = '';
    $modulTodo.style.display = 'none';
 };
-
 
 // TODO modal
 document.querySelector(".confirm-todo").onclick = function(){
@@ -75,7 +90,6 @@ document.querySelector(".confirm-todo").onclick = function(){
     }
     closeModal();
 };
-
 
 function $drawTodo(newTodo){
    var $todoListInner = `<div class="todo-list" data-id="${newTodo.id}">

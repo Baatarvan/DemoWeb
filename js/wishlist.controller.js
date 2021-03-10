@@ -19,7 +19,7 @@ addBtn.onclick = () => {
     let $title = document.querySelector('#modulTitle');
     let $description = document.querySelector('#modulDesc');
     
-    if($title.value == "" || $description.value =="")
+    if($title.value == "" || $description.value =="")  //utga hooson esehiig shalgah
     {
         alert("boglo");
     }
@@ -73,7 +73,14 @@ function $createList(item) {
     `;
     $list.innerHTML = content;
     $list.onclick = () => {
+        alert(item.data.image);
+        alert(item.data.description);
+        localStorage.setItem('selectedWishID', item.id); //selected wish ID local deer set hiih 
+        localStorage.setItem('selectedWishDataTitle', item.data.title); //selected wish title local deer set hiih 
+        localStorage.setItem('selectedWishDataImg', item.data.image); //selected wish image src local deer set hiih 
+        localStorage.setItem('selectedWishDataDesc', item.data.description); //selected wish desc local deer set hiih 
         window.location.href = 'schedule.html';
+        
     };
     return $list;
 }

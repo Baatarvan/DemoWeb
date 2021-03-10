@@ -1,3 +1,7 @@
+selectedChildID = localStorage.getItem("selectedChildID");  //selected child ID
+userUID = localStorage.getItem('userUID'); //selected family ID
+selectedWishID = localStorage.getItem('selectedWishID'); //selected wishlist ID
+
 var whishlist = {
   task: []
 };
@@ -41,9 +45,9 @@ function drawFromTodoSnapshot(snapshot){
 function create(newTodo){
   whishlist.task.push(newTodo);
    db.collection('family')
-  .doc('DSfi2IoefMBltjwX55WC')
+  .doc(userUID)
    .collection('whilist')
-   .doc('FeBGA8qIj3ER23G3VDOn').set({task: whishlist.task}, {merge: true});
+   .doc(selectedWishID).set({task: whishlist.task}, {merge: true});
 }
 
 function update(id, data) {
@@ -54,9 +58,9 @@ function update(id, data) {
   });
   
   db.collection('family')
-  .doc('DSfi2IoefMBltjwX55WC')
+  .doc(userUID)
    .collection('whilist')
-   .doc('FeBGA8qIj3ER23G3VDOn').set({task: whishlist.task}, {merge: true});
+   .doc(selectedWishID).set({task: whishlist.task}, {merge: true});
   
 }
 
@@ -65,9 +69,9 @@ function toggleIsDone(id){
     let todo = getTodo(id); 
     todo.isDone = !todo.isDone;
     db.collection('family')
-    .doc('DSfi2IoefMBltjwX55WC')
+    .doc(userUID)
      .collection('whilist')
-     .doc('FeBGA8qIj3ER23G3VDOn').set({task: whishlist.task}, {merge: true});  
+     .doc(selectedWishID).set({task: whishlist.task}, {merge: true});  
 };
 //  find todo in todos
 function getTodo(id) {  
@@ -79,9 +83,9 @@ function getTodo(id) {
 function deleteTask(id) {
   var idToRemove = id;
   db.collection('family')
-    .doc('DSfi2IoefMBltjwX55WC')
+    .doc(userUID)
     .collection('whilist')
-    .doc('FeBGA8qIj3ER23G3VDOn').get().then((snapshot)=>{
+    .doc(selectedWishID).get().then((snapshot)=>{
       var tasks = snapshot.data().task;
       var index = tasks.map(x => {
         return x.id;
@@ -90,15 +94,15 @@ function deleteTask(id) {
         whishlist.task = tasks;
 
         db.collection('family')
-    .doc('DSfi2IoefMBltjwX55WC')
+    .doc(userUID)
     .collection('whilist')
-    .doc('FeBGA8qIj3ER23G3VDOn').set({task: whishlist.task}, {merge: true}); 
+    .doc(selectedWishID).set({task: whishlist.task}, {merge: true}); 
       });
 };
    
 
 window.onload = function() {
-  db.collection('family').doc('DSfi2IoefMBltjwX55WC').collection('whilist').doc('FeBGA8qIj3ER23G3VDOn').onSnapshot(drawFromTodoSnapshot);
+  db.collection('family').doc(userUID).collection('whilist').doc(selectedWishID).onSnapshot(drawFromTodoSnapshot);
 };
 
 // modal hide uildel
