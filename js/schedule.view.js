@@ -1,8 +1,7 @@
 // point tootsoh
 var totalPoint = document.querySelector('.total-point');
 var yourPoint = document.querySelector('.your-point');
-var batteryContainer = document.querySelector('.battery-container');
-var achievePercent = document.querySelector('.achieve percent');
+
 
 // battery
 
@@ -129,17 +128,23 @@ function $drawTodos(tasks){
    var $completedTodos = document.querySelector('.todos-completed');
       $todos.innerHTML = '';
       $completedTodos.innerHTML = '';
-
+      tPoint  = 0;
+      myPoint = 0;
       tasks.forEach((task) => {
          $newTodo = $drawTodo(task);
       $todos.append($newTodo);
+      tPoint += parseInt(task.todoPoint) ;
       if(task.isDone){
          $completedTodos.append($newTodo);
-         onYourPoint(task);
+         myPoint += parseInt(task.todoPoint) ;
+    
       } else {
          $todos.append($newTodo);
-         //onTotalPoint(task);
+    
       }
+         onTotalPoint(tPoint);
+         onYourPoint(myPoint);
+         calcPers(tPoint, myPoint);
       });
       if($completedTodos.innerHTML === ''){
          document.querySelector('.p-list').innerHTML = '';

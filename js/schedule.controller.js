@@ -2,29 +2,34 @@ var whishlist = {
   task: []
 };
 
+
+// Progress battery
+var batteryContainer = document.querySelector('.battery-container');
+var achievePercent = document.querySelector('#taskProcent');
 var tPoint = 0;
 var myPoint = 0; 
 
+
+function calcPers(totalPoint, myPoint) {
+  var huwi = (myPoint / totalPoint) * 100;
+  console.log(totalPoint);
+  console.log(myPoint);
+  console.log(huwi);
+  achievePercent.style.width = `${huwi}%`;
+  let percent = parseInt(`${huwi}%`);
+  achievePercent.innerHTML =  percent + '%';
+}
+
+
 // point 
-function  onTotalPoint(task){
-  if(!task.isDone){
-    var point =  parseInt(task.todoPoint);
-    tPoint = tPoint + point;
-    totalPoint.innerHTML = tPoint;
-    console.log('total point')
-  } 
-};
+  function  onTotalPoint(point){
+      totalPoint.innerHTML = point;
 
-function  onYourPoint(task){
-  var point =  parseInt(task.todoPoint);
-  myPoint = myPoint + point;
+  };
+
+function  onYourPoint(myPoint){
   yourPoint.innerHTML = myPoint;
-  console.log('your point')
 };
-
-
-// Progress battery
-
 
 
 function drawFromTodoSnapshot(snapshot){
