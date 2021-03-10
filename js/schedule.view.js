@@ -1,6 +1,22 @@
 selectedChildID = localStorage.getItem("selectedChildID");  //selected child ID
 userUID = localStorage.getItem('userUID'); //selected family ID
 selectedWishID = localStorage.getItem('selectedWishID'); //selected wishlist ID
+selectedWishDataTitle = localStorage.getItem('selectedWishDataTitle'); //selected wish title
+selectedWishDataImg = localStorage.getItem('selectedWishDataImg'); //selected wish img src
+selectedWishDataDesc = localStorage.getItem('selectedWishDataDesc'); //selected wish desc
+
+
+// wishlist-n title, zurag, description oruulj ireh
+
+var wishTitle = document.querySelector('.name');
+var wishImage = document.querySelector('.wish-img');
+var wishDesc = document.querySelector('.purpose');
+
+wishTitle.innerHTML = selectedWishDataTitle;
+wishImage.src = selectedWishDataImg;
+wishDesc.innerHTML = selectedWishDataDesc;
+
+
 
 // point tootsoh
 var totalPoint = document.querySelector('.total-point');
