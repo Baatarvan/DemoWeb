@@ -56,6 +56,10 @@ body {
 
 .battery-container {
   background-color: gray;
+<<<<<<< HEAD
+=======
+  width: 60%;
+>>>>>>> main
   border-radius: 20px;
   margin: auto;
   width: 50%;
@@ -151,9 +155,14 @@ body {
   /* color: white;  */
   height: fit-content;
   font-size: 18px;
+<<<<<<< HEAD
   border: 1px solid grey;
+=======
+  border: 2px solid var(--background-color);
+>>>>>>> main
   border-radius: 5px;
   cursor: pointer;
+  padding: 1px;
 }
 
 .description {
@@ -423,6 +432,7 @@ webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+<<<<<<< HEAD
 }
 
 .logOut {
@@ -444,4 +454,6 @@ input::-webkit-inner-spin-button {
 .logOut:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
+=======
+>>>>>>> main
 }
