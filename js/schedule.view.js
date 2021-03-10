@@ -119,6 +119,7 @@ function $drawTodo(newTodo){
    deleteTask(newTodo.id);
    };
    $todoList.querySelector('.item-edit').onclick = onEditClick;
+   onTotalPoint(newTodo);
    return $todoList;
 };
 
@@ -137,7 +138,7 @@ function $drawTodos(tasks){
          onYourPoint(task);
       } else {
          $todos.append($newTodo);
-         onTotalPoint(task);
+         //onTotalPoint(task);
       }
       });
       if($completedTodos.innerHTML === ''){

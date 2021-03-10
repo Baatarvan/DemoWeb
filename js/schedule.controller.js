@@ -13,14 +13,18 @@ function  onTotalPoint(task){
     totalPoint.innerHTML = tPoint;
     console.log('total point')
   } 
+};
 
-}
 function  onYourPoint(task){
   var point =  parseInt(task.todoPoint);
   myPoint = myPoint + point;
   yourPoint.innerHTML = myPoint;
   console.log('your point')
-}
+};
+
+
+// Progress battery
+
 
 
 function drawFromTodoSnapshot(snapshot){
