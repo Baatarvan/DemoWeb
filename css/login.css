@@ -18,10 +18,11 @@ h1 {
 }
 
 .title {
-    display: flex;
     align-items: center;
-    font-size: 30px;
-    margin-left: 20px;
+}
+
+.title * {
+    margin-left: 15px;
 }
 
 .login {
