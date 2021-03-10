@@ -52,24 +52,47 @@ li {
 
 .content {
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
 }
 
 .childContainer {
     background-color: var(--white-color);
     border: none;
     box-shadow: 0 1px 3px 0 rgb(71 76 85 / 10%);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+}
 
+.profile {
+    justify-content: center;
+    align-items: center;
 }
 
 .child {
-    padding: 10px;
     flex-direction: column;
     align-items: center;
+}
+
+.wishbox {
+    overflow-x: scroll;
 }
 
 .wish {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10px 0;
+    margin: 0 20px;
+}
+
+.wish:hover {
+    background-color: var(--wishhover-color);
+    color: var(--white-color);
+}
+
+.wish .name {
+    margin-top: 20px;
 }
