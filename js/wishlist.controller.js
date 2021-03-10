@@ -19,7 +19,7 @@ addBtn.onclick = () => {
     let $title = document.querySelector('#modulTitle');
     let $description = document.querySelector('#modulDesc');
     
-    if($title.value == "" || $description.value =="")
+    if($title.value == "" || $description.value =="")  //utga hooson esehiig shalgah
     {
         alert("boglo");
     }
@@ -74,6 +74,8 @@ function $createList(item) {
     $list.innerHTML = content;
     $list.onclick = () => {
         window.location.href = 'schedule.html';
+        alert(item.id);
+        localStorage.setItem('selectedWishID', item.id);
     };
     return $list;
 }
