@@ -98,7 +98,7 @@ function deleteTask(id) {
    
 
 window.onload = function() {
-  db.collection('family').doc(userUID.collection('whilist').doc(selectedWishID).onSnapshot(drawFromTodoSnapshot);
+  db.collection('family').doc(userUID).collection('whilist').doc(selectedWishID).onSnapshot(drawFromTodoSnapshot);
 };
 
 // modal hide uildel
