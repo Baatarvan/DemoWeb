@@ -16,6 +16,17 @@ function $createChild(item) {
     $child.innerHTML = content;
     $child.onclick = () => {
         selectedChild = item.id;
+        let img = $child.querySelector('img');
+        let imageSource = img.getAttribute('src');
+        console.log(imageSource);
+
+        let modalImg = document.querySelector('.modulbox, img');
+        modalImg.setAttribute('src', imageSource);
+
+       let modulName = $child.querySelector('.child, .name');
+        document.querySelector('.childPinModal .modalbox h3').innerHTML = modulName.innerHTML;
+
+        
         showChildPinModal();
         document.querySelector('.childPinModal .modalbox button').onclick = () => {
             db.doc(`family/${userUID}/children/${selectedChild}`).get()
