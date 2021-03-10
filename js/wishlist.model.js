@@ -1,11 +1,7 @@
 
 // wishlist crud
-
-let childID = db.collection('family')
-.doc(userUID)
-.collection('children')
-
-
+ userUID = localStorage.getItem('userUID');
+ 
 function createWishlist(list){
     db.collection('family').doc(userUID)
     .collection('whilist').add({
@@ -21,7 +17,7 @@ function createWishlist(list){
 
 function listWishlist(childID){
     db.collection('family')
-        .doc('xLlWmKpzc7LiVOihxhsP')
+        .doc(userUID)
         .collection('whilist')
         .where("childrenId" , "==", childID)
         .onSnapshot(drawWishlistFromSnapshot);

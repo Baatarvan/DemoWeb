@@ -25,8 +25,11 @@ h1 {
 }
 
 .login {
-    justify-content: space-around;
-    align-items: flex-start;
+    max-width: 400px;
+}
+
+.content {
+    align-items: center;
 }
 
 .form {
