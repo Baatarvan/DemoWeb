@@ -4,13 +4,7 @@ body {
     min-width: 1080px;
 }
 
-h1 {
-    color: var(--primary-color);
-}
-
-h2 {
-    color: var(--grey-color);
-}
+/* navbar */
 
 h1, h2 {
     color: var(--primary-color);
@@ -56,35 +50,15 @@ li {
     font-weight: 700;
 }
 
-/* navbar */
-
-.navbar {
-    padding: 0 30px;
-}
-
-.title {
-    align-items: center;
-}
-
-.btns {
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-.btns .parentsImg {
-    border-radius: 50%;
-    width: 50px;
-    margin-right: 20px;
-    cursor: pointer;
-}
-
 /* content */
 .container {
     align-items: center;
-    flex-direction: column;    
+    flex-direction: column;
+    background-color: var(--grey2-color); 
 }
 
 .wishbox {
+    margin-top: 20px;
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 10px;
@@ -143,6 +117,8 @@ li {
     align-items: center;
     justify-content: space-around;
     padding: 30px 40px;
+    width: 1320px;
+    height: 600px;
 }
 
 .showme {
@@ -152,7 +128,8 @@ li {
 }
 
 .defualtWish {
-   overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
    flex-wrap: wrap;
    justify-content: space-around;
 }
@@ -193,11 +170,11 @@ li {
 }
 
 #modulTitle {
-    height: 30px;
+    height: 50px;
     outline: none;
 }
 
-#modulDisc {
-    height: 100px;
+#modulDesc {
+    height: 150px;
     outline: none;
 }
