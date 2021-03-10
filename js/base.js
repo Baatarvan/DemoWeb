@@ -75,6 +75,11 @@ if (window.location.href.endsWith('signup.html')) {
             // Signed in 
             var user = userCredential.user;
             userUID = user.uid;            
+            // Create new family collection
+            // function createFamily(){
+            //     console.log(userUID);               
+            // }
+            // createFamily();
             localStorage.setItem('userUID', userUID);  //family UID-glocal storage deer hadgalah
 
             //Create family collection

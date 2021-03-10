@@ -13,7 +13,7 @@ function createWishlist(list){
         createAt: new Date(Date.now()),
         isApproved: false,
         image: list.image,
-        task: [], 
+        task: null, 
     })
 }
 

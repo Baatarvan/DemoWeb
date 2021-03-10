@@ -65,6 +65,24 @@ li {
 
 .form {
     justify-content: center;
+<<<<<<< HEAD
+}
+
+#childName {
+    text-transform: capitalize;
+}
+
+.form * {
+    margin-top: 20px;
+}
+
+.form input {
+    border: 1px solid var(--grey-color);
+    border-radius: 10px;
+    outline: none;
+    height: 50px;
+}
+=======
 }
 
 #childName {
@@ -86,6 +104,7 @@ li {
     margin-right: 5px;
 }
 
+>>>>>>> main
 webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
