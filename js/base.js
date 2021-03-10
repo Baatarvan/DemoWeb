@@ -11,14 +11,6 @@ firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
 
-// localStorage.setItem('userType', 'parent'); 
-// localStorage.setItem('userID', 'p32332323');
-
-
-// localStorage.getItem('')
-
-// Login
-
 if (window.location.href.endsWith('login.html')) {
     document.querySelector('.loginBtn').onclick = () => {
         let email = document.querySelector('.email').value;
@@ -70,12 +62,9 @@ if (window.location.href.endsWith('signup.html')) {
             // Signed in 
             var user = userCredential.user;
             userUID = user.uid;            
-            localStorage.setItem('userUID', userUID); 
-            // Create new family collection
-            // function createFamily(){
-            //     console.log(userUID);               
-            // }
-            // createFamily();
+            localStorage.setItem('userUID', userUID);  //family UID-glocal storage deer hadgalah
+
+            //Create family collection
             db.collection('family').doc(userUID).set({
                 createAt: new Date()
             }).then(()=>  {

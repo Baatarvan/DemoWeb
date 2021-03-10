@@ -2,6 +2,8 @@
 // wishlist crud
  userUID = localStorage.getItem('userUID');
  
+//wishlist uusgeh
+
 function createWishlist(list){
     db.collection('family').doc(userUID)
     .collection('whilist').add({
@@ -15,6 +17,8 @@ function createWishlist(list){
     })
 }
 
+//wishlist jagsaaj haruulah
+
 function listWishlist(childID){
     db.collection('family')
         .doc(userUID)
@@ -22,6 +26,8 @@ function listWishlist(childID){
         .where("childrenId" , "==", childID)
         .onSnapshot(drawWishlistFromSnapshot);
 }
+
+//wishlist ustgah
 
 function deleteWishlist(id){
     db.collection('family').doc(userUID)
