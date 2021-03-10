@@ -58,6 +58,7 @@ li {
 }
 
 .wishbox {
+    margin-top: 20px;
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 10px;
@@ -80,7 +81,7 @@ li {
 }
 
 .wish:hover {
-    background-color: #CBCFDC;
+    background-color: var(--wishhover-color);
 }
 
 
@@ -116,6 +117,8 @@ li {
     align-items: center;
     justify-content: space-around;
     padding: 30px 40px;
+    width: 1320px;
+    height: 600px;
 }
 
 .showme {
@@ -125,7 +128,8 @@ li {
 }
 
 .defualtWish {
-   overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
    flex-wrap: wrap;
    justify-content: space-around;
 }
@@ -143,7 +147,7 @@ li {
 }
 
 .modalWish:hover {
-    background-color: #CBCFDC;
+    background-color: var(--wishhover-color);
 }
 
 
@@ -166,11 +170,11 @@ li {
 }
 
 #modulTitle {
-    height: 30px;
+    height: 50px;
     outline: none;
 }
 
 #modulDesc {
-    height: 100px;
+    height: 150px;
     outline: none;
 }

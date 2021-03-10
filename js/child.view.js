@@ -17,11 +17,9 @@ function $createChild(item) {
     $child.onclick = () => {
         selectedChild = item.id;
         showChildPinModal();
-
         document.querySelector('.childPinModal .modalbox button').onclick = () => {
             db.doc(`family/${userUID}/children/${selectedChild}`).get()
                 .then((doc) => {
-                    console.log(doc.data().pin);
                     selectedChildPin = doc.data().pin;
                     let inputPin = document.querySelector('.childPinModal .modalbox input').value;
 
@@ -29,16 +27,14 @@ function $createChild(item) {
                         selectedChildID = item.id;
                         localStorage.setItem('selectedChildID',selectedChildID);
                         window.location.href="wishlist.html";
-                    }
-                    
+                    }  
                 })
-           
         }
     };
     return $child;
 }
 
-let modal = document.querySelector('.childPinModal')
+let modal = document.querySelector('.childPinModal');
 
 if (modal != null) {
     modal.onclick = function (event) {
