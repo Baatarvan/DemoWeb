@@ -24,10 +24,11 @@ let db = firebase.firestore();
 // Login
 
 if (window.location.href.endsWith('login.html')) {
+
     document.querySelector('.loginBtn').onclick = () => {
         let email = document.querySelector('.email').value;
         let password = document.querySelector('.password').value;
-
+            
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
@@ -43,6 +44,13 @@ if (window.location.href.endsWith('login.html')) {
             alert(errorMessage);
         });
     }
+
+    document.querySelector('.password').addEventListener('keyup', function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.querySelector('.loginBtn').click();
+        }
+    });
 
     document.querySelector('.signUp').onclick = () => {
         window.location.href = "signup.html";
