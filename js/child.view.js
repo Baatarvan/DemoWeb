@@ -20,7 +20,7 @@ function $createChild(item) {
         let imageSource = img.getAttribute('src');
         console.log(imageSource);
 
-        let modalImg = document.querySelector('.modulbox, img');
+        let modalImg = document.querySelector('#childrenImage');
         modalImg.setAttribute('src', imageSource);
         
         document.querySelector('.childPinModal .modalbox h3').innerHTML = $child.querySelector('.child, .name').innerHTML;
