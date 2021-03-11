@@ -11,6 +11,18 @@ $addWishBtn.onclick = () => {
     images.forEach(element => {
         element.onclick = onClickImage;
     });
+
+    let x = document.querySelectorAll('.defualtWish .modalWish')
+
+    x.forEach(element => {
+        element.onclick = () => {
+            for (let i = 0; i < x.length; i++) {
+                x[i].style.backgroundColor = "";
+            }
+            element.style.backgroundColor = '#CBCFDC';
+        }
+        
+    });
 }
 
 addBtn.onclick = () => {
@@ -32,6 +44,8 @@ addBtn.onclick = () => {
         };
         createWishlist(list);
         $modulAddWish.classList.remove('showme');
+        $title.value = "";
+        $description.value = "";
     }
 }
 
