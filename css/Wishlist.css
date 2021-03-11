@@ -83,6 +83,10 @@ li {
     background-color: var(--wishhover-color);
 }
 
+.selectedWish {
+    background-color: var(--wishhover-color);
+}
+
 
 .wish img {
     width: 180px;
