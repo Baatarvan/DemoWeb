@@ -18,7 +18,7 @@ function $createChild(item, index) {
     var $child = document.createElement('div');
     $child.classList.add('child', 'flex');
     var content = `
-        <img class="avatarimg" src="${childImgArray[index]}" alt="avatar" width="170px">
+        <img class="avatarimg" src="${childImgArray[index % 5] }" alt="avatar" width="170px">
         <h3 class="name">${item.data.name}</h3>
     `;
     $child.innerHTML = content;

@@ -9,19 +9,18 @@ $addWishBtn.onclick = () => {
     $modulAddWish.classList.add('showme');
     images = document.querySelectorAll('.wishAddModul img');
     images.forEach(element => {
-        element.onclick = onClickImage
+        element.onclick = onClickImage;
     });
 }
 
 addBtn.onclick = () => {
-
     let $path = selectedImage;
     let $title = document.querySelector('#modulTitle');
     let $description = document.querySelector('#modulDesc');
     
     if($title.value == "" || $description.value =="")
     {
-        alert("boglo");
+        alert("please fill in the form");
     }
     else
     {
@@ -32,9 +31,7 @@ addBtn.onclick = () => {
             image: $path,
         };
         createWishlist(list);
-        setTimeout(() => {
-            $modulAddWish.classList.remove('showme');
-        }, 1000);
+        $modulAddWish.classList.remove('showme');
     }
 }
 
