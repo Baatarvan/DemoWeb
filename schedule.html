@@ -27,30 +27,40 @@
             </div>
       </div>
       <div class="schedule-container flex-9">
-            <div class="wish-achieve">
-                  <div class="wish-coming">
-                        <h1 class="name">Description</h1>
-                  </div>
-                  <div class="wish-content">
-                        <div class="wish-card">
-                              <img class="wish-img" alt="img">
-                        </div>
+            <div class="wish-achieve">  
+                  <h1 style="text-align: center; padding: 17px 0;">Wish Schedule</h1> 
+                  <div class="wish-content">  
                         <div class="wish-schedule">
+                              <div class="wish-card flex-2">
+                                    <img class="wish-img" alt="img">
+                              </div>
+                              <div class=" wish-point-container flex-1" >
+                                    <div>
+                                          <div class="wish-coming">
+                                                <h1 class="name"></h1>
+                                          </div>
+                                          <div class="point">
+                                                <div class="flex space-between">
+                                                      <span>Total point:</span>
+                                                      <span style="color: red;" class="total-point  "></span>
+                                                </div>
+                                                <div class="flex space-between">
+                                                      <span >Current point:</span>
+                                                      <span style="color: blue;" class="your-point">0</span>
+                                                </div>
+                                          </div>
+                                    </div>
+                                  
+                              </div>
+                        </div>
+                        <div class="desc-container">
+                              <span>Your wish is coming ...</span>
                               <div class="battery-container">
                                     <div class="achieve percent" id="taskProcent">0%</div>
                               </div>
-                              <div class="point">
-                                    <div>
-                                          <span>Total point:</span>
-                                          <span style="color: red;" class="total-point  "></span>
-                                    </div>
-                                    <div>
-                                          <span >Current point:</span>
-                                          <span style="color: blue;" class="your-point">0</span>
-                                    </div>
-                              </div>
                               <div class="wish-desc">
-                                    <h4 style="margin-left: 15px; color:  #64738a; font-size: 1.2rem;">Тайлбар</h4>
+                                    <h4 style="margin-left: 5px; color:  #64738a; font-size: 1.2rem;">Detail information</h4>
+                                   
                                     <div class="purpose">Унадаг дугуй унаж сурах шаардлагатай байгаа.</div>
                               </div>
                         </div>
@@ -58,11 +68,10 @@
                   </div>
             </div>
             <div class="todo-container">
-                  <h1 class='garchig'>To Do List</h1>
+                  <h1 class='garchig'>ToDo List</h1>
                   <div class="todos">
                   </div>
                   <p class='p-list'>Done List</p>
-                  <!-- <p class='all-del'>Бүгдийг устгах</p> -->
                   <div class="todos-completed">
                   </div>
                   <button class="add-todo">Add todo</button>
