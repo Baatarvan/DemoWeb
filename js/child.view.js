@@ -4,13 +4,21 @@ let selectedChildPin;
 let selectedChildID;
 userUID = localStorage.getItem('userUID');
 
+let childImgArray = [
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose.png?alt=media',
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose%20(3).png?alt=media',
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose%20(2).png?alt=media',
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose%20(1).png?alt=media&token',
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose%20(5).png?alt=media',
+]
+
 // create elementx
 
-function $createChild(item) {
+function $createChild(item, index) {
     var $child = document.createElement('div');
     $child.classList.add('child', 'flex');
     var content = `
-        <img class="avatarimg" src="https://api.getepic.com/utils/compose.png?avatar_id=15&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="170px">
+        <img class="avatarimg" src="${childImgArray[index]}" alt="avatar" width="170px">
         <h3 class="name">${item.data.name}</h3>
     `;
     $child.innerHTML = content;
@@ -70,8 +78,8 @@ if ($ChildPinmodal != null) {
         var $childrenList = document.querySelector('.avatar');
 
         $childrenList.innerHTML = '';
-        children.forEach((item) => {
-            $child = $createChild(item);
+        children.forEach((item, index) => {
+            $child = $createChild(item, index);
             $childrenList.append($child);
         });
     }
