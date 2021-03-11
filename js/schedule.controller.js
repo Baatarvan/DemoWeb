@@ -6,6 +6,17 @@ var whishlist = {
   task: []
 };
 
+// document.querySelector('.fa-sort').onclick = function(){ 
+//   whishlist.task.forEach((doc)=>{
+//     sort(doc.dueDate);
+//     console.log(doc.dueDate);
+//     // console.log(doc);
+//   })
+// };
+
+// function sort(date){
+//   date.sort((a, b) => b.dueDate - a.dueDate)
+// };
 
 // Progress battery
 var batteryContainer = document.querySelector('.battery-container');
@@ -19,8 +30,7 @@ function calcPers(totalPoint, myPoint) {
   achievePercent.style.width = `${huwi}%`;
   let percent = parseInt(`${huwi}%`);
   achievePercent.innerHTML =  percent + '%';
-}
-
+};
 
 // point 
   function  onTotalPoint(point){
@@ -30,7 +40,6 @@ function calcPers(totalPoint, myPoint) {
 function  onYourPoint(myPoint){
   yourPoint.innerHTML = myPoint;
 };
-
 
 function drawFromTodoSnapshot(snapshot){
   whishlist = snapshot.data();
@@ -114,4 +123,4 @@ window.onclick = function(event) {
   if (event.target == $modulTodo) {
     $modulTodo.style.display = 'none';
   }
-}  
+}

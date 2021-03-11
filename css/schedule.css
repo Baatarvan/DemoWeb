@@ -143,6 +143,12 @@ body {
   color:var(--primary-color);
 }
 
+.fa-sort {
+  font-size: 1rem;
+  text-align: right;
+  color: var(--font-color);
+}
+
 .garchig {
   text-align: center;
   margin: 20px;

@@ -21,7 +21,6 @@ $addWishBtn.onclick = () => {
             }
             element.style.backgroundColor = '#CBCFDC';
         }
-        
     });
 }
 
