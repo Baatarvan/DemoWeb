@@ -124,8 +124,12 @@ firebase.auth().onAuthStateChanged((user) => {
             window.location.href = 'profile-select.html';
         }
     } else {
-        if (!window.location.href.endsWith('login.html') && window.location.href.endsWith('login.html')) {
-            window.location.href = 'login.html';
+        console.log("uynar");
+        if(window.location.href.endsWith('signup.html')) {
+            return;
         }
+        if(!window.location.href.endsWith('login.html')) {
+            window.location.replace('login.html');
+        } 
     }
 });
