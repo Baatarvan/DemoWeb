@@ -13,8 +13,10 @@ body {
 }
 
 .desc-container {
-  height: 30%;
-  padding: 20px;
+  position: absolute;
+  left: 7%;
+  bottom: 10%;
+  width: 50%;
 
 }
 .wish-achieve {
@@ -45,48 +47,62 @@ body {
 
 .wish-coming {
   padding: 10px;
-  color: var(--font-color);
-  margin-left: 10%;
+  text-align: center;
 }
 
-.wish-coming h1 {
+/* .wish-coming h1 {
   font-size: 1.5rem;
-}
+} */
 
 .wish-point-container{
-  padding: 40px 10px;
-  margin-bottom: 25px;
-  background-color:#a9d3e9;
+  position: relative;
+  margin-top: 40px;
+  width: 90%;
+  height: 10%;
+  margin: auto;
+  padding: 15px;
+  background-color: var(--background-color);
   border-radius: 15px;
+
 }
 
-.wish-point-container>div{
-  background-color: #fff;
-  height:  80%;
-  padding: 5px;
-  border-radius: 15px;
-}
 .wish-img {
-  width: 80%;
+  width: 60%;
 }
 
 .point {
+  position: absolute;
+  right: 7%;
+  bottom: 10%;
   text-align: justify;
-  width: 95%;
+  width: 30%;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
 }
+
 .point span {
   display: inline-block;
-  margin-bottom: 17px;
+  font-size: 1rem;
+  color: #4c8932;
+}
+
+.point span.total-point {
+  color: black;
+}
+
+.point span.your-point {
+  color: black;
 }
 .wish-desc {
-  text-align: left;
-  margin-top: 20px;
+  margin-top: 10%;
+  text-align: center;
 }
 
 .battery-container {
   background-color: gray;
   border-radius: 20px;
-  width: 65%;
+  width: 100%;
   border: 1px solid var(--background-color);
 }
 
@@ -143,6 +159,12 @@ body {
   color:var(--primary-color);
 }
 
+.fa-sort {
+  font-size: 1rem;
+  text-align: right;
+  color: var(--font-color);
+}
+
 .garchig {
   text-align: center;
   margin: 20px;
@@ -169,11 +191,11 @@ body {
   font-weight: 400;
   font-size: 1rem;
   padding: 5px;
+  margin: 10px;
   color: var(--font-color);
   width: 100%;
   height:fit-content;
   border-radius: 5px;
-  background-color: var(--background-color);
   /* margin: 10px; */
 }
 

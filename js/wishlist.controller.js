@@ -9,19 +9,29 @@ $addWishBtn.onclick = () => {
     $modulAddWish.classList.add('showme');
     images = document.querySelectorAll('.wishAddModul img');
     images.forEach(element => {
-        element.onclick = onClickImage
+        element.onclick = onClickImage;
+    });
+
+    let x = document.querySelectorAll('.defualtWish .modalWish')
+
+    x.forEach(element => {
+        element.onclick = () => {
+            for (let i = 0; i < x.length; i++) {
+                x[i].style.backgroundColor = "";
+            }
+            element.style.backgroundColor = '#CBCFDC';
+        }
     });
 }
 
 addBtn.onclick = () => {
-
     let $path = selectedImage;
     let $title = document.querySelector('#modulTitle');
     let $description = document.querySelector('#modulDesc');
     
     if($title.value == "" || $description.value =="")
     {
-        alert("boglo");
+        alert("please fill in the form");
     }
     else
     {
@@ -32,9 +42,9 @@ addBtn.onclick = () => {
             image: $path,
         };
         createWishlist(list);
-        setTimeout(() => {
-            $modulAddWish.classList.remove('showme');
-        }, 1000);
+        $modulAddWish.classList.remove('showme');
+        $title.value = "";
+        $description.value = "";
     }
 }
 

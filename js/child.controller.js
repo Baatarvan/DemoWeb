@@ -19,7 +19,12 @@ if(document.querySelector('.addChildbtn') != null) {
   // Add child  html-ruu usreh uildel
 
   document.querySelector('.addChildbtn').addEventListener('click', () => {
-    window.location.href="addChild.html";
+    if(children.length < 6 ) {
+      window.location.href="addChild.html";
+    }
+    else {
+      alert('Хүүхдйин тоо дүүрсэн байна.');
+    }
   })
 }
 
@@ -39,7 +44,6 @@ if (window.location.href.endsWith('addChild.html')) {
           pin: $pin.value,
         })
         .then(() => {
-          console.log("Document successfully written!");
           window.location.href="profile-select.html";
         })
         .catch((error) => {
@@ -62,29 +66,53 @@ if (window.location.href.endsWith('addChild.html')) {
 if(window.location.href.endsWith('profile-select.html')){
   
   // modal show uildel// main
-  let $modal = document.querySelector('.modal');
+  let $parentPinModal = document.querySelector('.modal');
   let $button = document.querySelector('#modalshowme');
 
   $button.onclick = () => {
-    $modal.classList.add('showme');
+    $parentPinModal.classList.add('showme');
   };
 
   // logout //
   let $logout = document.querySelector('.logOut');
   $logout.addEventListener('click', () => {
     firebase.auth().signOut();
-    window.location.href="login.hmtl";
+    window.location.href="login.html";
   });
 
-  // modal hide uildel
+  // Parent pin modal 
   window.onclick = function(event) {
-    if (event.target == $modal) {
-      $modal.classList.remove('showme');
+    if (event.target == $parentPinModal) {
+      $parentPinModal.classList.remove('showme');
+      $parentPinModal.querySelector('input').value = "";
     }
   }
+  let $parentPintInput = document.querySelector('.modal .modalbox input');
+  let $parentPinBtn = document.querySelector('.modal .modalbox button');
 
+  $parentPinBtn.onclick = () => {
+    
+    db.doc(`family/${userUID}`).get()
+      .then((doc) => {
+        console.log(doc.data().parintPin);
+        if(doc.data().parintPin === $parentPintInput.value) {
+          window.location.href="parent.html";
+        }
+        else {
+          alert('Wrong Pin');
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+  $parentPintInput.addEventListener('keyup', function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        $parentPinBtn.click();
+    }
+  })
 };
-
 
 // Realtime data awchirah uildel
 

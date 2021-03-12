@@ -57,32 +57,36 @@ document.querySelector(".confirm-todo").onclick = function(){
    var $modulDate = document.querySelector("#modul-todo-date");
    var $modulPoint = document.querySelector("#modul-todo-point");
 
-   if (!$modulTodo.dataset.editingid){
-      var newTodo = {
-         id: parseInt(Math.random()*9999999999),
-         modTitle: $modulTitle.value,
-         description:$modulDesc.value,
-         dueDate : $modulDate.value,
-         todoPoint: $modulPoint.value,
-         createdAt: new Date().toISOString(),
-         isDone: false,
-      };
-      create(newTodo);
+   if($modulTodo.value==='' || $modulTitle.value===''|| $modulDesc.value === '' || $modulDate.value ==='' || $modulPoint.value === ''){
+      alert('Please fill in all the required fields');
    } else {
-        var id = $modulTodo.dataset.editingid;
-        var title = $modulTitle.value;
-        var description = $modulDesc.value;
-        var dueDate = $modulDate.value;
-        var todoPoint = $modulPoint.value;
-        let updatingFields = {
-            modTitle: title,
-            description: description,
-            dueDate: dueDate,
-            todoPoint: todoPoint,
-        };
-
-        update(id, updatingFields);
-    }
+      if (!$modulTodo.dataset.editingid){
+         var newTodo = {
+            id: parseInt(Math.random()*9999999999),
+            modTitle: $modulTitle.value,
+            description:$modulDesc.value,
+            dueDate : $modulDate.value,
+            todoPoint: $modulPoint.value,
+            createdAt: new Date().toISOString(),
+            isDone: false,
+         };
+         create(newTodo);
+      } else {
+           var id = $modulTodo.dataset.editingid;
+           var title = $modulTitle.value;
+           var description = $modulDesc.value;
+           var dueDate = $modulDate.value;
+           var todoPoint = $modulPoint.value;
+           let updatingFields = {
+               modTitle: title,
+               description: description,
+               dueDate: dueDate,
+               todoPoint: todoPoint,
+           };
+   
+           update(id, updatingFields);
+       }
+   }
     closeModal();
 };
 
@@ -150,7 +154,6 @@ function $drawTodos(tasks){
     
       } else {
          $todos.append($newTodo);
-    
       }
          onTotalPoint(tPoint);
          onYourPoint(myPoint);
@@ -161,12 +164,17 @@ function $drawTodos(tasks){
          // document.querySelector('.all-del').innerHTML = '';
          document.querySelector('.todos').style.height = '80%';
          document.querySelector('.todos-completed').style.display = 'none';
+         document.querySelector('.fasort').style.display = 'none'
+         
       } else {
-         document.querySelector('.p-list').innerHTML = 'Completed Todo Lists';
+         document.querySelector('.p-list').innerHTML = 'Дууссан ажлын жагсаалт';
          // document.querySelector('.all-del').innerHTML = 'Бүгдийг устгах';
          document.querySelector('.todos').style.height = '40%';
          document.querySelector('.todos-completed').style.display = 'block';
+         document.querySelector('.fasort').style.display = 'block';
       }
+
+     
 };
 
 //... edit delete button 

@@ -4,13 +4,21 @@ let selectedChildPin;
 let selectedChildID;
 userUID = localStorage.getItem('userUID');
 
+let childImgArray = [
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose.png?alt=media',
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose%20(3).png?alt=media',
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose%20(2).png?alt=media',
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose%20(1).png?alt=media&token',
+    'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose%20(5).png?alt=media',
+]
+
 // create elementx
 
-function $createChild(item) {
+function $createChild(item, index) {
     var $child = document.createElement('div');
     $child.classList.add('child', 'flex');
     var content = `
-        <img class="avatarimg" src="https://api.getepic.com/utils/compose.png?avatar_id=15&frame_id=1&size=2x&style_type=avatar" alt="avatar" width="170px">
+        <img class="avatarimg" src="${childImgArray[index % 5] }" alt="avatar" width="170px">
         <h3 class="name">${item.data.name}</h3>
     `;
     $child.innerHTML = content;
@@ -20,37 +28,48 @@ function $createChild(item) {
         let imageSource = img.getAttribute('src');
         console.log(imageSource);
 
-        let modalImg = document.querySelector('.modulbox, img');
+        let modalImg = document.querySelector('#childrenImage');
         modalImg.setAttribute('src', imageSource);
+        document.querySelector('.childPinModal .modalbox h3').innerHTML = $child.querySelector('.child, .name').innerHTML;
 
-       let modulName = $child.querySelector('.child, .name');
-        document.querySelector('.childPinModal .modalbox h3').innerHTML = modulName.innerHTML;
-
-        
         showChildPinModal();
-        document.querySelector('.childPinModal .modalbox button').onclick = () => {
-            db.doc(`family/${userUID}/children/${selectedChild}`).get()
-                .then((doc) => {
-                    selectedChildPin = doc.data().pin;
-                    let inputPin = document.querySelector('.childPinModal .modalbox input').value;
 
-                    if (inputPin === selectedChildPin) {
-                        selectedChildID = item.id;
-                        localStorage.setItem('selectedChildID',selectedChildID);
-                        window.location.href="wishlist.html";
-                    }  
-                })
+        let $inputPin = document.querySelector('.childPinModal .modalbox input');
+        let $goBtn = document.querySelector('.childPinModal .modalbox button');
+        
+        $goBtn.onclick = () => {
+            db.doc(`family/${userUID}/children/${selectedChild}`).get()
+            .then((doc) => {
+                selectedChildPin = doc.data().pin;
+                if ($inputPin.value === selectedChildPin) {
+                    selectedChildID = item.id;
+                    localStorage.setItem('selectedChildID',selectedChildID);
+                    window.location.href="wishlist.html";
+                } else {
+                    alert('Wrong Pin');
+                } 
+            });
         }
+
+        $inputPin.addEventListener('keyup', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                $goBtn.click();
+            }
+        })
     };
     return $child;
 }
 
-let modal = document.querySelector('.childPinModal');
+// child Pin modal
 
-if (modal != null) {
-    modal.onclick = function (event) {
-        if (event.target == modal) {
-            modal.classList.remove('showme')
+let $ChildPinmodal = document.querySelector('.childPinModal');
+
+if ($ChildPinmodal != null) {
+    $ChildPinmodal.onclick = function (event) {
+        if (event.target == $ChildPinmodal) {
+            $ChildPinmodal.classList.remove('showme')
+            $ChildPinmodal.querySelector('input').value = "";
         }
     }
 
@@ -59,8 +78,8 @@ if (modal != null) {
         var $childrenList = document.querySelector('.avatar');
 
         $childrenList.innerHTML = '';
-        children.forEach((item) => {
-            $child = $createChild(item);
+        children.forEach((item, index) => {
+            $child = $createChild(item, index);
             $childrenList.append($child);
         });
     }
