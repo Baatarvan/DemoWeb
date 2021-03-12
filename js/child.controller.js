@@ -1,5 +1,4 @@
 let children = [];
-userUID = localStorage.getItem('userUID'); //selected family ID
 
 // draw children
 
@@ -38,6 +37,7 @@ let cancelButton = document.querySelector('.cancelButton');
 if (window.location.href.endsWith('addChild.html')) {
   $addChild.onclick = () => {
     if ($name.value && $pin.value) {
+      const userUID = localStorage.getItem('userUID'); //selected family ID
       db.collection("family").doc(userUID)
         .collection('children').add({
           name: $name.value,
@@ -91,7 +91,7 @@ if(window.location.href.endsWith('profile-select.html')){
   let $parentPinBtn = document.querySelector('.modal .modalbox button');
 
   $parentPinBtn.onclick = () => {
-    
+    const userUID = localStorage.getItem('userUID'); //selected family ID
     db.doc(`family/${userUID}`).get()
       .then((doc) => {
         console.log(doc.data().parintPin);
@@ -117,6 +117,8 @@ if(window.location.href.endsWith('profile-select.html')){
 // Realtime data awchirah uildel
 
 window.onload = () => {
+  const userUID = localStorage.getItem('userUID'); //selected family ID
+
   db.collection('family')
     .doc(userUID)
     .collection('children')

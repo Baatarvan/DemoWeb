@@ -1,8 +1,6 @@
-
 let selectedChild;
 let selectedChildPin;
 let selectedChildID;
-userUID = localStorage.getItem('userUID');
 
 let childImgArray = [
     'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose.png?alt=media',
@@ -38,6 +36,7 @@ function $createChild(item, index) {
         let $goBtn = document.querySelector('.childPinModal .modalbox button');
         
         $goBtn.onclick = () => {
+            const userUID = localStorage.getItem('userUID'); //selected family ID
             db.doc(`family/${userUID}/children/${selectedChild}`).get()
             .then((doc) => {
                 selectedChildPin = doc.data().pin;
