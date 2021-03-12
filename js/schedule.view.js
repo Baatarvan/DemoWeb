@@ -86,8 +86,8 @@ document.querySelector(".confirm-todo").onclick = function(){
    
            update(id, updatingFields);
        }
+       closeModal();
    }
-    closeModal();
 };
 
 function $drawTodo(newTodo){

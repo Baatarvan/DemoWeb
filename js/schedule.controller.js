@@ -6,19 +6,20 @@ var whishlist = {
   task: []
 };
 
-// document.querySelector('.fa-sort').onclick = function(){ 
-//   whishlist.task.forEach((doc)=>{
-//     sort(doc.dueDate);
-//     console.log(doc.dueDate);
-//     // console.log(doc);
-//   })
-// };
-
-// function sort(date){
-//   date.sort(function(o1,o2){
-//     return sort_o1_before_o2 ? -1 : sort_o1_after_o2 ? 1 : 0;
-//   });
-// };
+document.querySelectorAll('.fa-sort').forEach((faSort)=>{
+  console.log('fasort')
+  faSort.onclick = function(){
+    console.log('clicked sort')
+console.log(whishlist.task);
+    whishlist.task.sort((item1, item2)=>{
+      if(item1.dueDate >item2.dueDate ){
+        return 1;
+      } 
+      return -1;
+    });
+    $drawTodos(whishlist.task);
+  }
+});
 
 // Progress battery
 var batteryContainer = document.querySelector('.battery-container');
