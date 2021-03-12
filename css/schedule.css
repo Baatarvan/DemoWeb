@@ -290,7 +290,7 @@ body {
   right: 0;
   bottom: 0;
   width: 100%;
-  background: var(--grey-color);
+  background-color: rgba(40,59,81,.9);
   border: none;
   display: none;
 }
