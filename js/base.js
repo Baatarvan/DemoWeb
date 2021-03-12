@@ -119,12 +119,10 @@ if (window.location.href.endsWith('signup.html')) {
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         let uid = user.uid;
-        console.log('nevtersen bna');
         if (window.location.href.endsWith('login.html') || window.location.href.endsWith('signup.html')) {
             window.location.href = 'profile-select.html';
         }
     } else {
-        console.log("uynar");
         if(window.location.href.endsWith('signup.html')) {
             return;
         }
