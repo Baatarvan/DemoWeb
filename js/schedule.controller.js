@@ -124,3 +124,9 @@ window.onclick = function(event) {
     $modulTodo.style.display = 'none';
   }
 }
+
+// back button
+
+document.querySelector('#backToWishlist').onclick = () => {
+  window.location.href = 'wishlist.html';
+}

@@ -5,6 +5,10 @@ body {
   flex-direction: column;
 }
 
+#backToWishlist {
+  color: var(--grey-color);
+}
+
 /* WISH IS COMING */
 .wish-schedule {
   display: flex;

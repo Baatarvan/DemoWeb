@@ -19,7 +19,7 @@ if(document.querySelector('.addChildbtn') != null) {
   // Add child  html-ruu usreh uildel
 
   document.querySelector('.addChildbtn').addEventListener('click', () => {
-    if(children.length < 6 ) {
+    if(children.length < 5 ) {
       window.location.href="addChild.html";
     }
     else {
