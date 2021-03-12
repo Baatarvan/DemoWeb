@@ -107,12 +107,25 @@ if (window.location.href.endsWith('signup.html')) {
 
 // onAuthStateChanged
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        let uid = user.uid;
-    } else {
-        if (!window.location.href.endsWith('login.html') && window.location.href.endsWith('login.html')) {
-            window.location.href = 'login.html';
-        }
-    }
-});
+// firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//         let uid = user.uid;
+//     } else {
+//         if (!window.location.href.endsWith('login.html') && window.location.href.endsWith('login.html')) {
+//             window.location.href = 'login.html';
+//         }
+//     }
+// });
+let auth = firebase.auth();
+
+// auth.onAuthStateChanged((userUID) => {
+//     if (userUID== null) {
+//       var url = window.location.pathname;
+//       var filename = url.substring(url.lastIndexOf('/')+1);
+//       if(filename != "login.html" && filename != "signup.html" ){
+//           window.location.replace('login.html');
+//       }
+//     } else {
+//         document.querySelector("#user").innerHTML = user.email;
+//     } 
+//   });

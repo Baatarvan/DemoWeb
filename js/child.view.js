@@ -36,6 +36,7 @@ function $createChild(item) {
                     if (inputPin === selectedChildPin) {
                         selectedChildID = item.id;
                         localStorage.setItem('selectedChildID',selectedChildID);
+                        localStorage.setItem('selectedChildName',doc.data().name);
                         window.location.href="wishlist.html";
                     }  
                 })

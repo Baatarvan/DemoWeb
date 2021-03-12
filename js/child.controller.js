@@ -35,6 +35,8 @@ let $name = document.querySelector('#childName');
 let $pin = document.querySelector('#childPin');
 let cancelButton = document.querySelector('.cancelButton');
 
+//create children
+
 if (window.location.href.endsWith('addChild.html')) {
   $addChild.onclick = () => {
     if ($name.value && $pin.value) {
@@ -103,7 +105,7 @@ if(window.location.href.endsWith('profile-select.html')){
   }
 };
 
-// Realtime data awchirah uildel
+// List children uildels
 
 window.onload = () => {
   db.collection('family')
@@ -111,3 +113,5 @@ window.onload = () => {
     .collection('children')
     .onSnapshot(drawChildrenFromSnapshot);
 };
+
+//

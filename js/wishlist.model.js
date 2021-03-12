@@ -1,7 +1,8 @@
 
-// wishlist crud
- userUID = localStorage.getItem('userUID');
+ userUID = localStorage.getItem('userUID'); //user uid local-s awah
  
+// wishlist crud
+
 //wishlist uusgeh
 
 function createWishlist(list){
@@ -19,12 +20,33 @@ function createWishlist(list){
 
 //wishlist jagsaaj haruulah
 
-function listWishlist(childID){
-    db.collection('family')
+function listWishlist(childID, type = true){
+    if(type)
+    {
+        db.collection('family')
         .doc(userUID)
         .collection('whilist')
         .where("childrenId" , "==", childID)
         .onSnapshot(drawWishlistFromSnapshot);
+    }
+    else
+    {
+        let wishes = [];
+         db.collection('family')
+        .doc(userUID)
+        .collection('whilist')
+        .where("childrenId" , "==", childID)
+        .get()    
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                wishes.push({
+                    id: doc.id,
+                    data: doc.data(),
+                }); 
+            });
+        });
+        return wishes;
+    }
 }
 
 //wishlist ustgah
