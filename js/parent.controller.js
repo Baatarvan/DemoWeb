@@ -106,6 +106,7 @@ function drawRow(child,childWishes)
         </div>
         
     `;
+    profile.innerHTML = content;
     let wishbox = document.createElement('div');
     wishbox.classList.add('wishbox','flex', 'flex-6');
 
@@ -132,9 +133,8 @@ function drawRow(child,childWishes)
 
     // content = content + wishbox.innerHTML;
     // profile.innerHTML = content;
-
+    profile.append(wishbox);
     lists.append(profile);
-    lists.append(wishbox);
 }
 
 function getWishLists(childID, callback)

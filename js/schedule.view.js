@@ -194,13 +194,14 @@ function onKebabBtn (html){
       openModal(todo);
    }
    
-   window.onload = function() {
-      if(userType == 'parent'){
-         alert('parents');
-      } else {
-         let todoButton = document.querySelector('.add-todo');
-         todoButton.style.display = "none";
-      }
-    };
+   // window.onload = function() {
+   //    if(userType === 'parent'){
+   //       let todoButton = document.querySelector('.add-todo');
+   //       todoButton.style.display = "none";
+   //    } else {
+   //       let todoButton = document.querySelector('.add-todo');
+   //       todoButton.style.display = "none";
+   //    }
+   //  };
 
 
