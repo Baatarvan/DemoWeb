@@ -1,6 +1,8 @@
 let selectedChild;
 let selectedChildPin;
 let selectedChildID;
+userUID = localStorage.getItem('userUID');
+userType = localStorage.getItem('userType');
 
 let childImgArray = [
     'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/compose.png?alt=media',

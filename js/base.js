@@ -8,10 +8,14 @@ let firebaseConfig = {
 };
 
 let userUID;
+let userType;
+
 
 firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
+
+
 
 // Login
 
@@ -27,6 +31,7 @@ if (window.location.href.endsWith('login.html')) {
             var user = userCredential.user;
             userUID = user.uid;
             localStorage.setItem('userUID', userUID); 
+            localStorage.setItem('userType', 'parent'); //type parents
             window.location.href = "profile-select.html";
             // ...
         })

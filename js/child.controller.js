@@ -1,4 +1,7 @@
 let children = [];
+userUID = localStorage.getItem('userUID'); //selected family ID
+let $button = document.querySelector('#modalshowme');
+
 
 // draw children
 
@@ -33,6 +36,8 @@ let $addChild = document.querySelector('.finishButton');
 let $name = document.querySelector('#childName');
 let $pin = document.querySelector('#childPin');
 let cancelButton = document.querySelector('.cancelButton');
+
+//create children
 
 if (window.location.href.endsWith('addChild.html')) {
   $addChild.onclick = () => {
@@ -114,7 +119,7 @@ if(window.location.href.endsWith('profile-select.html')){
   })
 };
 
-// Realtime data awchirah uildel
+// List children uildels
 
 window.onload = () => {
   const userUID = localStorage.getItem('userUID'); //selected family ID
@@ -123,4 +128,7 @@ window.onload = () => {
     .doc(userUID)
     .collection('children')
     .onSnapshot(drawChildrenFromSnapshot);
-};
+  }
+;
+
+//

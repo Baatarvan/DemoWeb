@@ -1,6 +1,9 @@
+
+ userUID = localStorage.getItem('userUID'); //user uid local-s awah
+ let wishes = [];
+
 // wishlist crud
- userUID = localStorage.getItem('userUID');
- 
+
 //wishlist uusgeh
 
 function createWishlist(list){
@@ -20,11 +23,13 @@ function createWishlist(list){
 
 function listWishlist(childID){
     db.collection('family')
-        .doc(userUID)
-        .collection('whilist')
-        .where("childrenId" , "==", childID)
-        .onSnapshot(drawWishlistFromSnapshot);
+    .doc(userUID)
+    .collection('whilist')
+    .where("childrenId" , "==", childID)
+    .onSnapshot(drawWishlistFromSnapshot);
 }
+
+
 
 //wishlist ustgah
 

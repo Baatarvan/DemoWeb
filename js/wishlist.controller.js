@@ -5,6 +5,8 @@ let images;
 let selectedImage = 'https://firebasestorage.googleapis.com/v0/b/tema2-74912.appspot.com/o/008-music%20player.svg?alt=media';
 selectedChildID = localStorage.getItem("selectedChildID");
 
+// add wish button darahad modal haragdah uildel
+
 $addWishBtn.onclick = () => {
     $modulAddWish.classList.add('showme');
     images = document.querySelectorAll('.wishAddModul img');
@@ -23,6 +25,8 @@ $addWishBtn.onclick = () => {
         }
     });
 }
+
+//add wish modal dotorh uildel
 
 addBtn.onclick = () => {
     let $path = selectedImage;
@@ -48,6 +52,7 @@ addBtn.onclick = () => {
     }
 }
 
+//add wish modal alga bolgoh uildel
 
 window.onclick = function(event) {
     if (event.target == $modulAddWish) {
