@@ -1,5 +1,7 @@
 let children = [];
 userUID = localStorage.getItem('userUID'); //selected family ID
+let $button = document.querySelector('#modalshowme');
+
 
 // draw children
 
@@ -70,7 +72,6 @@ if(window.location.href.endsWith('profile-select.html')){
   
   // modal show uildel// main
   let $modal = document.querySelector('.modal');
-  let $button = document.querySelector('#modalshowme');
 
   $button.onclick = () => {
     $modal.classList.add('showme');
@@ -112,6 +113,7 @@ window.onload = () => {
     .doc(userUID)
     .collection('children')
     .onSnapshot(drawChildrenFromSnapshot);
-};
+  }
+;
 
 //

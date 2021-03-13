@@ -3,6 +3,7 @@ let selectedChild;
 let selectedChildPin;
 let selectedChildID;
 userUID = localStorage.getItem('userUID');
+userType = localStorage.getItem('userType');
 
 // create elementx
 
@@ -37,6 +38,8 @@ function $createChild(item) {
                         selectedChildID = item.id;
                         localStorage.setItem('selectedChildID',selectedChildID);
                         localStorage.setItem('selectedChildName',doc.data().name);
+                        localStorage.setItem('userType', 'children');
+                        alert(userType);
                         window.location.href="wishlist.html";
                     }  
                 })

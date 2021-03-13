@@ -20,6 +20,7 @@ var tPoint = 0;
 var myPoint = 0; 
 
 // Add todo button
+
 document.querySelector('.add-todo').onclick = (e) => {
    openModal();
 }
@@ -185,6 +186,13 @@ function onKebabBtn (html){
       openModal(todo);
    }
    
-
+   window.onload = function() {
+      if(userType == 'parent'){
+         alert('parents');
+      } else {
+         let todoButton = document.querySelector('.add-todo');
+         todoButton.style.display = "none";
+      }
+    };
 
 
