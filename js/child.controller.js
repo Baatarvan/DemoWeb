@@ -21,7 +21,7 @@ if(document.querySelector('.addChildbtn') != null) {
   // Add child  html-ruu usreh uildel
 
   document.querySelector('.addChildbtn').addEventListener('click', () => {
-    if(children.length < 6 ) {
+    if(children.length < 5 ) {
       window.location.href="addChild.html";
     }
     else {
@@ -42,6 +42,7 @@ let cancelButton = document.querySelector('.cancelButton');
 if (window.location.href.endsWith('addChild.html')) {
   $addChild.onclick = () => {
     if ($name.value && $pin.value) {
+      const userUID = localStorage.getItem('userUID'); //selected family ID
       db.collection("family").doc(userUID)
         .collection('children').add({
           name: $name.value,
@@ -95,7 +96,7 @@ if(window.location.href.endsWith('profile-select.html')){
   let $parentPinBtn = document.querySelector('.modal .modalbox button');
 
   $parentPinBtn.onclick = () => {
-    
+    const userUID = localStorage.getItem('userUID'); //selected family ID
     db.doc(`family/${userUID}`).get()
       .then((doc) => {
         console.log(doc.data().parintPin);
@@ -121,6 +122,8 @@ if(window.location.href.endsWith('profile-select.html')){
 // List children uildels
 
 window.onload = () => {
+  const userUID = localStorage.getItem('userUID'); //selected family ID
+
   db.collection('family')
     .doc(userUID)
     .collection('children')

@@ -70,6 +70,7 @@ if ($logOutBtn != null) {
 // Sign up
 
 if (window.location.href.endsWith('signup.html')) {
+    firebase.auth().signOut();
     let $signUpBtn = document.querySelector('#signup');
     let parentPin = document.querySelector('.pin')
 
@@ -88,16 +89,21 @@ if (window.location.href.endsWith('signup.html')) {
             // }
             // createFamily();
             localStorage.setItem('userUID', userUID);  //family UID-glocal storage deer hadgalah
-
+            console.log("log", userUID);
             //Create family collection
             db.collection('family').doc(userUID).set({
                 createAt: new Date(),
                 parintPin: parentPin.value,
                 
             }).then(()=>  {
+                console.log("log");
                 firebase.auth().signOut();
                 window.location.href = 'login.html';
-            });
+            })
+            .catch((error) => {
+                console.log(error)
+            }) 
+            
            
         })
         .catch((error) => {
@@ -124,12 +130,11 @@ if (window.location.href.endsWith('signup.html')) {
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         let uid = user.uid;
-        console.log('nevtersen bna');
-        if (window.location.href.endsWith('login.html') || window.location.href.endsWith('signup.html')) {
+        if (window.location.href.endsWith('login.html')) {
             window.location.href = 'profile-select.html';
         }
     } else {
-        console.log("uynar");
+        localStorage.clear();
         if(window.location.href.endsWith('signup.html')) {
             return;
         }

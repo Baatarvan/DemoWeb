@@ -6,17 +6,20 @@ var whishlist = {
   task: []
 };
 
-// document.querySelector('.fa-sort').onclick = function(){ 
-//   whishlist.task.forEach((doc)=>{
-//     sort(doc.dueDate);
-//     console.log(doc.dueDate);
-//     // console.log(doc);
-//   })
-// };
-
-// function sort(date){
-//   date.sort((a, b) => b.dueDate - a.dueDate)
-// };
+document.querySelectorAll('.fa-sort').forEach((faSort)=>{
+  console.log('fasort')
+  faSort.onclick = function(){
+    console.log('clicked sort')
+console.log(whishlist.task);
+    whishlist.task.sort((item1, item2)=>{
+      if(item1.dueDate >item2.dueDate ){
+        return 1;
+      } 
+      return -1;
+    });
+    $drawTodos(whishlist.task);
+  }
+});
 
 // Progress battery
 var batteryContainer = document.querySelector('.battery-container');
@@ -123,4 +126,10 @@ window.onclick = function(event) {
   if (event.target == $modulTodo) {
     $modulTodo.style.display = 'none';
   }
+}
+
+// back button
+
+document.querySelector('#backToWishlist').onclick = () => {
+  window.location.href = 'wishlist.html';
 }

@@ -1,4 +1,3 @@
-
 let selectedChild;
 let selectedChildPin;
 let selectedChildID;
@@ -39,6 +38,7 @@ function $createChild(item, index) {
         let $goBtn = document.querySelector('.childPinModal .modalbox button');
         
         $goBtn.onclick = () => {
+            const userUID = localStorage.getItem('userUID'); //selected family ID
             db.doc(`family/${userUID}/children/${selectedChild}`).get()
             .then((doc) => {
                 selectedChildPin = doc.data().pin;
