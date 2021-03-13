@@ -54,7 +54,7 @@ if (window.location.href.endsWith('login.html')) {
     }
 }
 
-// Log Out
+// Log out
 
 let $logOutBtn = document.querySelector('.logOut');
 if ($logOutBtn != null) {
@@ -67,13 +67,15 @@ if ($logOutBtn != null) {
     }
 }
 
-// Signup
+// Sign up
 
 if (window.location.href.endsWith('signup.html')) {
-    document.querySelector('#signup').onclick = () => {
+    let $signUpBtn = document.querySelector('#signup');
+    let parentPin = document.querySelector('.pin')
+
+    $signUpBtn.onclick = () => {
         let email = document.querySelector('.email').value;
         let password = document.querySelector('.password').value;
-        let parentPin = document.querySelector('.pin').value;
     
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -90,7 +92,7 @@ if (window.location.href.endsWith('signup.html')) {
             //Create family collection
             db.collection('family').doc(userUID).set({
                 createAt: new Date(),
-                parintPin: parentPin,
+                parintPin: parentPin.value,
                 
             }).then(()=>  {
                 firebase.auth().signOut();
@@ -105,6 +107,13 @@ if (window.location.href.endsWith('signup.html')) {
         });   
     }
 
+    parentPin.addEventListener('keyup', function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $signUpBtn.click();
+        }
+    })
+
     document.querySelector('.loginBtn').onclick = () => {
         window.location.href = 'login.html';
     }
@@ -112,26 +121,20 @@ if (window.location.href.endsWith('signup.html')) {
 
 // onAuthStateChanged
 
-// firebase.auth().onAuthStateChanged((user) => {
-//     if (user) {
-//         let uid = user.uid;
-//     } else {
-//         if (!window.location.href.endsWith('login.html') && window.location.href.endsWith('login.html')) {
-//             window.location.href = 'login.html';
-//         }
-//     }
-// });
-let auth = firebase.auth();
-
-// auth.onAuthStateChanged((userUID) => {
-//     if (userUID== null) {
-//       var url = window.location.pathname;
-//       var filename = url.substring(url.lastIndexOf('/')+1);
-//       if(filename != "login.html" && filename != "signup.html" ){
-//           window.location.replace('login.html');
-//       }
-//     } else {
-//         document.querySelector("#user").innerHTML = user.email;
-//     } 
-//   });
-
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        let uid = user.uid;
+        console.log('nevtersen bna');
+        if (window.location.href.endsWith('login.html') || window.location.href.endsWith('signup.html')) {
+            window.location.href = 'profile-select.html';
+        }
+    } else {
+        console.log("uynar");
+        if(window.location.href.endsWith('signup.html')) {
+            return;
+        }
+        if(!window.location.href.endsWith('login.html')) {
+            window.location.replace('login.html');
+        } 
+    }
+});

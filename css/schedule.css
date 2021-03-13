@@ -6,7 +6,17 @@ body {
 }
 
 /* WISH IS COMING */
+.wish-schedule {
+  display: flex;
+  height: 50%;
+  margin-bottom: 10px;
+}
 
+.desc-container {
+  height: 30%;
+  padding: 20px;
+
+}
 .wish-achieve {
   background-color: var(--white-color);
   box-shadow: 0 1px 3px 0 rgb(71 76 85 / 10%);
@@ -16,8 +26,8 @@ body {
   width: 40%;
   height: fit-content;
   margin-left: 30px;
-  padding: 50px;
-  height: 800px;
+  padding: 30px;
+  height: 95%;
   overflow: hidden;
 }
 
@@ -26,17 +36,26 @@ body {
 }
 
 .wish-card {
-  width: 400px;
+  width: 90%;
   margin: auto;
   text-align: center;
-  padding: 30px 0;
+  padding:10px;
   border-radius: 20px;
 }
 
 .wish-coming {
   padding: 10px;
   text-align: center;
-  margin-bottom: 20px;
+}
+
+/* .wish-coming h1 {
+  font-size: 1.5rem;
+} */
+
+.wish-point-container{
+  margin: 10px;
+  background-color: var(--background-color);
+  border-radius: 15px;
 }
 
 .wish-img {
@@ -44,28 +63,49 @@ body {
 }
 
 .point {
-  text-align: left;
-  margin-top: 20px;
-  margin-left: 20%;
+  text-align: justify;
+  width: 95%;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  padding-top: 7%;
 }
 
+.point span {
+  display: inline-block;
+  font-size: 1rem;
+  color: #4c8932;
+}
+
+.point span.total-point {
+  color: black;
+}
+
+.point span.your-point {
+  color: black;
+}
 .wish-desc {
-  text-align: left;
-  margin-top: 20px;
+  margin-top: 10%;
+  text-align: center;
 }
 
 .battery-container {
   background-color: gray;
-  width: 60%;
   border-radius: 20px;
-  margin: auto;
-  width: 50%;
-  margin-top: 20px;
+  width: 100%;
   border: 1px solid var(--background-color);
 }
 
 .battery-container .achieve {
   background-color: rgb(135, 204, 135);
+  /* background-color: #74d04c; */
+  background: 
+   -moz-linear-gradient(#9bdd62 0%, #74d04c 100%);
+  -webkit-box-shadow: inset 0px 1px 0px 0px #dbf383, inset 0px -1px 1px #58c43a;
+  -moz-box-shadow: inset 0px 1px 0px 0px #dbf383, inset 0px -1px 1px #58c43a;
+  box-shadow: inset 0px 1px 0px 0px #dbf383, inset 0px -1px 1px #58c43a;
+  border: 1px solid #4c8932;
   color: var(--white-color);
   padding: 1%;
   text-align: right;
@@ -74,9 +114,8 @@ body {
 }
 
 #taskProcent {
-  width: 0%;
+  
 }
-
 
 .schedule-container {
   position: relative;
@@ -87,6 +126,7 @@ body {
 
 .hidden {
   display: none;
+  background-color: var(--background-color);
 }
 
 /* TODO LIST */
@@ -97,7 +137,7 @@ body {
   border-radius: 20px;
   border: none;
   width: 40%;
-  height: 800px;
+  height: 95%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -110,9 +150,16 @@ body {
   color:var(--primary-color);
 }
 
+.fa-sort {
+  font-size: 1rem;
+  text-align: right;
+  color: var(--font-color);
+}
+
 .garchig {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px;
+  margin-top: 30px;
 }
 
 .todos {
@@ -134,12 +181,13 @@ body {
   background-color:#fff;
   font-weight: 400;
   font-size: 1rem;
-  padding: 10px;
+  padding: 5px;
+  margin: 10px;
   color: var(--font-color);
   width: 100%;
   height:fit-content;
   border-radius: 5px;
-  margin-top: 5px;
+  /* margin: 10px; */
 }
 
 .todo {
@@ -354,6 +402,11 @@ body {
   color: #fff;
 }
 
+.deleteBtn {
+  display: inline-block;
+  text-align: center;
+  margin-left: 30%;
+}
 /* Navigation bar  */
 
 h1 {
